@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/searchbackground"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/favorites_tabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/BtnSlide_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@drawable/header_1" />
+            <!--
+            <LinearLayout android:id="@+id/favorites_logout_container" android:layout_width="fill_parent" 
+        			  	  android:layout_height="fill_parent" android:gravity="right">		   		  
+            	<ImageView android:id="@+id/favorites_logout_btn" android:layout_width="wrap_content" 
+            			   android:layout_height="fill_parent" android:src="@drawable/logout_main"
+            			   android:paddingRight="5dip"/>	   	  
+            </LinearLayout>
+            -->
+
+            <RelativeLayout
+                android:id="@+id/zoupons_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2" >
+
+                <ImageView
+                    android:id="@+id/zoupons_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="7dip"
+                    android:paddingRight="7dip"
+                    android:src="@drawable/logout_main" 
+                    android:visibility="gone"/>
+
+                <FrameLayout
+                    android:id="@+id/notification_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical"
+                    android:paddingRight="7dip"
+                    android:paddingLeft="7dip" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:id="@+id/zoupons_notificationImageId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/notification_sample" />
+
+                        <!-- <Button
+                            android:id="@+id/zoupons_notification_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/zoupons_notificationImageId"
+                            android:background="@drawable/circle_shape"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="2dp"
+                            android:textColor="@color/white"
+                            android:visibility="gone" /> -->
+                    </RelativeLayout>
+                    
+                    <Button
+                        android:id="@+id/zoupons_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/circle_shape"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                    
+                    <ImageView
+                        android:id="@+id/zoupons_callout_triangle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/triangle"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/zoupons_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/notification_container"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/home_header"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/store_header_loginchoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/zoupons_home"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/man"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/favorites_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menubarcontainer_favorites"
+        android:layout_below="@id/favorites_tabBar"
+        android:layout_weight="1"
+        android:visibility="visible" >
+
+        <!-- Favorites List -->
+
+        <LinearLayout
+            android:id="@+id/favorites_listview_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/favorites_listview_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <!-- Favorites ListView -->
+
+                <LinearLayout
+                    android:id="@+id/favorites_listview_holder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip" >
+
+                    <ListView
+                        android:id="@+id/favoriteslistview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:cacheColorHint="#00000000"
+                        android:clickable="true"
+                        android:divider="@color/searchbackground"
+                        android:dividerHeight="10dip"
+                        android:drawSelectorOnTop="false"
+                        android:padding="3dip" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/couponslistview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:cacheColorHint="#00000000"
+                        android:clickable="true"
+                        android:divider="@color/searchbackground"
+                        android:dividerHeight="10dip"
+                        android:drawSelectorOnTop="false"
+                        android:padding="3dip"
+                        android:visibility="gone" >
+                    </ListView>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- Favorites MenuBar -->
+
+    <LinearLayout
+        android:id="@+id/menubarcontainer_favorites"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/menubar_favstores"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/footer_dark_blue_new"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_favstores_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/store" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_favstores_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Stores   "
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <LinearLayout
+            android:id="@+id/menubar_favcoupons"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_favcoupons_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/favorite_coupons" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_favcoupons_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Coupons"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <LinearLayout
+            android:id="@+id/menubar_friendsfavstores"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_friendsfavstores_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/friend_favorite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_friendsfavstores_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Friends Stores"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Freeze Rewards Button -->
+
+    <Button
+        android:id="@+id/freezefavorites"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

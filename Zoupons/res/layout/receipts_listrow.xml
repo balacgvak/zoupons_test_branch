@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_curve" >
+
+    <ImageView 
+        android:layout_width="90dp" 
+        android:layout_height="70dp"
+        android:id="@+id/receipts_store_imageId"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:layout_alignParentLeft="true"/>
+    
+    <ImageView 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:id="@+id/receipts_arrow_Id"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/balloon_disclosure"
+        android:layout_alignParentRight="true"/>
+        
+   <TextView 
+       android:id="@+id/receipts_store_nameId"
+       android:layout_toRightOf="@id/receipts_store_imageId"
+       android:layout_marginLeft="5dp"
+       android:layout_marginTop="5dp"
+       android:layout_width="wrap_content"
+       android:paddingRight="30dp"
+       android:textColor="@color/black"
+       android:textSize="14dip"
+       android:textStyle="bold"
+       android:layout_height="wrap_content"/>
+   
+   <TextView 
+       android:id="@+id/receipts_dateId"
+       android:layout_below="@id/receipts_store_nameId"
+       android:layout_alignLeft="@id/receipts_store_nameId"
+       android:layout_width="wrap_content"
+       android:paddingRight="30dp"
+       android:textColor="@color/black"
+       android:layout_height="wrap_content"/>
+   
+   <TextView 
+       android:id="@+id/receipts_amountId"
+       android:layout_below="@id/receipts_dateId"
+       android:layout_alignLeft="@id/receipts_dateId"
+       android:layout_width="wrap_content"
+       android:paddingRight="30dp"
+       android:textColor="@color/black"
+       android:layout_height="wrap_content"/> 
+   
+  
+</RelativeLayout>

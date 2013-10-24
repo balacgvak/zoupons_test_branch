@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeownercoupons_app"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownercoupons_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeownercoupons_footerLayoutId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/storeownercoupons_availabletextId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:text="Available"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/step1_menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/storeownercoupons_purchasedtextId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:text="Purchased"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/step1_menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/storeownercoupons_purchasedtextId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:text="Purchased"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/step1_menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <TextView
+            android:id="@+id/storeownercoupons_addcoupontextId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/add_coupon"
+            android:gravity="center"
+            android:text="Add Coupon"
+            android:textColor="@color/white"
+            android:background="@drawable/gradient_menubar_new"
+            
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Middle View -->
+
+    <RelativeLayout
+        android:id="@+id/storeownercoupons_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/storeownercoupons_footerLayoutId"
+        android:layout_below="@+id/storeownercoupons_header"
+        android:background="@drawable/custombackground"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/storeownercoupons_storename_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/storeownercoupons_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/sample" />
+
+            <TextView
+                android:id="@+id/storeownercoupons_title_textId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/storeownercoupons_rightmenu"
+                android:gravity="center"
+                android:lines="2"
+                android:ellipsize="end"
+                android:layout_marginTop="10dp"
+                android:text="Store Name"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!--
+             <TextView
+            android:id="@+id/mCoupons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dip"
+            android:paddingLeft="5dip"
+            android:text="Coupons"
+            android:textColor="@android:color/black"
+            android:textSize="18dip" />
+        -->
+
+        <LinearLayout
+            android:id="@+id/choose_coupon_type_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownercoupons_storename_header" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/public_coupons_checkboxId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:text="Public Coupons"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/private_coupons_checkboxId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:text="Private Coupons"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/storeownercoupons_CouponsList"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/choose_coupon_type_layout"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:cacheColorHint="#00000000"
+            android:choiceMode="multipleChoice"
+            android:clickable="true"
+            android:divider="@color/custom_background"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false"
+            android:padding="3dip"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/storeownercoupons_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

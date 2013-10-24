@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/translucent_black"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/lncontainerpopup"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <!-- Date Bar -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:paddingRight="20dip" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/popup_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/popup_uploadreceipt_date"
+                            android:textColor="@color/white"
+                            android:textSize="15dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                        <TextView
+                            android:id="@+id/popup_date_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2012-11-05"
+                            android:textColor="@color/white"
+                            android:textSize="15dip" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Space between Date and Store -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="20dp" />
+                <!-- Store Layout -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip" >
+
+                    <TextView
+                        android:id="@+id/popup_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Store"
+                        android:textColor="@color/white"
+                        android:textSize="15dip" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$ "
+                        android:textColor="@color/white"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/popup_getstore"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="15dip" />
+                </LinearLayout>
+                <!-- Amount Layout -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip" >
+
+                    <TextView
+                        android:id="@+id/popup_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Amount"
+                        android:textColor="@color/white"
+                        android:textSize="15dip"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/popup_dollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dip"
+                        android:text="$"
+                        android:textColor="@color/white"
+                        android:textSize="15dip"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/popup_getamount"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="15dip" />
+                </LinearLayout>
+                <!-- Upload Receipt Image View -->
+
+                <LinearLayout
+                    android:id="@+id/popup_imagecontainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dip"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip"
+                    android:paddingTop="10dip" >
+
+                    <!--
+                    <ImageView android:layout_width="fill_parent" android:layout_height="200dip"
+						   android:id="@+id/popup_imageview" android:src="@drawable/icon"
+						   android:layout_weight="1"/>		  
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/popup_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip" >
+
+                    <Button
+                        android:id="@+id/popup_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dip"
+                        android:background="@drawable/buttonhover"
+                        android:text="UPLOAD"
+                        android:textColor="@color/black"
+                        android:textSize="15dip"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/freezeview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

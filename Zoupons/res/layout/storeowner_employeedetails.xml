@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/employeedetails_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeowner_employeedetails_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <RelativeLayout
+        android:id="@+id/employeedetails_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeowner_employeedetails_default_footer"
+        android:layout_below="@id/storeowner_employeedetails_header"
+        android:background="@drawable/custombackground"
+        android:visibility="visible" >
+
+        <!-- EmployeeDetails ScrollView -->
+
+        <ScrollView
+            android:id="@+id/employeedetails_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fadeScrollbars="false"
+            android:visibility="visible" >
+
+            <!-- EmployeeDetails Full Content -->
+
+            <LinearLayout
+                android:id="@+id/employeedetails_employeeprofile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <!-- AddEmployee Group -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!-- AddEmployee Items -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/settings_contactborder"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp" >
+
+                                <ImageView
+                                    android:id="@+id/employeedetails_profileimage"
+                                    android:layout_width="120dp"
+                                    android:layout_height="135dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/profileimage" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@id/employeedetails_profileimage"
+                                    android:orientation="vertical" >
+
+                                    <!-- First Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/employeedetails_txtFirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="First Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="16sp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <EditText
+                                                android:id="@+id/employeedetails_edtFirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="First Name"
+                                                android:singleLine="true"
+                                                android:focusable="false"
+                                                android:textSize="15sp"
+                                                android:focusableInTouchMode="false"
+                                                android:background="#00000000"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <!-- Last Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/employeedetails_txtLastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Last Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="16sp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1" >
+
+                                            <EditText
+                                                android:id="@+id/employeedetails_edtLastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="Last Name"
+                                                android:singleLine="true"
+                                                android:focusable="false"
+                                                android:focusableInTouchMode="false"
+                                                android:background="#00000000"
+                                                android:textSize="15sp"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <!-- Email Id Field -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_txtEmail"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="EmailID"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_edtEmail"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Email Id"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:singleLine="true"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- MobileNumber -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_mobilenumber"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mobile Number"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_mobilenumber_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Mobile Number"
+                                        android:inputType="phone"
+                                        android:singleLine="true"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Address 1 container -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_address1_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Address1"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_address1_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Address1"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Address 2 container -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_address2_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Address2"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_address2_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Address2"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- City -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_city_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="City"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_city_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="City"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- State -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_state_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="State"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_state_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="State"
+                                        android:focusable="false"
+                                        android:textSize="15sp"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- ZipCode -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/employeedetails_zipcode_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Zipcode"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/employeedetails_zipcode_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Zipcode      "
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:background="#00000000"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- EmployeeDetails Button Container -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal" 
+                                android:visibility="gone">
+
+                                <Button
+                                    android:id="@+id/employeedetails_Save"
+                                    android:layout_width="@dimen/cancelbuttonwidth"
+                                    android:layout_height="@dimen/cancelbuttonheight"
+                                    android:background="@drawable/buttonhover"
+                                    android:text="Submit"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- EmployeeDetails Group Bottom Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Permission Container -->
+
+        <LinearLayout
+            android:id="@+id/employeedetails_permission_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/storeowner_employeedetails_default_footer"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:visibility="gone" >
+
+            <!-- New Permission View like add employee -->
+
+
+            <!-- Choose Modules -->
+
+
+            <!-- Start -->
+
+
+            <!-- employee module permission two container -->
+
+            <LinearLayout
+                android:id="@+id/employeedetails_employeemodule_permission"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Permissions"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:text="@string/StoreOwner_Employees_header1"
+                    android:textColor="@color/black"
+                    android:textSize="15dip"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:id="@+id/employeepermissiondetails_multiselectlistview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:cacheColorHint="#00000000"
+                    android:choiceMode="multipleChoice"
+                    android:clickable="true"
+                    android:divider="@color/custombackground"
+                    android:dividerHeight="10dip"
+                    android:drawSelectorOnTop="false"
+                    android:fadeScrollbars="false"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/employeedetails_employeemodule_activateemployeepermissions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/cancelbuttonheight"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/buttonhover"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:text="Activate Employee"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Choose Locations -->
+
+
+            <!-- employee location permission one container -->
+
+            <LinearLayout
+                android:id="@+id/employeedetails_employeelocation_permission"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Permissions"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:text="@string/StoreOwner_Employees_header2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <ListView
+                    android:id="@+id/employeedetails_multiselectlistview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:cacheColorHint="#00000000"
+                    android:choiceMode="multipleChoice"
+                    android:clickable="true"
+                    android:divider="@color/custombackground"
+                    android:dividerHeight="10dip"
+                    android:drawSelectorOnTop="false"
+                    android:fadeScrollbars="false"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/employeedetails_employeelocation_modulepermission"
+                    android:layout_width="170dp"
+                    android:layout_height="@dimen/cancelbuttonheight"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/buttonhover_new"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip"
+                    android:textSize="15sp"
+                    android:text="Module Permissions"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- End -->
+
+
+            <!-- Choose Employee Modules -->
+
+
+            <!--
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                Employee Module Header
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/StoreOwner_Employees_header1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:fadeScrollbars="false" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                         >
+
+                        <CheckBox
+                            android:id="@+id/addemployee_invoicecenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invoice Center"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_pointofsale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Point Of Sale"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_giftcards"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GiftCards"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_deals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Deals"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_coupons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Coupons"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_reviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reviews"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_locations"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Locations"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_photos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Photos"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_videos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Videos"
+                            android:textColor="@color/black" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_contactstore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Store"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+            -->
+
+
+            <!-- Center Line -->
+
+
+            <!--
+                 <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/black"
+                android:layout_marginTop="5dip" />            -->
+
+
+            <!-- Choose Employee Location -->
+
+            <!--
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                Employee Location Module Header
+
+				<TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/StoreOwner_Employees_header2"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <ListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/employeedetails_multiselectlistview"
+                    android:choiceMode="multipleChoice"
+                    android:cacheColorHint="#00000000"
+                    android:clickable="true"
+                    android:divider="@color/borderColor"
+                    android:dividerHeight="0dip"
+                    android:drawSelectorOnTop="false"
+                    android:visibility="visible"
+                    android:background="@drawable/border"
+                    android:fadeScrollbars="false"/>
+                
+            </LinearLayout>
+            -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/employeedetails_permission_btnSave"
+                    android:layout_width="100dip"
+                    android:layout_height="45dip"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/buttonhover"
+                    android:text="Submit"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_employeedetails_default_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Default Footer Back -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_employeedetails_default_footer_back"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_employeedetails_default_footer_back_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/back"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <!-- Default Footer Permission -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_employeedetails_default_footer_permission"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_employeedetails_default_footer_permission_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/setting_contact_info"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Permissions"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <!-- Default Footer Inactive Employee -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_employeedetails_default_footer_inactiveemployee"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_menubar_new"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_employeedetails_default_footer_inactiveemployee_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:drawableTop="@drawable/inactiveuser"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Inactivate Employee"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Permission Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_employeedetails_permission_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <!-- Permission Footer Back -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_employeedetails_permission_footer_back"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <!-- Invisible 1 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_qrcode"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_qrcode_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/qrcode"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_qrcode_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="QR CODE"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Invisible 2 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_search"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_search_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_search_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SEARCH"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Save Employee -->
+
+        <LinearLayout
+            android:id="@+id/employeedetails_permission_footer_save"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_save_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/save" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_save_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Freeze StoreOwner_AddEmployee Button -->
+
+    <Button
+        android:id="@+id/storeowner_employeedetails_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

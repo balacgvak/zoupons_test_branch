@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeowner_refund_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeowner_refund_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Refund MiddleView Container -->
+
+    <RelativeLayout
+        android:id="@+id/storeowner_refund_middleview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeowner_refund_footer"
+        android:layout_below="@id/storeowner_refund_header"
+        android:background="@color/custombackground"
+        android:padding="2dip" >
+
+        <!-- Telephone layout -->
+
+        <LinearLayout
+            android:id="@+id/initial_telephone_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Telephone Number"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/storeowner_refund_phoneNumberId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter Telephone Number"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/storeowner_refund_phoneNumber_submit"
+                android:layout_width="100dip"
+                android:layout_height="45dip"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonhover"
+                android:text="Submit"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- storeowner _refund customer Info details -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_customer_refund_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:visibility="gone" >
+
+            <!-- storeowner _refund customer info Header -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <!-- storeowner _refund customer details -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <!-- Contact Information Items -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/settings_contactborder"
+                            android:paddingRight="5dp"
+                            android:paddingTop="5dp" >
+
+                            <ImageView
+                                android:id="@+id/storeowner_customer_refund_ImageId"
+                                android:layout_width="120dp"
+                                android:layout_height="135dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="5dp"
+                                android:adjustViewBounds="true"
+                                android:paddingLeft="5dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/profileimage"
+                                android:visibility="visible" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/storeowner_customer_refund_ImageId"
+                                android:orientation="vertical" >
+
+                                <!-- First Name -->
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="5dip" >
+
+                                        <TextView
+                                            android:id="@+id/txtFirstName"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="First Name"
+                                            android:textColor="@color/black"
+                                            android:textSize="15dip"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="5dip" >
+
+                                        <EditText
+                                            android:id="@+id/storeowner_customer_refund_FirstName"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="First Name"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <!-- Last Name -->
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical" >
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="5dip" >
+
+                                        <TextView
+                                            android:id="@+id/txtLastName"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Last Name"
+                                            android:textColor="@color/black"
+                                            android:textSize="15dip"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1" >
+
+                                        <EditText
+                                            android:id="@+id/storeowner_customer_refund_LastName"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="Last Name"
+                                            android:singleLine="true"
+                                            android:textColor="@color/black"
+                                            android:focusable="false"
+                                            android:focusableInTouchMode="false" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- list view header -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Purchase Date"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Total Paid"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Total Refunded"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+
+                <ImageView
+                    android:id="@+id/listitem_arrow_Id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/balloon_disclosure"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/storeowner_customer_refund_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:cacheColorHint="#00000000"
+                android:clickable="true"
+                android:divider="@color/custombackground"
+                android:dividerHeight="10dip"
+                android:drawSelectorOnTop="false"
+                android:visibility="visible"
+                android:fadeScrollbars="false" >
+            </ListView>
+        </LinearLayout>
+
+        <!-- Refund details view -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_customer_refund_details_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Refund Amount"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/storeowner_refund_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter Refund Amount"
+                android:inputType="numberDecimal"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Employee Pin"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/storeowner_refund_employeePin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter Employee Pin"
+                android:inputType="phone"
+                android:password="true"
+                android:maxLength="4"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/storeowner_refund_issueButton"
+                android:layout_width="110dip"
+                android:layout_height="45dip"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonhover"
+                android:text="Issue Refund"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/black"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Purchase"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Refund"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="Net"
+                    android:textColor="@color/black"
+                    android:textSize="15dip" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/storeowner_customer_refund_details_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="3dp"
+                android:cacheColorHint="#00000000"
+                android:clickable="true"
+                android:divider="@color/custombackground"
+                android:dividerHeight="10dip"
+                android:drawSelectorOnTop="false"
+                android:visibility="visible"
+                android:fadeScrollbars="false" >
+            </ListView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_refund_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Back -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_refund_footer_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_refund_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_refund_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="BACK"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <!-- Invisible 1 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_qrcode"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_qrcode_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/qrcode"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_qrcode_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="QR CODE"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Invisible 2 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_search"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_search_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_search_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SEARCH"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Add Employee -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_refund_footer_save"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_refund_footer_save_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/addemp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_refund_footer_save_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FreezeView -->
+
+    <Button
+        android:id="@+id/storeowner_refund_freezeview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

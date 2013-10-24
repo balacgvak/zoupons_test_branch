@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:gravity="center_vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+	<com.us.zoupons.TransparentPanel android:id="@+id/popup_window"
+		android:orientation="horizontal" android:layout_width="wrap_content"
+		android:layout_height="fill_parent" android:gravity="left"
+		android:background="#2e2e2e">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+					  android:orientation="vertical" android:background="@color/litegrey">
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" 
+						  android:paddingTop="3dip" android:paddingRight="3dip"
+						  android:background="@drawable/gradient_bg" android:id="@+id/zpay">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/zpay" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="Z PAY" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/giftcards">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/giftcards" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="GIFTCARDS" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/myfavourites">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/favorite" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="MY FAVOURITES" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/myfriends">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/myfriends" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="MY FRIENDS" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/talktous">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/chat" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="TALK TO US" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/rewards">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/rewards" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="REWARDS" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+						  android:orientation="horizontal" android:paddingLeft="5dip" android:paddingTop="3dip"
+						  android:paddingRight="3dip" android:background="@drawable/gradient_bg"
+						  android:id="@+id/settings">
+		  		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		  					  android:orientation="horizontal" android:gravity="center|center_horizontal">			  
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/settings" android:id="@+id/menuimage"/>
+		     		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+							  android:text="SETTINGS" android:singleLine="true"
+							  android:textColor="@color/white" android:id="@+id/menutext"
+		     				  android:textSize="13dip" android:textStyle="bold"/>		  
+		   		</LinearLayout>
+	 	    </LinearLayout>
+	 	    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dip"
+	 	    	      	  android:background="@color/dividerblack"/>
+		</LinearLayout>
+	</com.us.zoupons.TransparentPanel>
+
+	<LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent"
+				  android:orientation="vertical" android:layout_gravity="top" 
+	 			  android:background="#ffffff">
+ 		<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent"
+					  android:orientation="horizontal" android:background="@drawable/header_2">
+			<Button android:id="@+id/show_popup_button" android:background="@drawable/buttonhover"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_gravity="center_vertical"/>
+		</LinearLayout>		
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/custombackground" >
+
+    <FrameLayout
+        android:id="@+id/mcameraFrameViewId"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="visible" >
+
+        <SurfaceView
+            android:id="@+id/mSurfaceViewId"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/mCameraPreviewCustomEmbedLayoutId"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/mCameraPreviewTimerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="00:00"
+                android:textSize="25sp"
+                android:textColor="#FFFF00"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/mCameraPreviewFooterLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/play_buttonId"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_gravity="left"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/yellw_bg_hover"
+                        android:text="Upload"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/pause_buttonId"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/yellw_bg_hover"
+                        android:text="Pause"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/record_stop_buttonId"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/yellw_bg_hover"
+                        android:text="Record"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/videopreview_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@id/mCameraPreviewFooterLayout"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/video_thumbnailId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/applogo" />
+
+                <ImageView
+                    android:id="@+id/mPlayButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/video_play_button" />
+
+                <VideoView
+                    android:id="@+id/mPlayVideoDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" 
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/storeownerdealcards_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownerdealcards_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Footer View -->
+    <LinearLayout
+        android:id="@+id/storeownerdealcards_footerLayoutId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/storeownerdealcards_availabletextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/availablegc"
+            android:gravity="center"
+            android:text="Available"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/step1_menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <TextView
+            android:id="@+id/storeownerdealcards_purchasedtextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/purchasedgc"
+            android:gravity="center"
+            android:text="Purchased"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/step1_menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <TextView
+            android:id="@+id/storeownerdealcards_historytextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/history"
+            android:gravity="center"
+            android:text="History"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Middle View -->
+
+    <RelativeLayout
+        android:id="@+id/storeownerdealcards_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/storeownerdealcards_footerLayoutId"
+        android:layout_below="@id/storeownerdealcards_header"
+        android:layout_margin="2dp"
+        android:background="@drawable/custombackground" >
+
+        <RelativeLayout
+            android:id="@+id/storeownerdealcards_storename_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp" 
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/storeownerdealcards_title_textId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:paddingRight="40dp"
+                android:text="Store Name"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/storeownerdealcards_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/choose_card_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="GiftCards"
+                    android:textColor="@color/black" />
+
+                <CheckBox
+                    android:id="@+id/giftcards_checkboxId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ZCards"
+                    android:textColor="@color/black" />
+
+                <CheckBox
+                    android:id="@+id/zcards_checkboxId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/storeownerdealcards_facevalueId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choose_card_layout"
+            android:layout_centerInParent="true"
+            android:paddingRight="100dp"
+            android:text="Face Value |"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/storeownerdealcards_priceId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choose_card_layout"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20dp"
+            android:text=" Price |"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/storeownerdealcards_remainingid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choose_card_layout"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/storeownerdealcards_priceId"
+            android:text=" Remaining"
+            android:textColor="@color/black" />
+
+        <ListView
+            android:id="@+id/storeownerdealcards_listId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownerdealcards_facevalueId"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/custom_background"
+            android:dividerHeight="10dp"
+            android:drawSelectorOnTop="false"
+            android:scrollingCache="false"
+            android:visibility="gone" >
+        </ListView>
+    </RelativeLayout>
+
+    <!-- Freeze Button -->
+    <Button
+        android:id="@+id/storeownerdealcards_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

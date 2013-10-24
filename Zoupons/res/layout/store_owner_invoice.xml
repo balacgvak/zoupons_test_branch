@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeownerinvoice_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownerinvoice_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- MiddleView and MenuBar Container -->
+
+    <RelativeLayout
+        android:id="@+id/storeownerinvoice_middleview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeownerinvoice_footer"
+        android:layout_below="@id/storeownerinvoice_header"
+        android:background="@color/custombackground"
+        android:padding="2dip" >
+
+        <RelativeLayout
+            android:id="@+id/storeownerinvoice_header_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dip"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/storeownerinvoice_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+
+            <TextView
+                android:id="@+id/storeownerinvoice_headerText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/storeownerinvoice_rightmenu"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="Store Name"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/initial_telephone_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/storeowner_invoice_phoneNumberId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter Mobile Number"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/storeowner_invoice_phoneNumber_submit"
+                android:layout_width="100dip"
+                android:layout_height="45dip"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonhover"
+                android:text="Submit"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Zoupons customer ScrollView -->
+
+        <ScrollView
+            android:id="@+id/storeowner_customer_invoice_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownerinvoice_header_container"
+            android:visibility="gone" >
+
+            <!-- storeowner invoice customer Info ScrollView -->
+
+            <LinearLayout
+                android:id="@+id/storeowner_customer_invoice_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <!-- storeowner invoice customer info Header -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <!-- storeowner invoice customer details -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!-- Contact Information Items -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/settings_contactborder"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp" >
+
+                                <ImageView
+                                    android:id="@+id/storeowner_customer_invoice_ImageId"
+                                    android:layout_width="120dp"
+                                    android:layout_height="135dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:adjustViewBounds="true"
+                                    android:paddingLeft="5dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/profileimage"
+                                    android:visibility="visible" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/storeowner_customer_invoice_ImageId"
+                                    android:orientation="vertical" >
+
+                                    <!-- First Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/txtFirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="First Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="16sp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/storeowner_customer_invoice_FirstNameText"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text=""
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp" />
+
+                                            <EditText
+                                                android:id="@+id/storeowner_customer_invoice_FirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="First Name"
+                                                android:singleLine="true"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <!-- Last Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/txtLastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Last Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="16sp"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1" >
+
+                                            <TextView
+                                                android:id="@+id/storeowner_customer_invoice_LastNameText"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text=""
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp" />
+
+                                            <EditText
+                                                android:id="@+id/storeowner_customer_invoice_LastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="Last Name"
+                                                android:singleLine="true"
+                                                android:textColor="@color/black"
+                                                android:textSize="15sp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <!-- Email Address field -->
+
+                            <LinearLayout
+                                android:id="@+id/storeowner_customer_invoice_EmailLayout"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="visible" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Email Address"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_customer_invoice_EmailAddress"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Email Address"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Amount Field -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Amount"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_customer_invoice_Amount"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:hint="Enter Amount"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <!-- Coupon code -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:id="@+id/txtCouponCode"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Coupon code"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_customer_invoice_couponCode"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:hint="Coupon code"
+                                        android:inputType="phone"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp" />
+
+                                    <ImageView
+                                        android:id="@+id/storeowner_customer_invoice_couponcode_scanner"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:src="@drawable/coupons" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Notes -->
+
+                            <TextView
+                                android:id="@+id/invoice_add_notes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_notes"
+                                android:textColor="@color/blue"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                            <!--
+                            <TextView
+                                android:id="@+id/txtNotes"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Notes"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/storeowner_customer_invoice_Notes"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="top"
+                                android:inputType="textMultiLine"
+                                android:maxLines="5"
+                                android:minLines="5"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                            -->
+
+                            <TextView
+                                android:id="@+id/txtPincode"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Pin code"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical" >
+
+                                <EditText
+                                    android:id="@+id/storeowner_customer_invoice_pincode"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="PIN code"
+                                    android:inputType="textPassword"
+                                    android:maxLength="4"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                                <Button
+                                    android:id="@+id/storeowner_customer_invoice_submit"
+                                    android:layout_width="@dimen/cancelbuttonwidth"
+                                    android:layout_height="@dimen/cancelbuttonheight"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_toRightOf="@id/storeowner_customer_invoice_pincode"
+                                    android:background="@drawable/buttonhover"
+                                    android:text="Submit"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dip"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/invoicelist_date_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtFromDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="From Date"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/invoicelist_fromdate_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/invoicelist_fromdate_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="From Date"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingRight="50dp"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/invoicelist_fromdate_contextImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="0dip"
+                        android:layout_marginTop="1dip"
+                        android:background="@drawable/step2_downarrow" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtToDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="To Date"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/invoicelist_Todate_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/invoicelist_Todate_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="To Date"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingRight="50dp"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/invoicelist_Todate_contextImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="0dip"
+                        android:layout_marginTop="1dip"
+                        android:background="@drawable/step2_downarrow" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/invoice_search_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/invoicelist_date_container"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/invoice_search_buttonId"
+                android:layout_width="65dip"
+                android:layout_height="45dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/buttonhover"
+                android:padding="10dip"
+                android:text="Cancel"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/invoice_searchId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dip"
+                android:layout_toLeftOf="@id/invoice_search_buttonId"
+                android:inputType="textNoSuggestions" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/listview_header_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_search_layout"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Customer"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/invoice_listview_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1.25"
+                android:gravity="center"
+                android:text="Days Outstanding"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/storeowneinvoice_ListView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/listview_header_layout"
+            android:cacheColorHint="#00000000"
+            android:clickable="true"
+            android:divider="@color/custombackground"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false"
+            android:visibility="gone" >
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/view_invoicedetails_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/receipts_footerLayoutId"
+            android:layout_below="@id/receipts_tabbar_container"
+            android:layout_margin="2dp"
+            android:background="@drawable/border"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <TextView
+                    android:id="@+id/view_invoicedetails_storenameId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ScrollView
+                    android:id="@+id/view_invoice_details"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_invoicedetails_storenameId"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        android:paddingBottom="20dp" >
+
+                        <LinearLayout
+                            android:id="@+id/view_invoice_details_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/settings_contactborder"
+                                android:paddingRight="5dp"
+                                android:paddingTop="10dp" >
+
+                                <ImageView
+                                    android:id="@+id/invoice_details_customer_ImageId"
+                                    android:layout_width="120dp"
+                                    android:layout_height="135dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:adjustViewBounds="true"
+                                    android:clickable="true"
+                                    android:paddingLeft="5dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/profileimage"
+                                    android:visibility="visible" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@id/invoice_details_customer_ImageId"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:id="@+id/invoice_details_customer_firstNameLabelId"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="First Name"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/invoice_details_customer_firstNameId"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:id="@+id/invoice_details_customer_lastNameLabelId"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Last Name"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/invoice_details_customer_lastNameId"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="5dp" >
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_dateLabelId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Date:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_dateId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Amount:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_AmountId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Tip:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_tipId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Total of Charges:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_totalChargeId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/firstcardtype_borderId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/black" />
+
+                            <LinearLayout
+                                android:id="@+id/view_invoicedetails_singlecardTypeLayoutId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Card Used:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_cardTypeId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/creditcardAmountLayoutId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Total On Credit Card:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_creditCardAmountId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/Secondcardtype_borderId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/black" />
+
+                            <LinearLayout
+                                android:id="@+id/giftcardUsedLayoutId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Gift Card Used:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_GiftCardId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/giftcardAmountLayoutId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:paddingRight="5dp"
+                                    android:text="Total On Gift Card:"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/view_invoicedetails_GiftCardAmountId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/invoicedetails_viewnotes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="45dip"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/buttonhover"
+                                android:clickable="true"
+                                android:padding="10dip"
+                                android:text="View Notes"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/view_invoicedetails_notes_container"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+
+                            <ImageView
+                                android:id="@+id/view_invoicedetails_notes_closeImageId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="15dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/business_time_close" />
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Customer Note:"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/customer_invoicedetails_descriptionId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dip"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/coupondescriptionborder"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:gravity="top|left"
+                                android:maxLines="5"
+                                android:minLines="5"
+                                android:paddingBottom="2dip"
+                                android:paddingLeft="10dip"
+                                android:paddingRight="2dip"
+                                android:paddingTop="2dip"
+                                android:scrollbars="vertical"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Store Note:"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/store_invoicedetails_descriptionId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dip"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/coupondescriptionborder"
+                                android:cursorVisible="false"
+                                android:editable="false"
+                                android:gravity="top|left"
+                                android:maxLines="5"
+                                android:minLines="5"
+                                android:paddingBottom="2dip"
+                                android:paddingLeft="10dip"
+                                android:paddingRight="2dip"
+                                android:paddingTop="2dip"
+                                android:scrollbars="vertical"
+                                android:textSize="13dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeownerinvoice_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Back or Send Invoice Footer View -->
+
+        <LinearLayout
+            android:id="@+id/storeownerinvoice_footer_addinvoice"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeownerinvoice_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/add_invoice" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeownerinvoice_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Add Invoice"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <LinearLayout
+            android:id="@+id/storeownerinvoice_footer_outstandingInvoice"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_outstandingInvoiceImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/outstanding_invoice"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_outstandingInvoiceText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="2dip"
+                    android:text="Outstanding"
+                    android:textColor="@color/white"
+                    android:textSize="12dip"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <!-- Received Payment -->
+
+        <LinearLayout
+            android:id="@+id/storeownerinvoice_footer_processed"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeownerinvoice_footer_processed_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/processed_invoice" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeownerinvoice_footer_processed_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Processed"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FreezeView -->
+
+    <Button
+        android:id="@+id/storeownerinvoice_freezeview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

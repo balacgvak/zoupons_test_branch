@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/custombackground"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mTermsConditionTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Terms And Conditions"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/mTermsConditionTitle"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/mTermsConditionContext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/mBack"
+            android:layout_width="100dip"
+            android:layout_height="45dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonhover"
+            android:text="Back" />
+    </RelativeLayout>
+
+</LinearLayout>

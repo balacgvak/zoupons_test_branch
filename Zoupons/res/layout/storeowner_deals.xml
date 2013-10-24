@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeownerdeals_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownerdeals_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- MiddleView and MenuBar Container -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeownerdeals_footer"
+        android:layout_below="@id/storeownerdeals_header"
+        android:padding="2dip" >
+
+        <LinearLayout
+            android:id="@+id/storeownerdeals_middleview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/custombackground"
+            android:orientation="horizontal"
+            android:padding="3dip" >
+
+            <ListView
+                android:id="@+id/storeownerdeals_ListView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="#00000000"
+                android:clickable="true"
+                android:divider="@color/custombackground"
+                android:dividerHeight="10dip"
+                android:drawSelectorOnTop="false"
+                android:visibility="gone" >
+            </ListView>
+
+            <RelativeLayout
+                android:id="@+id/storeownerdeals_detailsView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:id="@+id/storeownerdeals_details_headerView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="20dp" >
+
+                    <ImageView
+                        android:id="@+id/storeownerdeals_details_cardImageId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/profileimage" />
+
+                    <TextView
+                        android:id="@+id/storeownerdeals_details_cardvalueId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:text="$50"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/storeownerdeals_details_chargetext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_headerView"
+                    android:layout_margin="5dp"
+                    android:text="How much would you like to charge for card"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/storeownerdeals_details_chargevalueId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_chargetext"
+                    android:layout_margin="5dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/storeownerdeals_details_weeksaletext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_chargevalueId"
+                    android:layout_margin="5dp"
+                    android:text="How many would you like to sell for week?"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/storeownerdeals_details_weeksalevalueId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_weeksaletext"
+                    android:layout_margin="5dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
+                
+                <Button
+                    android:layout_width="@dimen/cancelbuttonwidth"
+                    android:layout_height="@dimen/cancelbuttonheight"
+                    android:text="Save"
+                    android:id="@+id/storeonwerdeals_details_save"
+                    android:layout_below="@id/storeownerdeals_details_weeksalevalueId"
+                    android:background="@drawable/buttonhover"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeownerdeals_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Back -->
+
+        <LinearLayout
+            android:id="@+id/storeownerdeals_footer_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeownerdeals_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeownerdeals_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="BACK"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Invisible 1 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_qrcode"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_qrcode_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/qrcode"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_qrcode_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="QR CODE"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Invisible 2 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_search"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_search_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_search_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SEARCH"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Add Employee -->
+
+        <LinearLayout
+            android:id="@+id/storeownerdeals_footer_save"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeownerdeals_footer_save_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/addemp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeownerdeals_footer_save_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FreezeView -->
+
+    <Button
+        android:id="@+id/storeownerdeals_freezeview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

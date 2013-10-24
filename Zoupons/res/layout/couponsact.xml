@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/coupons_tabbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_2" >
+
+        <ImageView
+            android:id="@+id/BtnSlide_coupons"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/header_1" />
+
+        <RelativeLayout
+            android:id="@+id/zoupons_logout_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/zoupons_logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="7dip"
+                android:paddingRight="7dip"
+                android:src="@drawable/logout_main"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/notification_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:paddingRight="5dip" 
+                android:paddingLeft="5dip" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/zoupons_notificationImageId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/notification_sample" />
+
+                    <!--
+                         <Button
+                        android:id="@+id/zoupons_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@id/zoupons_notificationImageId"
+                        android:background="@drawable/circle_shape"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+                    -->
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/zoupons_notification_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/circle_shape"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/zoupons_callout_triangle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/triangle"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/zoupons_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/notification_container"
+                android:paddingRight="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_header"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/store_header_loginchoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/zoupons_home"
+                android:padding="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/man"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/coupons_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/coupons_tabbar"
+        android:background="@drawable/custombackground" >
+
+        <RelativeLayout
+            android:id="@+id/storename_menu_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" >
+
+            <TextView
+                android:id="@+id/coupons_title_textId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:paddingRight="50dip"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Store Name" />
+
+            <ImageView
+                android:id="@+id/coupons_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/mCoupons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dip"
+            android:paddingLeft="5dip"
+            android:text="Coupons"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/mCouponsList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mCoupons"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:cacheColorHint="#00000000"
+            android:clickable="true"
+            android:divider="@color/custom_background"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false"
+            android:padding="3dip" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/coupons_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

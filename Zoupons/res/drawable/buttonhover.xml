@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--
+<item android:state_selected="false"
+	  android:state_pressed="false"
+	  android:drawable="@drawable/gradient_bg"/>
+<item android:state_pressed="true"
+	  android:drawable="@drawable/gradient_bg_hover"/>
+<item android:state_selected="true"
+	  android:state_pressed="false"
+	  android:drawable="@drawable/gradient_bg_hover"/>
+-->
+	  	  
+	<item android:state_focused="true" android:state_pressed="false"
+		  android:drawable="@drawable/yellw_bg_hover" android:state_selected="false"/>
+	<item android:state_focused="true" android:state_pressed="true"
+		  android:drawable="@drawable/yellw_bg_hover" />
+	<item android:state_focused="false" android:state_pressed="true"
+		  android:drawable="@drawable/yellw_bg_hover" />
+	<item android:drawable="@drawable/yellw_bg" 
+		  android:state_focused="false" android:state_pressed="false"/>
+
+<!--
+// Button Focused
+<item android:state_focused="true" android:state_pressed="false"  android:drawable="@drawable/icon" />
+// Button Focused Pressed
+<item android:state_focused="true" android:state_pressed="true"
+android:drawable="@drawable/myfriendshover48" />
+// Button Pressed
+<item android:state_focused="false" android:state_pressed="true"
+android:drawable="@drawable/myfriendshover48" />
+// Button Default Image
+<item android:drawable="@drawable/myfriends48" />
+--><!--
+
+	<item android:state_pressed="true">
+		<shape>
+			<gradient android:startColor="#0079AD" android:endColor="#009AD6"
+				android:angle="270" />
+			<stroke android:width="1dp" android:color="#F1FAFE" />
+			<corners android:radius="3dp" />
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+
+	<item android:state_focused="true">
+		<shape>
+			<gradient android:endColor="#007900" android:startColor="#009A77"
+				android:angle="270" />
+			<stroke android:width="1dp" android:color="#F1FAFE" />
+			<corners android:radius="3dp" />
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+
+	<item>
+		<shape>
+			<gradient android:endColor="#0079AD" android:startColor="#009AD6"
+				android:angle="270" />
+			<stroke android:width="1dp" android:color="#F1FAFE" />
+			<corners android:radius="3dp" />
+			<padding android:left="10dp" android:top="10dp"
+				android:right="10dp" android:bottom="10dp" />
+		</shape>
+	</item>
+--></selector>

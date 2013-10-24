@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.us.zoupons.MultiSelectListView.MultiSelectRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="3dip" >
+
+    <RelativeLayout
+        android:id="@+id/myfriends_contacts_imageholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" >
+
+        <ImageView
+            android:id="@+id/myfriends_contacts_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon" >
+        </ImageView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/myfriendsdetails_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/myfriends_contacts_imageholder"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/myfriends_contacts_namecontainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/myfriends_contacts_firstname"
+                style="@style/boldText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Steven" />
+
+            <TextView
+                android:layout_width="2dip"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:id="@+id/myfriends_contacts_lastname"
+                style="@style/boldText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Gerrad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myfriends_other_namecontainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/myfriends_other_firstname"
+                style="@style/boldText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Steven" />
+
+            <TextView
+                android:layout_width="2dip"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:id="@+id/myfriends_other_lastname"
+                style="@style/boldText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Gerrad" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/myfriends_emailid_namecontainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/myfriends_emailid"
+                style="@style/boldText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Stevengerrad@abc.com" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/myfriends_checkboxholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/myfriendsdetails_container"
+        android:visibility="visible" >
+
+        <CheckBox
+            android:id="@+id/myfriends_contacts_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/customcheckbox"
+            android:clickable="false"
+            android:focusable="false"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</com.us.zoupons.MultiSelectListView.MultiSelectRelativeLayout>

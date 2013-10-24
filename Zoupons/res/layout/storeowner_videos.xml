@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownervideos_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Total videos -->
+
+    <RelativeLayout
+        android:id="@+id/storeownervideos_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/storeownervideos_header"
+        android:background="@drawable/custombackground"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="visible" >
+
+        <!-- Store Name Header -->
+
+        <RelativeLayout
+            android:id="@+id/storeownervideos_storename_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp" >
+
+            <ImageView
+                android:id="@+id/storeownervideos_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+
+            <TextView
+                android:id="@+id/storeownervideos_store_title_textId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/storeownervideos_rightmenu"
+                android:gravity="center"
+                android:text="Store name"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/storeowner_uploadvideo"
+            android:layout_width="120dip"
+            android:layout_height="45dip"
+            android:layout_below="@id/storeownervideos_storename_header"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonhover"
+            android:text="Upload video"
+            android:textColor="@color/black"
+            android:textSize="15dip"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/storeowner_activatevideo"
+            android:layout_width="120dip"
+            android:layout_height="45dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/buttonhover"
+            android:text="Activate video"
+            android:textColor="@color/black"
+            android:textSize="15dip"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/storeowner_videos_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/storeowner_activatevideo"
+            android:layout_below="@id/storeowner_uploadvideo"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:cacheColorHint="#00000000"
+            android:clickable="true"
+            android:divider="@color/custombackground"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false"
+            android:fadeScrollbars="false"
+            android:visibility="gone" >
+        </ListView>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeowner_uploadvideo" >
+
+            <ImageView
+                android:id="@+id/mVideoImage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="100dp"
+                android:background="#ffffff" />
+
+            <ImageView
+                android:id="@+id/mPlayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/video_play_button" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Freeze videos Button -->
+
+    <Button
+        android:id="@+id/storeownervideos_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <SurfaceView
+        android:id="@+id/qrcodelib_preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true" />
+
+    <com.us.zoupons.android.lib.qrcode.ViewfinderView
+        android:id="@+id/qrcodelib_viewfinder_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent" />
+
+    <TextView
+        android:id="@+id/qrcodelib_status_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/qrcode_transparent"
+        android:text="@string/QRCodeScanner_msg_default_status"
+        android:textColor="@color/qrcode_status_text"
+        android:textSize="15dip"
+        android:textStyle="bold" />
+
+</FrameLayout>

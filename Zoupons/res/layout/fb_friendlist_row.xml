@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_curve" >
+
+    <ImageView
+        android:id="@+id/friendimageId"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/friendlist_share_buttonId"
+        android:layout_width="55dip"
+        android:layout_height="35dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/buttonhover"
+        android:padding="5dip"
+        android:text="Share"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/friendnameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/friendimageId"
+        android:layout_toLeftOf="@+id/friendlist_share_buttonId"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/zouponsfriendimageId"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignRight="@id/friendimageId"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/zouponfriend" />
+
+</RelativeLayout>

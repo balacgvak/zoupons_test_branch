@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <!-- Mobile pay choose card and approve layout tab bar -->
+
+    <RelativeLayout
+        android:id="@+id/mobile_pay_tabbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:id="@+id/mobilepay_steps_tabbar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/BtnSlide_mobilepay_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@drawable/header_1" />
+
+            <RelativeLayout
+                android:id="@+id/zoupons_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2" >
+
+                <ImageView
+                    android:id="@+id/zoupons_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="7dip"
+                    android:paddingRight="7dip"
+                    android:src="@drawable/logout_main"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/notification_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:paddingRight="7dip"
+                    android:paddingLeft="7dip" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:id="@+id/zoupons_notificationImageId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/notification_sample" />
+
+                        <!--
+                             <Button
+                            android:id="@+id/zoupons_notification_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/zoupons_notificationImageId"
+                            android:background="@drawable/circle_shape"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="2dp"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />                        -->
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/zoupons_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/circle_shape"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/zoupons_callout_triangle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/triangle"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/zoupons_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/notification_container"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/home_header"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/store_header_loginchoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/zoupons_home"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/man"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- store owner mobile payment tab bar -->
+
+        <com.us.zoupons.storeowner.Header
+            android:id="@+id/storeowner_mobilepay_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible" >
+        </com.us.zoupons.storeowner.Header>
+    </RelativeLayout>
+
+    <!-- Footer layout -->
+
+    <RelativeLayout
+        android:id="@+id/mobilepay_steps_footerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2" >
+
+        <TextView
+            android:id="@+id/mobilepay_steps_BackFooterText"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <View
+            android:id="@+id/mobilepay_steps_backmenusplitter"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/mobilepay_steps_BackFooterText"
+            android:layout_alignParentTop="@id/mobilepay_steps_BackFooterText"
+            android:layout_toRightOf="@id/mobilepay_steps_BackFooterText"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/mobilepay_steps_FooterText"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableTop="@drawable/add_card"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Add Card"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/mobilepay_steps_menusplitter"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/mobilepay_steps_FooterText"
+            android:layout_alignTop="@id/mobilepay_steps_FooterText"
+            android:layout_toLeftOf="@id/mobilepay_steps_FooterText"
+            android:background="@color/menubarsplitter" />
+    </RelativeLayout>
+
+    <!-- Mobile pay container -->
+
+    <RelativeLayout
+        android:id="@+id/mobilepay_steps_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/mobilepay_steps_footerLayout"
+        android:layout_below="@id/mobile_pay_tabbar"
+        android:layout_margin="2dp"
+        android:background="@drawable/border" >
+
+        <!-- Mobile pay step options layout -->
+
+
+        <!--
+        <LinearLayout
+            android:id="@+id/mobilepay_stepsLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/mobilepay_SearchStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:drawableRight="@drawable/arrow"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="Search"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mobilepay_ChooseCardStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:drawableRight="@drawable/arrow"
+                android:gravity="center"
+                android:text="Choose card"
+                android:textColor="@color/step_font_color"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mobilepay_ApproveStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow"
+                android:gravity="center"
+                android:text="Approve"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        -->
+
+
+        <!-- Mobile pay store name view -->
+
+
+        <!--
+             <TextView
+            android:id="@+id/mobilepay_steps_storeName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        -->
+
+
+        <!-- Mobile pay CHOOSE CARD Amount details view -->
+
+        <LinearLayout
+            android:id="@+id/mobilepay_amountdetails"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/button_border"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="visible" >
+
+            <!-- Mobile pay add credit card button container -->
+
+            <LinearLayout
+                android:id="@+id/addcardlayout_id"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_option"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/mobilepay_addcard_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/step2_insideborder" >
+
+                    <Button
+                        android:id="@+id/mobilepay_addcard"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/customtable_new"
+                        android:padding="5dp"
+                        android:text="ADD CARD" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/CardOptionTextID"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_option"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:id="@+id/mobilepay_cards_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@+id/mobilepay_choosedcard"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:enabled="true"
+                    android:focusable="false"
+                    android:hint="Select Gift Card or Deal Card"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/mobilepay_choosecard_contextImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="0dip"
+                    android:layout_marginTop="1dip"
+                    android:background="@drawable/step2_downarrow" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/dollar_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/mobilepay_amount_value"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Amount"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/mobilepay_amount_valueTextId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tip"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <FrameLayout
+                        android:id="@+id/mobilepay_tip_container"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/mobilepay_tip_value"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="Tip"
+                            android:singleLine="true"
+                            android:text="0%"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/mobilepay_tip_contextImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="0dip"
+                            android:layout_marginTop="1dip"
+                            android:background="@drawable/step2_downarrow" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/mobilepay_tip_textId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:text="$0"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone" >
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="200dip"
+                android:layout_height="1dip"
+                android:layout_marginBottom="2dip"
+                android:layout_marginTop="2dip"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Total: "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/mobilepay_total_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$0.00"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/mobilepay_review_paymentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dip"
+            android:layout_below="@id/mobilepay_amountdetails"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/buttonhover"
+            android:gravity="center"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:text="@string/reviewpayment"
+            android:textStyle="bold" />
+
+        <!-- Mobile pay choose card layout -->
+
+        <ScrollView
+            android:id="@+id/mobilepay_choosecard_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/mobilepay_amountdetails"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/button_border"
+            android:padding="5dip"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" >
+
+                <!-- Mobile pay ADD CARD layout -->
+
+                <LinearLayout
+                    android:id="@+id/addcardlayout_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@string/card_option"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/mobilepay_addcard_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/step2_insideborder" >
+
+                        <Button
+                            android:id="@+id/mobilepay_addcard"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/customtable_new"
+                            android:padding="5dp"
+                            android:text="ADD CARD" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mobilepay_creditcard_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@string/card_option"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/mobilepay_creditcard_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="Select Credit Card"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/mobilepay_creditcard_contextImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="0dip"
+                            android:layout_marginTop="1dip"
+                            android:background="@drawable/step2_downarrow" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- Mobile pay choose credit and giftcard layout -->
+
+                <LinearLayout
+                    android:id="@+id/mobilepay_bothcard_payment_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/paymentoptionsTextID"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@string/payment_option"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <FrameLayout
+                        android:id="@+id/mobilepay_paymentoptions_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/mobilepay_payment_options"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="Payment options"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/mobilepay_payment_options_contextImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="0dip"
+                            android:layout_marginTop="1dip"
+                            android:background="@drawable/step2_downarrow" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/CardOptionTextID"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="@string/card_option"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <FrameLayout
+                        android:id="@+id/mobilepay_cards_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/mobilepay_choosedcard"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="Select Gift Card or Deal Card"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/mobilepay_choosecard_contextImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="0dip"
+                            android:layout_marginTop="1dip"
+                            android:background="@drawable/step2_downarrow" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/giftcard_amount_detailsId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="20dp"
+                            android:text="Amount on Giftcard"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/mobilepay_giftcard_amount"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:hint="Amount"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/mobilepay_card_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/mobilepay_choosedcreditcard_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:enabled="true"
+                            android:focusable="false"
+                            android:hint="Select Credit Card"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/mobilepay_choosedcreditcard_contextImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="0dip"
+                            android:layout_marginTop="1dip"
+                            android:background="@drawable/step2_downarrow" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/balanceOnCreditCardLayoutId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dip"
+                        android:paddingLeft="10dp"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="20dp"
+                            android:text="Balance on Credit Card"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_creditcard_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$0.00"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Mobile pay APPROVE layout container -->
+
+        <ScrollView
+            android:id="@+id/mobilepay_approve_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_border"
+                    android:orientation="vertical"
+                    android:layout_margin="2dp"
+                    android:padding="5dp" >
+
+                    <LinearLayout
+                        android:id="@+id/step3_amount_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Amount:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_amountvalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_tip_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Tip:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_tipvalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_totalcharge_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Total of Charges:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_totalvalue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:text="$ 00"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/firstcardtype_borderId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/step3_cardused_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="5dp"
+                            android:text="Card Used:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_cardTypeId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_totaloncreditcard_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="5dp"
+                            android:text="Total On Credit Card:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_creditCardAmountId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/Secondcardtype_borderId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/step3_giftcardused_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="5dp"
+                            android:text="Gift Card Used:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_GiftCardId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_totalongiftcard_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="5dp"
+                            android:text="Total On Gift Card:"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/mobilepay_approve_GiftCardAmountId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_addnote_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:id="@+id/step3_addnote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_notes"
+                            android:textColor="@color/blue"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/mobilepay_approve_addnote"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="left|top"
+                            android:inputType="textMultiLine|textNoSuggestions"
+                            android:lines="3"
+                            android:paddingLeft="5dp"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/step3_pin_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Enter your pin to approve the transaction above:"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="PIN :"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <EditText
+                                android:id="@+id/mobilepay_approve_pinvalue"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:hint="PIN"
+                                android:inputType="textPassword"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/mobilepay_approve_generateqr"
+                    android:layout_width="@dimen/cancelbuttonwidth"
+                    android:layout_height="@dimen/cancelbuttonheight"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/buttonhover"
+                    android:gravity="center"
+                    android:text="Generate QR"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Layout container for qr code -->
+
+        <RelativeLayout
+            android:id="@+id/mobilepay_step4_QRContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" >
+
+            <!-- invisible -->
+
+            <TextView
+                android:id="@+id/step4_qr_expirytime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="QR code expires in : "
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/step4_qr_expirytimevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/step4_qr_expirytime"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/step4_qr_destructId"
+                android:layout_width="100dip"
+                android:layout_height="45dip"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/buttonhover"
+                android:text="Destruct"
+                android:textColor="@color/black"
+                android:textSize="15dip"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/step4_qr_imageId"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@id/step4_qr_destructId"
+                android:layout_below="@id/step4_qr_expirytime"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/step4_qr_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Freeze Mobile Pay Button -->
+
+    <Button
+        android:id="@+id/mobilepay_Steps_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

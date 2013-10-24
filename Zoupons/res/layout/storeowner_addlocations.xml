@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeowner_addlocations_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeowner_addlocations_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <RelativeLayout
+        android:id="@+id/storeowner_addlocations_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeowner_addlocations_footer"
+        android:layout_below="@id/storeowner_addlocations_header"
+        android:background="@drawable/custombackground"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/storeownerlocations_storename_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" 
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/storeowner_addlocations_storename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingRight="40dp"
+                android:text="Store Name"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/storeowner_addlocations_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+        </RelativeLayout>
+
+        <!-- addlocations ScrollView -->
+
+        <ScrollView
+            android:id="@+id/storeowner_addlocations_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownerlocations_storename_header"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/storeowner_addlocations_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="5dip"
+                android:visibility="visible" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <!-- Address 1 container -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dip" >
+
+                            <TextView
+                                android:id="@+id/address1_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Address1"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dip" >
+
+                            <TextView
+                                android:id="@+id/storeowner_addlocations_address1_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/storeowner_addlocations_address1_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="Address1"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Address 2 container -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dip" >
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Address2"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dip" >
+
+                            <TextView
+                                android:id="@+id/storeowner_addlocations_address2_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/storeowner_addlocations_address2_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="Address2"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- City -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dip" >
+
+                            <TextView
+                                android:id="@+id/city_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="City"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dip" >
+
+                            <TextView
+                                android:id="@+id/storeowner_addlocations_city_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/storeowner_addlocations_city_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="City"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!-- State -->
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingBottom="10dip" >
+
+                                <TextView
+                                    android:id="@+id/state_text"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="State"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/storeowner_addlocations_state_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:visibility="gone" />
+
+                            <FrameLayout
+                                android:id="@+id/storeowner_addlocations_selecttype_container"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:paddingBottom="5dip" >
+
+                                <EditText
+                                    android:id="@+id/storeowner_addlocations_state_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="State"
+                                    android:paddingRight="50dip"
+                                    android:textColor="@color/black" />
+
+                                <ImageView
+                                    android:id="@+id/storeowner_addlocations_selectstate_contextmenu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right|center_vertical"
+                                    android:layout_marginBottom="2dip"
+                                    android:layout_marginRight="1dip"
+                                    android:layout_marginTop="0dip"
+                                    android:background="@drawable/step2_downarrow" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <!-- ZipCode -->
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingBottom="10dip" >
+
+                                <TextView
+                                    android:id="@+id/zipcode_text"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Zipcode"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:paddingBottom="5dip" >
+
+                                <TextView
+                                    android:id="@+id/storeowner_addlocations_zipcode_text"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/storeowner_addlocations_zipcode_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:focusableInTouchMode="false"
+                                    android:hint="Zipcode      "
+                                    android:maxLength="5"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Mobile Number -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dip" >
+
+                            <TextView
+                                android:id="@+id/mobilenumber_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mobile Number"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingBottom="5dip" >
+
+                            <TextView
+                                android:id="@+id/storeowner_addlocations_mobilenumber_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/storeowner_addlocations_mobilenumber_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="Mobile Number"
+                                android:inputType="phone"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- AddLocation Button Container -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal" >
+
+                        <Button
+                            android:id="@+id/storeowner_addlocations_Save"
+                            android:layout_width="@dimen/cancelbuttonwidth"
+                            android:layout_height="@dimen/cancelbuttonheight"
+                            android:background="@drawable/buttonhover"
+                            android:text="Save"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Add Locations Bottom Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_addlocations_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Footer Back -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_addlocations_back"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_addlocations_back_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/back"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_contactinfo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/footer_dark_blue_new"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:visibility="invisible" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_contactinfo_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/setting_contact_info"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Contact Info"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_editpassword"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:visibility="invisible" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_editpassword_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:drawableTop="@drawable/setting_security"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Edit Password"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_addlocations_inactivate"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:background="@drawable/gradient_menubar_new"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/storeowner_addlocations_inactivate_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:drawableTop="@drawable/back"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="InActivate Location"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Freeze Settings Button -->
+
+    <Button
+        android:id="@+id/storeowner_addlocations_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, LeftToRight!</string>
+    <string name="app_name">Zoupons</string>
+    
+    <string name="storecategory">Select Category</string>
+    <string name="scan">Scan</string>
+	<string name="scan_resut_lable">Scan Result:</string>
+	<string name="QRCodeScanner_app_name">QRCodeLib</string>
+	<string name="QRCodeScanner_msg_default_status">Zoupons QRCode Scanner</string>
+    <string-array name="list_entries">
+        <item>Item1</item>
+        <item>Item2</item>
+        <item>Item3</item>
+        <item>Item4</item>
+        <item>Item5</item>
+    </string-array>
+    <string name="LoginHeader">Log into Zoupons</string>
+    <string name="zoupons_login_username">Email</string>
+    <string name="zoupons_login_password">Password</string>
+    <string name="zoupons_login_rememberme"> Remember Me</string>
+    <string name="zoupons_login_forgotpassword"><u>Forgot Password</u></string>
+    <string name="zoupons_login_creataccounttext">Dont have a login</string>
+    <string name="zoupons_login_creataccountlinktext">Create an Account Now</string>
+    <string name="zoupons_login_or">or</string>
+    <string name="zoupons_login_choice">Which one you would prefer for Login.</string>
+    <string name="zoupons_shopper_login_choice">Shopper</string>
+    <string name="zoupons_business_login_choice">Business</string>
+    <string name="zoupons_login_socialnetwork">Login using your Social Account</string>
+    <string name="zoupons_ManageCards_addcard"><u>Add Card</u></string>
+    <string name="Settings_Notification_Content">Please Choose the frequency of emails you would like to receive for each category:</string>
+    <string name="Settings_Notification_Content1">How do you want to receive the updates?</string>
+    <string name="popup_uploadreceipt_date">Date : </string>
+    <string name="Rewards_Signupfacebook">Sign up Using your facebook account</string>
+    <string name="Rewards_AddCreditCard">Add a credit card to Zpay account</string>
+    <string name="Rewards_ReferFacebookFriends">Refer facebook friends who can sign up</string>
+    <string name="Rewards_ZpayUse">First Zpay use</string>
+    <string name="Rewards_ReferStore">Refer a store who signs up</string>
+    <string name="Registration_ContactInformation">Contact Information</string>
+    <string name="SignUp_Verification_UserInformation">User Information</string>
+    <string name="talktous_header">Talk to Us</string>
+    <string name="talktous_post">The effects of Global Warming is very dangerous for our existence and survival. The sun’s scorching heat comes to earth in a direct way. Therefore, the earth’s surface becomes seriously heated. Agriculture, forestry and fishery is seriously be damaged. This can catastrophically reduce mankind’s ability to grow foods, destroy wildlife. Global Warming also cause sea-water to swell up.</string>
+    <string name="addcardinformation_header">Add a credit card to our secure vault and begin using your phone to pay for purchases at participating stores.</string>
+    <string name="addcardinformation_information">You only have to enter this information once.</string>
+    <string name="addcardinformation_subheader1">Enter Name as shown on card</string>
+    <string name="addcardinformation_subheader2">Enter Card Information</string>
+    <string name="addcardinformation_subheader3">Enter Billing Address</string>
+    <string name="addcardinformation_pinhint">To Secure your card to the vault, please choose a 4 digit PIN number. You will use this pin number and your mobile number to make purchases at participating stores.</string>
+    <string name="addcardinformation_warning">NEVER SHARE YOUR PIN NUMBER WITH ANYONE.</string>
+    <string name="forgotpassword_emailidheader">Please enter the email address used to setup your account.</string>
+    <string name="forgotpassword_username">Username</string>
+    <string name="forgotpassword_securityquestion_header">Please answer the following security question</string>
+    <string name="forgotpassword_securityquestion1_header">Security Question</string>
+    <string name="forgotpassword_securityquestion2_header">Security Question 2</string>
+    <string name="forgotpassword_securityquestion1">security question?</string>
+    <string name="forgotpassword_securityquestion2">security question2?</string>
+    <string name="LeftMenu_Home">Home </string>
+    <string name="LeftMenu_MobilePay ">Mobile Pay</string>
+    <string name="LeftMenu_GiftCards">Giftcards &amp; Deals</string>
+    <string name="LeftMenu_Favorites">Favorites</string>
+    <string name="LeftMenu_ManageCards">Wallet</string>
+    <string name="LeftMenu_Receipts">Receipts</string>
+    <string name="LeftMenu_MyFriends">Friends</string>
+    <string name="LeftMenu_TalkToUs">Talk to Us</string>
+    <string name="LeftMenu_CustomerCenter">Customer Service</string>
+    <string name="LeftMenu_Rewards">Refer a Store</string>
+    <string name="LeftMenu_Settings">Settings</string>
+    <string name="LeftMenu_Logout">Logout</string>
+    <string name="RightMenu_StoreName">Store Name </string>
+    <string name="RightMenu_Info">Information</string>
+    <string name="RightMenu_MobilePay">Mobile Pay       </string>
+    <string name="RightMenu_GiftCards">Gift Cards</string>
+    <string name="RightMenu_Deals">Deal Cards</string>
+    <string name="RightMenu_Coupons">Coupons</string>
+    <string name="RightMenu_Share">Share</string>
+    <string name="RightMenu_Reviews">Reviews</string>
+    <string name="RightMenu_Locations">Locations</string>
+    <string name="RightMenu_Photos">Photos</string>
+    <string name="RightMenu_Videos">Videos</string>
+    <string name="RightMenu_ContactStore">Contact Store</string>
+    <string name="RightMenu_CustomerService">Customer Service</string>
+    <string name="RightMenu_Favorite">Favorite</string>
+    <string name="LoginPageHeader_ForgotPassword">Please choose a new password for your account</string>
+    <string name="TalkToUs_ContactStore_Send">Send</string>
+    <string name="TalkToUs_ContactStore_Time">Feb 7,2013, 3:09 AM</string>
+    <string name="TalkToUs_ContactStore_StoreHeader">STORE : </string>
+    <string name="TalkToUs_ContactStore_UserHeader">ME : </string>
+    <string name="ZPay_Search">Search</string>
+    <string name="ZPay_ChooseCard">Choose card</string>
+    <string name="ZPay_Approve">Approve</string>
+    <string name="close_text"><b>          closed</b></string>
+    <string name="ZPay_MenuBar_SendPayment">Send Payment</string>
+    <string name="ZPay_MenuBar_ApproveInvoices">Approve Invoices</string>
+    <string name="giftcards_redeem_header">Enter the verification code to get the Giftcard sent from your friends.</string>
+    <string name="giftcards_redeem_verificationcodetxt">Verification Code</string>
+    <string name="card_option"><u>Card Option</u></string>
+    <string name="payment_option"><u>Payment Option</u></string>
+    <string name="zpay_step2_giftcard_alertmsg">The selected GiftCard does not have enough amount for payment.Please choose another GiftCard/Credit card for purchase.</string>
+    <string name="zpay_step2_giftcard_amount_alertmsg">The entered amount exceeded the selected Giftcard\'s balance amount.Please choose another Giftcard/Credit card for purchase.</string>
+    <string name="zpay_step2_giftcard_amount_alertmsg_new">The entered amount exceeded the selected Giftcard\'s balance amount.Please choose another Giftcard/Credit card for purchase.</string>
+    <string name="rewards_add_photo_text">Please add two photos of store to share.</string>
+    <!-- <string name="zoupons_signup_sendmobileactivationcode"><u>Send mobile verification code</u></string> -->
+    <string name="zoupons_signup_sendmobileactivationcode">Send verification code</string>
+    <string name="zoupons_signup_usermessage">For security of your free mobile payment account, please take one minute to verify your email address &amp; mobile number.</string>
+    <!-- Store LeftMenu -->
+    <string name="LeftMenu_Store_Home">Home</string>
+    <string name="LeftMenu_Store_Invoicecenter">Invoice Center</string>
+    <string name="LeftMenu_Store_Pointofsale">Point Of Sale</string>
+    <string name="LeftMenu_Store_Refund">Refund</string>
+    <string name="LeftMenu_Store_Batchsales">Batch Sales</string>
+    <string name="LeftMenu_Store_Cardonfile">Card On File</string>
+    <string name="LeftMenu_Store_Comunication">Communication</string>
+    <!-- Store Information LeftMenu -->
+    <string name="LeftMenu_StoreInfo_Dashboard">Dashboard</string>
+    <string name="LeftMenu_StoreInfo_GeneralInfo">General Info</string>
+    <string name="LeftMenu_StoreInfo_StoreOwnerSettings">Store Owner Settings</string>
+    <string name="LeftMenu_StoreInfo_Employees">Employees</string>
+    <string name="LeftMenu_StoreInfo_Locations">Locations</string>
+    <string name="LeftMenu_StoreInfo_Billing">Billing</string>
+    <string name="LeftMenu_StoreInfo_DealCards">Deal Cards</string>
+    <!-- Store RightMenu -->
+    <string name="RightMenu_Store_Employee">Employees</string>
+    <!-- Store Owner AddCoupon -->
+    <string name="Storeowner_AddCoupon_SelectType">Select Type       </string>
+    <!-- Store Owner General Info -->
+    <string name="StoreOwner_ChangeStoreLogo"><u>Change Logo</u></string>
+    <!-- Store Owner Employees -->
+    <string name="StoreOwner_Employees_header1">Choose modules employees can access :</string>
+    <string name="StoreOwner_Employees_header2">Choose locations, Employee can access :</string>
+    <!-- Store Owner Add Employee  Header One -->
+    <string name="StoreOwner_AddEmployees_header1">Please ask your new employee to create a Zoupons account. Then start the addition process.</string>
+    <string name="StoreOwner_AddEmployees_header2">Then start the addition process.</string>
+    <string name="StoreOwner_AddEmployees_header3">Please ask employee to check their email for an emloyee pass code.</string>
+    <string name="add_notes"><u>Add note</u></string>
+    <string name="app_id_unsigned">532558480136413</string>
+    <string name="app_id">399356956837551</string>
+    <string name="referstore_information">Support your favorite store. Give them the gift of a free account on Zoupons. Simply fill out a short reference page and we will be sure to reach out on your behalf.</string>
+    <string name="reviewpayment">Review Payment</string>
+    <string name="map_api_key_signed">AIzaSyCOFoLZTAWrkJbQ4ebZtF0rcbF-RcXeCEs</string>
+    <string name="map_api_key_unsigned">AIzaSyCJPw4p702TKo_fFU93RUaH1sbHF_2FZNg</string>
+</resources>

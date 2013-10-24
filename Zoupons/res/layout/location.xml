@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/searchbackground"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/tabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" >
+
+            <LinearLayout
+                android:id="@+id/BtnSlide"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@drawable/header_1"
+                android:gravity="left" />
+
+            <!--
+            <LinearLayout
+                android:id="@+id/zoupons_location_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/header_2"
+                android:gravity="right" >
+
+                <ImageView
+                    android:id="@+id/zoupons_location_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingRight="5dip"
+                    android:src="@drawable/logout_main" />
+            </LinearLayout>
+            -->
+
+            <RelativeLayout
+                android:id="@+id/zoupons_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2" >
+
+                <ImageView
+                    android:id="@+id/zoupons_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="7dip"
+                    android:paddingRight="7dip"
+                    android:src="@drawable/logout_main"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/notification_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:paddingLeft="7dip"
+                    android:paddingRight="7dip" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:id="@+id/zoupons_notificationImageId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/notification_sample" />
+
+                        <!--
+                             <Button
+                            android:id="@+id/zoupons_notification_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/zoupons_notificationImageId"
+                            android:background="@drawable/circle_shape"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="2dp"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                        -->
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/zoupons_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/circle_shape"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/zoupons_callout_triangle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/triangle"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/zoupons_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/notification_container"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/home_header"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/store_header_loginchoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/zoupons_home"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/man"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- MiddleView and MenuBar Container -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tabBar" >
+
+        <RelativeLayout
+            android:id="@+id/titlebar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tabBar"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="5dip"
+            android:background="@color/searchbackground"
+            android:visibility="visible" >
+
+            <!-- Store Header Text -->
+
+            <TextView
+                android:id="@+id/store_title_textId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:paddingRight="50dip"
+                android:singleLine="false"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/location_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/titlebar"
+            android:orientation="vertical" >
+
+            <!-- Store Header Text -->
+
+            <TextView
+                android:id="@+id/store_subtitle_textId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="5dip"
+                android:text="Locations"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/store_subtitle_textinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:text="On selecting a store location will switch to that location."
+                android:textColor="@color/red"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/menubar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/header_2" >
+
+            <LinearLayout
+                android:id="@+id/menubar_list"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/gradient_menubar_new"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/menubar_list_image"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/map_view" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/menubar_list_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingBottom="2dip"
+                        android:singleLine="true"
+                        android:text="Map View"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menubar_splitter3"
+                android:layout_width="1dip"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/menubar_list"
+                android:layout_alignTop="@id/menubar_list"
+                android:layout_toLeftOf="@id/menubar_list"
+                android:background="@color/menubarsplitter" />
+
+            <!-- Location MenuBar -->
+
+
+            <!--
+              <LinearLayout
+                android:id="@+id/menubarcontainer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2"
+                android:clickable="false"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <LinearLayout
+                    android:id="@+id/menubar_browse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    android:background="@drawable/gradient_menubar_new" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <ImageView
+                            android:id="@+id/menubar_browse_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/browse" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/menubar_browse_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="5dip"
+                            android:singleLine="true"
+                            android:text="BROWSE"
+                            android:textColor="@color/white"
+                            android:textSize="10dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menubar_splitter1"
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:background="@color/menubarsplitter"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/menubar_qrcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    android:background="@drawable/gradient_menubar_new" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <ImageView
+                            android:id="@+id/menubar_qrcode_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/qrcode" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/menubar_qrcode_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingBottom="5dip"
+                            android:singleLine="true"
+                            android:text="QR CODE"
+                            android:textColor="@color/white"
+                            android:textSize="10dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menubar_splitter2"
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:background="@color/menubarsplitter"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:id="@+id/menubar_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    android:background="@drawable/gradient_menubar_new" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <ImageView
+                            android:id="@+id/menubar_search_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/search" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/menubar_search_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingBottom="5dip"
+                            android:singleLine="true"
+                            android:text="SEARCH"
+                            android:textColor="@color/white"
+                            android:textSize="10dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menubar_splitter3"
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:background="@color/menubarsplitter" />
+
+                <LinearLayout
+                    android:id="@+id/menubar_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="@drawable/gradient_menubar_new" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <ImageView
+                            android:id="@+id/menubar_list_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/map_view" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/menubar_list_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingBottom="2dip"
+                            android:singleLine="true"
+                            android:text="Map View"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            -->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/middleview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/menubar"
+            android:layout_below="@id/subtitle"
+            android:orientation="horizontal"
+            android:padding="3dip" >
+
+            <RelativeLayout
+                android:id="@+id/location_mapview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/border"
+                android:visibility="gone" >
+
+                <!--
+                <com.us.zoupons.android.map.TapControlledMapView
+                    android:id="@+id/zouponsLocationsMapView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:apiKey="0ddt4qwT_YV2xEYacYbbx6ptFw1pY8lVPJZbd4A"
+                    android:clickable="true"
+                    android:enabled="true" >
+                </com.us.zoupons.android.map.TapControlledMapView>
+                -->
+
+                <fragment
+                    android:id="@+id/zouponsHomePageMapView"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/locationList"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dip"
+                android:visibility="visible" >
+
+                <ListView
+                    android:id="@+id/locationListView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:cacheColorHint="#00000000"
+                    android:clickable="true"
+                    android:divider="@color/searchbackground"
+                    android:dividerHeight="10dip"
+                    android:drawSelectorOnTop="false" >
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/freezeview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/qrcode_transparent"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

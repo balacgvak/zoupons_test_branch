@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/searchbackground" >
+
+    <LinearLayout
+        android:id="@+id/approve_invoice_tabbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_2" >
+
+        <ImageView
+            android:id="@+id/BtnSlide_approve_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/header_1" />
+
+        <!--
+        <LinearLayout
+            android:id="@+id/approve_invoice_logout_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="right" >
+
+            <ImageView
+                android:id="@+id/approve_invoice_logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:paddingRight="5dip"
+                android:src="@drawable/logout_main" />
+        </LinearLayout>
+        -->
+
+        <RelativeLayout
+            android:id="@+id/zoupons_logout_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/zoupons_logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="7dip"
+                android:paddingRight="7dip"
+                android:src="@drawable/logout_main" 
+                android:visibility="gone"/>
+
+            <FrameLayout
+                android:id="@+id/notification_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:paddingRight="7dip"
+                android:paddingLeft="7dip" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/zoupons_notificationImageId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/notification_sample" />
+
+                    <!-- <Button
+                        android:id="@+id/zoupons_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@id/zoupons_notificationImageId"
+                        android:background="@drawable/circle_shape"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:visibility="gone" /> -->
+                </RelativeLayout>
+                
+                <Button
+                    android:id="@+id/zoupons_notification_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/circle_shape"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+                
+                <ImageView
+                    android:id="@+id/zoupons_callout_triangle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/triangle"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/zoupons_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/notification_container"
+                android:padding="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_header"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/store_header_loginchoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/zoupons_home"
+                android:padding="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/man"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/approve_invoice_footerLayoutId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/approve_invoice_leftFooterText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/gradient_menubar_new"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+        
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/approve_invoice_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/approve_invoice_footerLayoutId"
+        android:layout_below="@id/approve_invoice_tabbar"
+        android:layout_margin="2dp" >
+
+        <ListView
+            android:id="@+id/approve_invoice_listId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/searchbackground"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false" >
+        </ListView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/view_approve_invoice_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/approve_invoice_footerLayoutId"
+        android:layout_below="@id/approve_invoice_tabbar"
+        android:background="@drawable/custombackground"
+        android:fillViewport="true"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Store Name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/invoice_storenameId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dip" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/invoice_dateId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dip" >
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/invoice_amountId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/invoice_descriptionId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:editable="false"
+                android:focusable="false"
+                android:gravity="top|left"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:maxLines="6"
+                android:minLines="6"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp" >
+
+                <Button
+                    android:id="@+id/reject_invoice_buttonId"
+                    android:layout_width="100dip"
+                    android:layout_height="45dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/buttonhover"
+                    android:padding="5dp"
+                    android:text="Reject" />
+
+                <Button
+                    android:id="@+id/approve_invoice_buttonId"
+                    android:layout_width="100dip"
+                    android:layout_height="45dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/buttonhover"
+                    android:padding="5dp"
+                    android:text="Approve" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Freeze Rewards Button -->
+
+    <Button
+        android:id="@+id/approve_invoice_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

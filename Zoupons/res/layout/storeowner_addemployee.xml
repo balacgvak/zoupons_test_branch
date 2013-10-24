@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addemployee_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeowner_addemployee_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <RelativeLayout
+        android:id="@+id/addemployee_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeowner_addemployee_footer"
+        android:layout_below="@id/storeowner_addemployee_header"
+        android:background="@drawable/custombackground"
+        android:visibility="visible" >
+
+        <!-- addemployee Mobile Number Container -->
+
+        <LinearLayout
+            android:id="@+id/addemployee_employeemobilenumber"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/StoreOwner_AddEmployees_header1"
+                android:textColor="@color/black"
+                android:textSize="18dip"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/StoreOwner_AddEmployees_header2"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/addemployee_employeemobilenumber_value"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:hint="Mobile Number"
+                android:textSize="15sp"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/employeemobilenumber_submit"
+                android:layout_width="@dimen/cancelbuttonwidth"
+                android:layout_height="@dimen/cancelbuttonheight"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:textSize="15sp"
+                android:background="@drawable/buttonhover"
+                android:text="Submit"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Employee Code Container -->
+
+        <LinearLayout
+            android:id="@+id/addemployee_employeecode_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <!-- EmployeeDetails ScrollView -->
+
+            <ScrollView
+                android:id="@+id/addemployee_employeecode_scrollview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
+                android:visibility="visible" >
+
+                <!-- employeecode Full Content -->
+
+                <LinearLayout
+                    android:id="@+id/employeecode_employeecode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical"
+                    android:padding="5dip"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <!-- AddEmployee Group -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <!-- AddEmployee Items -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:orientation="vertical" >
+
+                                <RelativeLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/settings_contactborder"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:paddingTop="5dp" >
+
+                                    <ImageView
+                                        android:id="@+id/addemployee_profileimage"
+                                        android:layout_width="120dp"
+                                        android:layout_height="135dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/profileimage" />
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_toRightOf="@id/addemployee_profileimage"
+                                        android:orientation="vertical" >
+
+                                        <!-- First Name -->
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical" >
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:paddingBottom="5dip" >
+
+                                                <TextView
+                                                    android:id="@+id/addemployee_txtFirstName"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="First Name"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="16sp"
+                                                    android:textStyle="bold" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:paddingBottom="5dip" >
+
+                                                <EditText
+                                                    android:id="@+id/addemployee_edtFirstName"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:hint="First Name"
+                                                    android:singleLine="true"
+                                                    android:focusable="false"
+                                                    android:editable="false"
+                                                    android:focusableInTouchMode="false"
+                                                    android:textSize="15sp"
+                                                    android:background="#00000000"
+                                                    android:textColor="@color/black" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+                                        <!-- Last Name -->
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:orientation="vertical" >
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1"
+                                                android:paddingBottom="5dip" >
+
+                                                <TextView
+                                                    android:id="@+id/addemployee_txtLastName"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Last Name"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="16sp"
+                                                    android:textStyle="bold" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="1" >
+
+                                                <EditText
+                                                    android:id="@+id/addemployee_edtLastName"
+                                                    android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:hint="Last Name"
+                                                    android:singleLine="true"
+                                                    android:focusable="false"
+                                                    android:editable="false"
+                                                    android:textSize="15sp"
+                                                    android:focusableInTouchMode="false"
+                                                    android:background="#00000000"
+                                                    android:textColor="@color/black" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/addemployee_info_text"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dip"
+                                    android:text="@string/StoreOwner_AddEmployees_header3"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dip"
+                                    android:textStyle="bold" />
+
+                                <!-- Employee code -->
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:visibility="visible" >
+
+                                    <TextView
+                                        android:id="@+id/addemployee_employeecode_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Employee Code"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/addemployee_employeecode_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dip"
+                                        android:hint="Employee Code"
+                                        android:inputType="phone"
+                                        android:singleLine="true"
+                                        android:textSize="15sp"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/employeecode_submit"
+                                    android:layout_width="@dimen/cancelbuttonwidth"
+                                    android:layout_height="@dimen/cancelbuttonheight"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="15dip"
+                                    android:background="@drawable/buttonhover"
+                                    android:text="Submit"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- EmployeeDetails Group Bottom Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- employee permission one container -->
+
+        <LinearLayout
+            android:id="@+id/addemployee_employeemodule_permission"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Permissions"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="@string/StoreOwner_Employees_header1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            
+            <ListView
+                android:id="@+id/addemployee_employeePermission_multiselectlistview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:cacheColorHint="#00000000"
+                android:choiceMode="multipleChoice"
+                android:clickable="true"
+                android:divider="@color/custombackground"
+                android:dividerHeight="10dip"
+                android:drawSelectorOnTop="false"
+                android:fadeScrollbars="false"
+                android:visibility="visible" />
+<!-- 
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fadeScrollbars="false" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_invoicecenter"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Invoice Center"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_pointofsale"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Point Of Sale"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_giftcards"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="GiftCards"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_deals"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_curve"
+                            android:paddingLeft="6mm"
+                            android:text="Deals"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_coupons"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Coupons"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_reviews"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Reviews"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_locations"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Locations"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_photos"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_curve"
+                            android:paddingLeft="6mm"
+                            android:text="Photos"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_videos"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Videos"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve" >
+
+                        <View
+                            android:layout_width="5dip"
+                            android:layout_height="wrap_content" />
+
+                        <CheckBox
+                            android:id="@+id/addemployee_employeemodule_contactstore"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="6mm"
+                            android:text="Contact Store"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+            </ScrollView> -->
+
+            <Button
+                android:id="@+id/addemployee_employeemodule_locationpermission"
+                android:layout_width="170dp"
+                android:layout_height="@dimen/cancelbuttonheight"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/buttonhover_new"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="Location Permissions"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- employee permission two container -->
+
+        <LinearLayout
+            android:id="@+id/addemployee_employeelocation_permission"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Permissions"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="@string/StoreOwner_Employees_header2"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="5dip" />
+
+            <ListView
+                android:id="@+id/addemployee_employeelocation_multiselectlistview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:cacheColorHint="#00000000"
+                android:choiceMode="multipleChoice"
+                android:clickable="true"
+                android:divider="@color/custombackground"
+                android:dividerHeight="10dip"
+                android:drawSelectorOnTop="false"
+                android:fadeScrollbars="false"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/addemployee_employeelocation_locationpermission"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/cancelbuttonheight"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/buttonhover"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="Activate Employee"
+                android:textColor="@color/black"
+                android:textStyle="bold" 
+                android:textSize="15sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_addemployee_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Permission Footer Back -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_addemployee_permission_footer_back"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <!-- Invisible 1 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_qrcode"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/gradient_menubar_new"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_qrcode_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/qrcode"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_qrcode_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="QR CODE"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Invisible 2 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_search"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/gradient_menubar_new"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_search_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_search_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SEARCH"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible" />
+
+        <!-- Save Employee -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_employeedetails_permission_footer_save"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_menubar_new"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_save_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/save" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeowner_employeedetails_permission_footer_save_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Freeze StoreOwner_AddEmployee Button -->
+
+    <Button
+        android:id="@+id/storeowner_addemployee_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/border_curve"
+    android:paddingBottom="8dip"
+    android:paddingTop="8dip" >
+
+    <RelativeLayout
+        android:id="@+id/coupons_header_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/coupons_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dip" />
+
+        <TextView
+            android:id="@+id/mCouponsheader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/coupons_image"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mCouponscode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/coupons_header_container"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/mCouponsstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/coupons_header_container"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black" />
+
+</RelativeLayout>

@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/storeownerinfo_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".StoreInformation" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownerinfo_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Footer View -->
+
+    <RelativeLayout
+        android:id="@+id/storeownerinfo_footer_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:id="@+id/storeownerinfo_footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2"
+            android:clickable="false"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/storeownerinfo_footer_GeneralInfo"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_menubar_new"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/storeownerinfo_footer_GeneralInfo_image"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/aboutstore" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/storeownerinfo_footer_GeneralInfo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingBottom="2dip"
+                        android:singleLine="true"
+                        android:text="General Info"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menubar_splitter1"
+                android:layout_width="1dip"
+                android:layout_height="fill_parent"
+                android:background="@color/menubarsplitter"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/storeownerinfo_footer_businesshours"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_menubar_new"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/storeownerinfo_footer_businesshours_image"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/businesshr" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/storeownerinfo_footer_businesshours_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingBottom="2dip"
+                        android:singleLine="true"
+                        android:text="Business Hours"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menubar_splitter3"
+                android:layout_width="1dip"
+                android:layout_height="fill_parent"
+                android:background="@color/menubarsplitter" />
+
+            <LinearLayout
+                android:id="@+id/storeownerinfo_footer_aboutstore"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_menubar_new"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/storeownerinfo_footer_aboutstore_image"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/aboutstore" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/storeownerinfo_footer_aboutstore_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingBottom="2dip"
+                        android:singleLine="true"
+                        android:text="About Store"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/storeownerinfo_footer_container"
+        android:layout_below="@id/storeownerinfo_header"
+        android:background="@drawable/custombackground" >
+
+        <!-- Store Name Header -->
+
+        <RelativeLayout
+            android:id="@+id/storeownerinfo_storename_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" >
+
+            <ImageView
+                android:id="@+id/storeowner_info_rightmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/sample" />
+
+            <TextView
+                android:id="@+id/storeowner_info_storename"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/storeowner_info_rightmenu"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="2"
+                android:text="Store Name"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/storeownergeneralinfo_middleview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/storeownerinfo_storename_header"
+            android:background="@color/custombackground" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/storeownergeneralinfo_footer"
+                android:layout_below="@id/storeownergeneralinfo_header"
+                android:padding="2dip"
+                android:visibility="visible" >
+
+                <!-- StoreLogo Container -->
+
+                <LinearLayout
+                    android:id="@+id/storeownergeneralinfo_storelogo_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownergeneralinfo_storename"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dip" >
+
+                    <TextView
+                        android:id="@+id/storeownergeneralinfo_storelogo_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:text="Store Logo"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dip" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:id="@+id/storeownergeneralinfo_storelogo"
+                            android:layout_width="250dip"
+                            android:layout_height="150dip"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="2dp" />
+
+                        <ProgressBar
+                            android:id="@+id/progess_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:visibility="invisible" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <TextView
+                        android:id="@+id/storeownergeneralinfo_changestorelogo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:paddingBottom="5dip"
+                        android:paddingLeft="1dp"
+                        android:paddingRight="5dip"
+                        android:paddingTop="5dip"
+                        android:text="@string/StoreOwner_ChangeStoreLogo"
+                        android:textColor="@color/blue"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- Store website container -->
+
+                <LinearLayout
+                    android:id="@+id/storeownergeneralinfo_website_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownergeneralinfo_storelogo_container"
+                    android:layout_marginTop="20dip"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip" >
+
+                    <TextView
+                        android:id="@+id/storeownergeneralinfo_website"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:text="Website"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dip" />
+
+                    <EditText
+                        android:id="@+id/storeownergeneralinfo_website_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Website"
+                        android:singleLine="true"
+                        android:textSize="15sp" />
+                </LinearLayout>
+                <!-- </RelativeLayout> -->
+
+
+                <!-- Button Container -->
+
+                <LinearLayout
+                    android:id="@+id/buttoncontainer_abovespace"
+                    android:layout_width="fill_parent"
+                    android:layout_height="10dip"
+                    android:layout_below="@id/storeownergeneralinfo_website_container"
+                    android:orientation="horizontal" />
+
+                <RelativeLayout
+                    android:id="@+id/storeownergeneralinfo_buttoncontainer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/buttoncontainer_abovespace"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
+
+                    <Button
+                        android:id="@+id/storeownergeneralinfo_save"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/buttonhover"
+                        android:text="Save"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/storeownerinfo_businesshours_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownerinfo_storename_header"
+            android:layout_marginTop="5dip"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/businesshours_header_day"
+                style="@style/businesshoursheader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wednesday"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/businesshours_header_open"
+                style="@style/businesshoursheader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Start" />
+
+            <TextView
+                android:id="@+id/businesshours_header_close"
+                style="@style/businesshoursheader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="End" />
+
+            <TextView
+                android:id="@+id/businesshours_header_closed"
+                style="@style/businesshoursheader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Closed" />
+        </LinearLayout>
+
+        <!-- Business Hours ScrollView -->
+
+        <LinearLayout
+            android:id="@+id/storeownerinfo_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storeownerinfo_businesshours_header"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ScrollView
+                android:id="@+id/storeownerinfo_businesshours_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:visibility="visible" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <!-- Monday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_monday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_monday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:text="Mon" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_day1_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_monday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_monday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_monday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginBottom="0dip"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_day1_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_monday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_monday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_monday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_monday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Monday Splitter -->
+                    <!--
+                         <LinearLayout
+                        android:id="@+id/monday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip"
+                        android:layout_below="@id/businesshours_monday_container"
+                        android:background="@color/searchbordercolor" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/monday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_monday_container" />
+
+                    <!-- Tuesday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_tuesday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/monday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_tuesday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:text="Tue" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_tuesday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_tuesday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_tuesday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_tuesday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_tuesday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_tuesday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_tuesday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_tuesday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_tuesday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Tuesday Splitter -->
+
+
+                    <!--
+                         <LinearLayout
+                        android:id="@+id/tuesday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip"
+                        android:layout_below="@id/businesshours_tuesday_container"
+                        android:background="@color/searchbordercolor" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/tuesday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_tuesday_container" />
+
+                    <!-- Wednesday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_wednesday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tuesday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_wednesday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:singleLine="true"
+                                    android:text="Wed" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_wednesday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_wednesday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_wednesday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_wednesday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_wednesday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_wednesday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_wednesday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_wednesday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_wednesday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Wednesday Splitter -->
+
+
+                    <!--
+                         <LinearLayout
+                        android:id="@+id/wednesday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip"
+                        android:layout_below="@id/businesshours_wednesday_container"
+                        android:background="@color/searchbordercolor" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/wednesday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_wednesday_container" />
+
+                    <!-- Thursday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_thursday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/wednesday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_thursday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:singleLine="true"
+                                    android:text="Thu" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_thursday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_thursday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_thursday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_thursday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_thursday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_thursday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_thursday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_thursday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_thursday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Thursday Splitter -->
+
+
+                    <!--
+                         <LinearLayout
+                        android:id="@+id/thursday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip"
+                        android:layout_below="@id/businesshours_thursday_container"
+                        android:background="@color/searchbordercolor" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/thursday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_thursday_container" />
+
+                    <!-- Friday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_friday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/thursday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_friday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:singleLine="true"
+                                    android:text="Fri" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_friday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_friday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_friday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_friday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_friday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_friday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_friday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_friday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_friday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/friday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_friday_container" />
+
+                    <!-- Saturday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_saturday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/friday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_saturday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:singleLine="true"
+                                    android:text="Sat" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_saturday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_friday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_saturday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_saturday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_saturday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_saturday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_saturday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_saturday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_saturday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- saturday Splitter -->
+
+
+                    <!--
+                         <LinearLayout
+                        android:id="@+id/saturday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dip"
+                        android:layout_below="@id/businesshours_saturday_container"
+                        android:background="@color/searchbordercolor" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/saturday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_saturday_container" />
+
+                    <!-- Sunday Container -->
+
+                    <LinearLayout
+                        android:id="@+id/businesshours_sunday_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/saturday_belowsplitter"
+                        android:background="@drawable/border_curve"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="5dip"
+                        android:visibility="visible" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:gravity="center_vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/businesshour_sunday_holder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true" >
+
+                                <TextView
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="35dip"
+                                    android:layout_height="fill_parent"
+                                    android:singleLine="true"
+                                    android:text="Sun" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_sunday_open_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/businesshour_sunday_holder"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_sunday_open_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_sunday_open_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/monday_belowsplitter"
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <FrameLayout
+                                android:id="@+id/businesshour_sunday_close_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/businesshours_sunday_checkbox"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/businesshour_sunday_close_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="40dp"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="00:00        "
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/businesshour_sunday_close_dropdown"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <CheckBox
+                                    android:id="@+id/businesshours_sunday_checkbox"
+                                    style="@style/businesshoursheader"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- sunday Splitter -->
+
+                    <LinearLayout
+                        android:id="@+id/sunday_belowsplitter"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip"
+                        android:layout_below="@id/businesshours_sunday_container" />
+                </RelativeLayout>
+            </ScrollView>
+
+            <!-- Business Hours Save Button -->
+
+            <Button
+                android:id="@+id/businesshours_save"
+                style="@style/boldText"
+                android:layout_width="@dimen/cancelbuttonwidth"
+                android:layout_height="@dimen/cancelbuttonheight"
+                android:layout_below="@id/storeownerinfo_businesshours_container"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/buttonhover"
+                android:text="Save" />
+        </LinearLayout>
+
+        <!-- About Store ScrollView -->
+
+        <RelativeLayout
+            android:id="@+id/businesshours_aboutstore_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/storeownerinfo_storename_header"
+            android:visibility="gone" >
+
+            <!-- About Store Save Button -->
+
+            <Button
+                android:id="@+id/businesshours_aboutstore_save"
+                style="@style/boldText"
+                android:layout_width="@dimen/cancelbuttonwidth"
+                android:layout_height="@dimen/cancelbuttonheight"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/buttonhover"
+                android:text="Save" />
+
+            <ScrollView
+                android:id="@+id/businesshours_aboutstore_scrollview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@id/businesshours_aboutstore_save"
+                android:fillViewport="true"
+                android:visibility="visible" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <!-- About Store Container -->
+
+                    <EditText
+                        android:id="@+id/businesshours_aboutstore"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="top"
+                        android:textColor="@android:color/black" />
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+    <!-- Freeze StoreOnwer_Info Button -->
+
+    <Button
+        android:id="@+id/storeowner_info_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

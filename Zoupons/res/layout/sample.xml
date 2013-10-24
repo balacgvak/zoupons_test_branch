@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="fill_parent" android:layout_height="fill_parent"
+			  android:background="@color/searchbackground">
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+				  android:orientation="vertical" android:gravity="center"
+				  android:paddingLeft="20dip" android:paddingRight="20dip"
+				  android:visibility="visible">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:gravity="center_horizontal" android:visibility="visible">
+			<ImageView android:src="@drawable/applogo" android:layout_width="wrap_content"
+					   android:layout_height="fill_parent"/>	  
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:orientation="vertical" android:visibility="visible">		  
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:textSize="13dip" android:textStyle="bold" android:gravity="center"
+					  android:textColor="@color/black" android:text="@string/LoginPageHeader_ForgotPassword"
+					  android:id="@+id/loginpage_fb_header"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="20dip"/>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:orientation="vertical">
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:text="New Password" android:textStyle="bold"
+					  android:textColor="@color/black" android:textSize="15dip"
+					  android:id="@+id/loginpage_fb_newpassword"/>
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="5dip"/>		  
+			<EditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:hint="New Password" android:singleLine="true"
+					  android:id="@+id/loginpage_fb_newpassword_value" android:inputType="textEmailAddress"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:orientation="vertical">
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:text="Confirm New Password" android:textStyle="bold"
+					  android:textColor="@color/black" android:textSize="15dip"
+					  android:id="@+id/loginpage_fb_confirm_newpassword"/>
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="5dip"/>		  
+			<EditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:hint="Confirm Password" android:singleLine="true"
+					  android:id="@+id/loginpage_fb_confirm_newpassword_value" android:inputType="textEmailAddress"/>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="10dip"/>
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:gravity="center">
+			<Button android:layout_width="100dip" android:layout_height="40dip"
+					android:text="Save" android:textStyle="bold"
+					android:textColor="@color/black" android:textSize="15dip"
+					android:background="@drawable/buttonhover" android:id="@+id/loginpage_fb_save"/>
+		</LinearLayout>		
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/searchbackground" >
+
+    <LinearLayout
+        android:id="@+id/store_info_tabbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_2" >
+
+        <ImageView
+            android:id="@+id/BtnSlide_storeinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/header_1" />
+
+        <RelativeLayout
+            android:id="@+id/zoupons_logout_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/zoupons_logout_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="7dip"
+                android:paddingRight="7dip"
+                android:src="@drawable/logout_main"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:id="@+id/notification_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:paddingRight="7dip"
+                android:paddingLeft="7dip" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/zoupons_notificationImageId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/notification_sample" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/zoupons_notification_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/circle_shape"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/zoupons_callout_triangle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/triangle"
+                    android:visibility="invisible" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/zoupons_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/notification_container"
+                android:padding="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_header"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/store_header_loginchoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/zoupons_home"
+                android:padding="7dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/man"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/friends_footerLayoutId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/friends_leftFooterText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/friendlist_backmenusplitter"
+            android:layout_width="1dip"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/friends_leftFooterText"
+            android:layout_alignTop="@id/friends_leftFooterText"
+            android:layout_toRightOf="@id/friends_leftFooterText"
+            android:background="@color/menubarsplitter" />
+
+        <TextView
+            android:id="@+id/friends_import_friends_menuId"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/friends_leftFooterText"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/friends_leftFooterText"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:paddingBottom="2dip"
+            android:text="Import Friends"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:drawableTop="@drawable/import_friends" />
+
+        <View
+            android:id="@+id/friendlist_importmenusplitter"
+            android:layout_width="1dip"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/friends_leftFooterText"
+            android:layout_alignTop="@id/friends_leftFooterText"
+            android:layout_toLeftOf="@id/friends_import_friends_menuId"
+            android:background="@color/menubarsplitter" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/store_info_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/friends_footerLayoutId"
+        android:layout_below="@id/store_info_tabbar"
+        android:layout_margin="2dp"
+        android:background="@drawable/border"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/fb_friendsearch_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true" >
+
+            <Button
+                android:id="@+id/fb_friendsearch_buttonId"
+                android:layout_width="65dip"
+                android:layout_height="45dip"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/buttonhover"
+                android:padding="10dip"
+                android:text="Cancel"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/fb_friendlist_searchId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dip"
+                android:layout_toLeftOf="@id/fb_friendsearch_buttonId"
+                android:inputType="textNoSuggestions" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/fb_friendlistId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fb_friendsearch_layout"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/custom_background"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false" >
+        </ListView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/social_import_friend_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/friends_footerLayoutId"
+        android:layout_below="@id/store_info_tabbar"
+        android:layout_margin="2dp"
+        android:background="@drawable/border"
+        android:visibility="gone" >
+
+        <!--
+           <Button 
+          android:id="@+id/social_gmail_Id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="GMAIL Friends"
+          android:layout_centerInParent="true"
+          android:paddingLeft="20dp"
+          android:paddingRight="20dp"/>
+        -->
+
+        <ListView
+            android:id="@+id/social_listId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:cacheColorHint="#00000000"
+            android:divider="@color/custom_background"
+            android:dividerHeight="10dip"
+            android:drawSelectorOnTop="false" >
+        </ListView>
+    </RelativeLayout>
+
+    <!-- Freeze Rewards Button -->
+
+    <Button
+        android:id="@+id/store_info_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

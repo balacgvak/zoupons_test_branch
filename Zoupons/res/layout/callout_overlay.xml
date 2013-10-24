@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/callout_main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:id="@id/callout_inner_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:minHeight="40dip"
+            android:orientation="vertical"
+            android:paddingTop="0dip">
+
+            <TextView
+                android:id="@+id/callout_item_shopname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="balloon_item_title"
+                android:textColor="@color/black"
+                android:textSize="16dip"/>
+
+            <TextView
+                android:id="@+id/callout_shop_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="balloon_item_snippet"
+                android:textColor="@color/black"
+                android:textSize="12dip" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/callout_disclosure"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="1dip"
+            android:src="@drawable/balloon_disclosure"
+            android:visibility="visible" />
+    	</LinearLayout>
+
+    <!--<ImageView
+        android:id="@id/balloon_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip"
+        android:src="@drawable/balloon_overlay_close" />
+	-->
+</LinearLayout>

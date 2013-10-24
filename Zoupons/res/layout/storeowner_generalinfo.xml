@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeownergeneralinfo_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeownergeneralinfo_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <!-- Middle View -->
+
+	<ScrollView
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_above="@+id/storeownergeneralinfo_footer"
+	    android:layout_below="@id/storeownergeneralinfo_header"
+	    android:background="@color/custombackground" >
+
+	    <RelativeLayout
+	        android:id="@+id/storeownergeneralinfo_middleview"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:layout_above="@+id/storeownergeneralinfo_footer"
+	        android:layout_below="@id/storeownergeneralinfo_header"
+	        android:padding="2dip" >
+
+	        <TextView
+	            android:id="@+id/storeownergeneralinfo_storename"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_marginTop="20dp"
+	            android:text="Store Name"
+	            android:textColor="@android:color/black"
+	            android:textSize="18sp"
+	            android:textStyle="bold" />
+
+	        <!-- StoreLogo Container -->
+
+	        <LinearLayout
+	            android:id="@+id/storeownergeneralinfo_storelogo_container"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/storeownergeneralinfo_storename"
+	            android:layout_marginTop="20dp"
+	            android:orientation="vertical"
+	            android:paddingLeft="5dip" >
+
+	            <TextView
+	                android:id="@+id/storeownergeneralinfo_storelogo_text"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="1dp"
+	                android:text="Store Logo"
+	                android:textColor="@color/black"
+	                android:textSize="16sp"
+	                android:textStyle="bold"
+	                android:visibility="visible" />
+
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="5dip" />
+
+	            <ImageView
+	                android:id="@+id/storeownergeneralinfo_storelogo"
+	                android:layout_width="250dip"
+	                android:layout_height="150dip"
+	                android:layout_gravity="center_horizontal"
+	                android:layout_marginTop="2dp"
+	                 />
+
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="10dip" />
+
+	            <TextView
+	                android:id="@+id/storeownergeneralinfo_changestorelogo"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="right"
+	                android:paddingBottom="5dip"
+	                android:paddingLeft="1dp"
+	                android:paddingRight="5dip"
+	                android:paddingTop="5dip"
+	                android:text="@string/StoreOwner_ChangeStoreLogo"
+	                android:textColor="@color/blue"
+	                android:textSize="13sp"
+	                android:textStyle="bold"
+	                android:visibility="gone" />
+	        </LinearLayout>
+
+	        <!-- Store website container -->
+
+	        <LinearLayout
+	            android:id="@+id/storeownergeneralinfo_website_container"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/storeownergeneralinfo_storelogo_container"
+	            android:layout_marginTop="20dip"
+	            android:orientation="vertical"
+	            android:paddingLeft="5dip"
+	            android:paddingRight="5dip" >
+
+	            <TextView
+	                android:id="@+id/storeownergeneralinfo_website"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="1dp"
+	                android:text="Website"
+	                android:textColor="@color/black"
+	                android:textSize="16sp"
+	                android:textStyle="bold"
+	                android:visibility="visible" />
+
+	            <LinearLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="5dip" />
+
+	            <EditText
+	                android:id="@+id/storeownergeneralinfo_website_value"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="2dp"
+	                android:hint="Website"
+	                android:textSize="15sp"
+	                android:singleLine="true" />
+	        </LinearLayout>
+	        <!-- </RelativeLayout> -->
+
+
+	        <!-- Button Container -->
+
+	        <LinearLayout
+	            android:id="@+id/buttoncontainer_abovespace"
+	            android:layout_width="fill_parent"
+	            android:layout_height="10dip"
+	            android:orientation="horizontal"
+	            android:layout_below="@id/storeownergeneralinfo_website_container" />
+
+	        <RelativeLayout
+	            android:id="@+id/storeownergeneralinfo_buttoncontainer"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/buttoncontainer_abovespace"
+	            android:orientation="horizontal"
+	            android:visibility="visible"
+	            android:layout_marginTop="10dip" >
+
+	            <Button
+	                android:id="@+id/storeownergeneralinfo_save"
+	                android:layout_width="@dimen/cancelbuttonwidth"
+	                android:layout_height="@dimen/cancelbuttonheight"
+	                android:layout_centerHorizontal="true"
+	                android:background="@drawable/buttonhover"
+	                android:text="Save"
+	                android:textColor="@color/black"
+	                android:textSize="15dp"
+	                android:textStyle="bold" />
+	        </RelativeLayout>
+	    </RelativeLayout>
+	</ScrollView>
+    
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeownergeneralinfo_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:background="@drawable/header_2"
+        android:clickable="false"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <!-- Back -->
+
+        <LinearLayout
+            android:id="@+id/storeownergeneralinfo_footer_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/storeownergeneralinfo_footer_back_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dip"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/storeownergeneralinfo_footer_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="BACK"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:orientation="horizontal"
+            android:visibility="invisible" />
+
+        <!-- Invisible 1 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_qrcode"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_qrcode_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/qrcode"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_qrcode_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="QR CODE"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:orientation="horizontal"
+            android:visibility="invisible" />
+
+        <!-- Invisible 2 -->
+
+        <LinearLayout
+            android:id="@+id/menubar_search"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_search_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/search"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/menubar_search_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SEARCH"
+                    android:textColor="@color/white"
+                    android:textSize="10dip"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="invisible"
+            android:orientation="horizontal" />
+
+        <!-- Invisible 3 -->
+
+        <LinearLayout
+            android:id="@+id/addcreditcard_menubar_save"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageView
+                    android:id="@+id/menubar_list_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="2dip"
+                    android:src="@drawable/save" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/addcreditcard_menubar_save_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="2dip"
+                    android:singleLine="true"
+                    android:text="SAVE"
+                    android:textColor="@color/white"
+                    android:textSize="12dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- FreezeView -->
+
+    <Button
+        android:id="@+id/freezeview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

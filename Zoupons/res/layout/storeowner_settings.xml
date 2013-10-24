@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeowner_settings_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <com.us.zoupons.storeowner.Header
+        android:id="@+id/storeowner_settings_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
+
+    <RelativeLayout
+        android:id="@+id/storeowner_settings_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/storeowner_settings_footer"
+        android:layout_below="@id/storeowner_settings_header"
+        android:background="@drawable/custombackground"
+        android:visibility="visible" >
+
+        <!-- Initial Login Layout -->
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_loginLayoutId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="UserName"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" 
+                 />
+			
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"/>
+            
+            <EditText
+                android:id="@+id/storeowner_settings_loginUserNameId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Enter User Name"
+                android:singleLine="true" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Password"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"/>
+            
+            <EditText
+                android:id="@+id/storeowner_settings_loginPasswordId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+            
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dip"/>
+            
+            <Button
+                android:id="@+id/storeowner_settings_loginButtonId"
+                android:layout_width="100dip"
+                android:layout_height="45dip"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/buttonhover"
+                android:textStyle="bold"
+                android:text="@android:string/ok" />
+        </LinearLayout>
+        
+        <!-- ContactInfo ScrollView -->
+
+        <ScrollView
+            android:id="@+id/storeowner_settings_contactinfo_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <!-- Contact Info ScroolView -->
+            <!-- Contact Info Full Content -->
+
+            <LinearLayout
+                android:id="@+id/settings_contactinfo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <!-- ContactInfo Header -->
+
+                <LinearLayout
+                    android:id="@+id/settings_contactinfobar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/settings_contactinfo_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:text="Contact Information"
+                            android:textColor="@color/black"
+                            android:textSize="17dip"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" >
+
+                    <!-- Contact Information Heading Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="3dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:paddingBottom="5dip"
+                            android:text="@string/Settings_Notification_Content"
+                            android:textColor="@color/black"
+                            android:textSize="11dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                    <!-- Contact Information Group -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!-- Contact Information Group Left Space -->
+
+                        <LinearLayout
+                            android:layout_width="10dip"
+                            android:layout_height="fill_parent"
+                            android:visibility="gone" />
+
+                        <!-- Contact Information Items -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/settings_contactborder"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp" >
+
+                                <ImageView
+                                    android:id="@+id/settings_contactImageId"
+                                    android:layout_width="120dp"
+                                    android:layout_height="135dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/profileimage" />
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@id/settings_contactImageId"
+                                    android:orientation="vertical" >
+
+                                    <!-- First Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/txtFirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="First Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="15dip"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <EditText
+                                                android:id="@+id/edtFirstName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="First Name"
+                                                android:singleLine="true"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <!-- Last Name -->
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical" >
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:paddingBottom="5dip" >
+
+                                            <TextView
+                                                android:id="@+id/txtLastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="Last Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="15dip"
+                                                android:textStyle="bold" />
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1" >
+
+                                            <EditText
+                                                android:id="@+id/edtLastName"
+                                                android:layout_width="fill_parent"
+                                                android:layout_height="wrap_content"
+                                                android:hint="Last Name"
+                                                android:singleLine="true"
+                                                android:textColor="@color/black" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <!-- Email Id Field -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/txtEmail"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="EmailID"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/edtEmail"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/storeinfo_contact_border"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:hint="EmailId"
+                                        android:padding="5dp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- Address 1 -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_mobilenumber"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mobile Number"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_mobilenumber_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Mobile Number"
+                                        android:inputType="phone"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Address 1 container -->
+                            
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_address1_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Address1"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_address1_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Address1"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- Address 2 container -->
+                            
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_address2_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Address2"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_address2_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Address2"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- City -->
+                            
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_city_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="City"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_city_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="City"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- State -->
+                            
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_state_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="State"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_state_value"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="State"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- ZipCode -->
+                            
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_settings_state_text"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Zipcode"
+                                        android:textColor="@color/black"
+                                        android:textSize="15dip"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_settings_state_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Zipcode      "
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            
+                            <!-- ContactInfo Button Container -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:layout_marginTop="5dp" >
+
+                                <Button
+                                    android:id="@+id/storeowner_settings_ContactInfoSave"
+                                    android:layout_width="@dimen/cancelbuttonwidth"
+                                    android:layout_height="@dimen/cancelbuttonheight"
+                                    android:background="@drawable/buttonhover"
+                                    android:text="Save"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dip"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        
+                        <!-- Contact Information Group Right Space -->
+
+                        <LinearLayout
+                            android:layout_width="10dip"
+                            android:layout_height="fill_parent"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <!-- Contact Information Group Bottom Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Security ScrollView -->
+
+        <ScrollView
+            android:id="@+id/storeowner_settings_security_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true"
+            android:visibility="gone" >
+
+            <!-- Security Info ScroolView -->
+            
+            <!-- Security Info Full Content -->
+
+            <LinearLayout
+                android:id="@+id/storeowner_settings_security"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <!-- Security Header -->
+
+                <LinearLayout
+                    android:id="@+id/storeowner_settings_securitybar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal" >
+
+                        <TextView
+                            android:id="@+id/storeowner_settings_changepassword_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="Change Password"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/storeowner_settings_changepasswordBoxId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/storeowner_settings_changepassword_heading"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/storeowner_settings_changeSecurityquestions_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="Change Security Questions"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/storeowner_settings_changequestionsBoxId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/storeowner_settings_changeSecurityquestions_heading"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/black" />
+
+                <!-- EditPassword container -->
+                
+                <LinearLayout
+                    android:id="@+id/storeowner_settings_changepassword_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="New Password"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/storeowner_settings_passwordChangeId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="New Password"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Confirm New Password"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/storeowner_settings_confirmPasswordChangeId"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="Confirm New Password"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+				
+                <!-- Edit Security Question Container -->
+                		
+                <LinearLayout
+                    android:id="@+id/storeowner_settings_security_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                    
+                    <!-- Security Group -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <!-- Security Group Left Space -->
+
+                        <LinearLayout
+                            android:layout_width="10dip"
+                            android:layout_height="fill_parent" />
+
+                        <!-- Security Items -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical" >
+
+                            <!-- Security Question1 -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_txtSecurityQuestion1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Security Question 1"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <FrameLayout
+                                        android:id="@+id/storeowner_settings_questions1_container"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/storeowner_settings_questions1"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:enabled="true"
+                                            android:focusable="false"
+                                            android:maxLines="2"
+                                            android:minLines="2"
+                                            android:paddingRight="50dp"
+                                            android:textSize="10sp" />
+
+                                        <ImageView
+                                            android:id="@+id/storeowner_settings_questions1ImageId"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:layout_marginRight="0dip"
+                                            android:layout_marginTop="1dip"
+                                            android:background="@drawable/step2_downarrow" />
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Your Answer 1 -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_txtYourAnswer2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Asnwer 1"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_edtAnswer1"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Answer 1"
+                                        android:inputType="textPassword"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Security  Question2 -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_txtSecurityQuestion2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Security Question 2"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <FrameLayout
+                                        android:id="@+id/storeowner_settings_questions2_container"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/storeowner_settings_questions2"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:enabled="true"
+                                            android:focusable="false"
+                                            android:maxLines="2"
+                                            android:minLines="2"
+                                            android:paddingRight="50dp"
+                                            android:textSize="10sp" />
+
+                                        <ImageView
+                                            android:id="@+id/storeowner_settings_questions2ImageId"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right"
+                                            android:layout_marginRight="0dip"
+                                            android:layout_marginTop="1dip"
+                                            android:background="@drawable/step2_downarrow" />
+                                    </FrameLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Your Answer 2 -->
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <TextView
+                                        android:id="@+id/storeowner_txtYourAnswer2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Asnwer 2"
+                                        android:textColor="@color/black"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="5dip" >
+
+                                    <EditText
+                                        android:id="@+id/storeowner_edtAnswer2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="Answer"
+                                        android:inputType="textPassword"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!-- Security Group Right Space -->
+
+                        <LinearLayout
+                            android:layout_width="10dip"
+                            android:layout_height="fill_parent" />
+                    </LinearLayout>
+                    <!-- Security Group Bottom Space -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+                </LinearLayout>
+
+                <!-- Security Button Container -->
+
+                <RelativeLayout
+                    android:id="@+id/storeowner_settings_securitybuttonlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone" >
+
+                    <Button
+                        android:id="@+id/storeowner_btnSecurityBack"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/buttonhover"
+                        android:text="Back"
+                        android:textColor="@color/black"
+                        android:textSize="15dip"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/storeowner_btnSecuritySave"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/buttonhover"
+                        android:text="Save"
+                        android:textColor="@color/black"
+                        android:textSize="15dip"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- EditPin Container -->
+
+        <ScrollView
+            android:id="@+id/storeowner_settings_editpin_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true"
+            android:visibility="gone" >
+
+            <RelativeLayout
+                android:id="@+id/storeowner_settings_editPin_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <TextView
+                                android:id="@+id/storeowner_settings_editpin_txtPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Existing PIN"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1" >
+
+                            <EditText
+                                android:id="@+id/storeowner_settings_editpin_edtExistingPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="PIN Number"
+                                android:inputType="textPassword"
+                                android:singleLine="true"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1" >
+
+                            <TextView
+                                android:id="@+id/storeowner_settings_editpin_txtPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Enter New PIN"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1" >
+
+                            <EditText
+                                android:id="@+id/storeowner_settings_editpin_edtNewPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="PIN Number"
+                                android:inputType="textPassword"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1" >
+
+                            <TextView
+                                android:id="@+id/storeowner_settings_editpin_txtReEnterPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Re-Enter PIN"
+                                android:textColor="@color/black"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1" >
+
+                            <EditText
+                                android:id="@+id/storeowner_settings_editpin_edtReEnterPin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="PIN Number"
+                                android:inputType="textPassword"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp" >
+
+                        <Button
+                            android:id="@+id/storeowner_settings_editpin_btnEditPinBack"
+                            android:layout_width="100dip"
+                            android:layout_height="45dip"
+                            android:background="@drawable/buttonhover"
+                            android:text="Back"
+                            android:textColor="@color/black"
+                            android:textSize="15dip"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/storeowner_settings_editpin_btnEditPinSave"
+                            android:layout_width="100dip"
+                            android:layout_height="45dip"
+                            android:layout_marginLeft="120dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_toRightOf="@id/btnEditPinBack"
+                            android:background="@drawable/buttonhover"
+                            android:text="Save"
+                            android:textColor="@color/black"
+                            android:textSize="15dip"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- Footer View -->
+
+    <LinearLayout
+        android:id="@+id/storeowner_settings_footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_back"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_back_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/back"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter1"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_contactinfo"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            android:background="@drawable/footer_dark_blue_new" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_contactinfo_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="1dp"
+                android:drawableTop="@drawable/setting_contact_info"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Contact Info"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter2"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_editpassword"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_editpassword_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:drawableTop="@drawable/setting_security"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Edit Password"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menubar_splitter3"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/storeowner_settings_editpin"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <TextView
+                android:id="@+id/storeowner_settings_editpin_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:drawableTop="@drawable/setting_changepin"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Edit PIN"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Freeze Settings Button -->
+
+    <Button
+        android:id="@+id/storeowner_settings_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

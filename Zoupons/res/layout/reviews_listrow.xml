@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".ForgotPassword"
+    android:background="@drawable/border_curve" >
+
+    <LinearLayout
+        android:id="@+id/review_rating_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/reviewFirstRatingImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/star"
+            android:visibility="invisible"
+            android:paddingRight="5dp" />
+
+        <ImageView
+            android:id="@+id/reviewSecondRatingImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            android:src="@drawable/star"
+            android:paddingRight="5dp" />
+
+        <ImageView
+            android:id="@+id/reviewThirdRatingImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            android:src="@drawable/star" 
+            android:paddingRight="5dp" />
+
+        <ImageView
+            android:id="@+id/reviewFourthRatingImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            android:src="@drawable/star" 
+            android:paddingRight="5dp" />
+
+        <ImageView
+            android:id="@+id/reviewFifthRatingImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            android:src="@drawable/star" 
+            android:paddingRight="5dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/review_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/review_rating_layout"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/review_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/review_rating_layout"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/review_arrow_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/review_date"
+        android:src="@drawable/balloon_disclosure" />
+
+    <TextView
+        android:id="@+id/review_commentId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/review_arrow_image"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="1dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        />
+
+</RelativeLayout>

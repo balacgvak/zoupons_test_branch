@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/notification_tabBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/header_2" >
+
+            <ImageView
+                android:id="@+id/BtnSlide"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@drawable/header_1" />
+
+            <!--
+            <LinearLayout
+                android:id="@+id/giftcards_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right" >
+
+                <ImageView
+                    android:id="@+id/giftcards_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingRight="5dip"
+                    android:src="@drawable/logout_main" />
+            </LinearLayout>
+            -->
+
+            <RelativeLayout
+                android:id="@+id/zoupons_logout_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2" >
+
+                <ImageView
+                    android:id="@+id/zoupons_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="7dip"
+                    android:paddingRight="7dip"
+                    android:src="@drawable/logout_main" 
+                    android:visibility="gone"/>
+
+                <FrameLayout
+                    android:id="@+id/notification_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical"
+                    android:paddingRight="7dip"
+                    android:paddingLeft="7dip" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" >
+
+                        <ImageView
+                            android:id="@+id/zoupons_notificationImageId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/notification_sample" />
+
+                        <!-- <Button
+                            android:id="@+id/zoupons_notification_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@id/zoupons_notificationImageId"
+                            android:background="@drawable/circle_shape"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:padding="2dp"
+                            android:textColor="@color/white"
+                            android:visibility="gone" /> -->
+                    </RelativeLayout>
+
+                    <Button
+        	            android:id="@+id/zoupons_notification_count"
+        	            android:layout_width="wrap_content"
+        	            android:layout_height="wrap_content"
+        	            android:layout_gravity="right"
+        	            android:layout_marginTop="5dp"
+        	            android:background="@drawable/circle_shape"
+        	            android:clickable="false"
+        	            android:focusable="false"
+        	            android:focusableInTouchMode="false"
+        	            android:padding="2dp"
+        	            android:textColor="@color/white"
+        	            android:textSize="12sp"
+        	            android:visibility="gone" />
+                    
+                    <ImageView
+                        android:id="@+id/zoupons_callout_triangle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/triangle"
+                        android:visibility="invisible" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/zoupons_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/notification_container"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/home_header"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/store_header_loginchoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@id/zoupons_home"
+                    android:padding="7dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/man"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/notificationfooter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/header_2" >
+
+        <TextView
+            android:id="@+id/notification_saveButtonId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/header_2"
+            android:drawableTop="@drawable/save"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/notification_saveButtonId"
+            android:layout_alignTop="@id/notification_saveButtonId"
+            android:layout_toLeftOf="@id/notification_saveButtonId"
+            android:background="@color/menubarsplitter" />
+
+        <TextView
+            android:id="@+id/notification_backButtonId"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/header_2"
+            android:drawableTop="@drawable/back"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/notification_backButtonId"
+            android:layout_alignTop="@id/notification_backButtonId"
+            android:layout_toRightOf="@id/notification_backButtonId"
+            android:background="@color/menubarsplitter" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/settings_notification_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/notificationfooter"
+        android:layout_below="@id/notification_tabBar"
+        android:background="@drawable/custombackground"
+        android:fillViewport="true" >
+
+        <!-- Notification Full Content -->
+
+        <LinearLayout
+            android:id="@+id/settings_notification"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:visibility="visible" >
+
+            <!-- Notification Header -->
+
+            <LinearLayout
+                android:id="@+id/settings_notificationbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Notification"
+                        android:textColor="@color/black"
+                        android:textSize="17dip"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <!-- Notify Content1 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="3dip" >
+
+                    <TextView
+                        android:id="@+id/settings_notification_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:paddingBottom="5dip"
+                        android:text="@string/Settings_Notification_Content"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <!-- Notify Check Group -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkNone"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="None"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+
+                        <!--
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkDaily"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Daily"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+                        -->
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkMonthly"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Monthly"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkNewCodesAvailable"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="New Codes Available"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkWeekly"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Weekly"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Notify question -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="3dip"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/settings_notification_question"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:paddingBottom="5dip"
+                        android:text="@string/Settings_Notification_Content1"
+                        android:textColor="@color/black"
+                        android:textSize="11dip" />
+                </LinearLayout>
+
+                <!-- Notify Content2 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkNotifybyEmail"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Notifiy by Email"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" >
+
+                            <CheckBox
+                                android:id="@+id/chkNotifybySms"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Notify by SMS"
+                                android:textColor="@color/black"
+                                android:textSize="11dip" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Categories -->
+            <!-- Categories Header -->
+
+            <LinearLayout
+                android:id="@+id/settings_contactsbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/settings_categories_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Select Categories"
+                        android:textColor="@color/black"
+                        android:textSize="17dip"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Please select the type of discount offers you would like to receive in each category.You can always change your settings and frequency of emails from your acccount page"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                android:paddingTop="3dip"
+                android:paddingBottom="5dip" />
+
+            <LinearLayout
+                android:id="@+id/notification_categoriescontainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!-- Freeze button -->
+
+    <Button
+        android:id="@+id/notification_freeze"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/qrcode_transparent"
+        android:visibility="gone" />
+
+</RelativeLayout>

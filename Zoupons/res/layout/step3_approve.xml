@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/app"
+    		  android:layout_width="fill_parent" android:layout_height="fill_parent" 
+    		  android:orientation="vertical" android:background="@color/white">
+	<RelativeLayout android:id="@+id/step3_tabBar" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:layout_alignParentTop="true">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" 
+					  android:layout_alignParentRight="true" android:background="@drawable/header_2">
+        	<ImageView android:id="@+id/BtnSlide" android:layout_width="wrap_content" 
+        			   android:layout_height="fill_parent" android:background="@drawable/header_1"/>
+            <LinearLayout android:id="@+id/approve_logout_container" android:layout_width="fill_parent" 
+        			  	  android:layout_height="fill_parent" android:gravity="right">		   		  
+            	<ImageView android:id="@+id/approve_logout_btn" android:layout_width="wrap_content" 
+            			   android:layout_height="fill_parent" android:src="@drawable/logout_main"
+            			   android:paddingRight="5dip"/>	   	  
+            </LinearLayout>		   
+        </LinearLayout>    	       		
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/step3_approve" android:layout_width="fill_parent"
+					android:layout_height="fill_parent" android:layout_below="@id/step3_tabBar"
+					android:visibility="visible" android:background="@drawable/custombackground">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  android:orientation="vertical" android:layout_alignParentTop="true"
+					  android:visibility="visible">
+			<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+						android:scrollbars="none">		  
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+					  	  android:orientation="vertical" android:visibility="visible">		  
+			<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+						  android:layout_height="fill_parent" android:paddingLeft="5dip"
+						  android:paddingRight="5dip" android:paddingTop="5dip" 
+						  android:gravity="center" android:id="@+id/step3_zpaybar">
+				<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+							  android:orientation="vertical" android:gravity="center"
+							  android:layout_weight="1" android:paddingBottom="5dip">
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/step1_hover" android:id="@+id/step3_search_image"
+							   android:visibility="gone"/>
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							  android:text="@string/ZPay_Search" android:id="@+id/step3_search_txt"
+							  android:textColor="@color/step_font_color" android:textSize="12sp"
+							  android:textStyle="bold"/>		  
+				</LinearLayout>
+				<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+							  android:gravity="center" android:paddingBottom="15dip">
+					<ImageView android:src="@drawable/arrow" android:layout_width="wrap_content"
+							   android:layout_height="wrap_content"/>			  
+				</LinearLayout>
+				<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+							  android:orientation="vertical" android:gravity="center"
+							  android:layout_weight="0.5" android:paddingBottom="5dip">
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/step2_hover" android:id="@+id/step3_choosecard_image"
+							   android:visibility="gone"/>
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							  android:text="@string/ZPay_ChooseCard" android:id="@+id/step3_choosecard_txt"
+							  android:textColor="@color/step_font_color" android:textSize="12sp"
+							  android:textStyle="bold"/>		  
+				</LinearLayout>
+				<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+							  android:gravity="center" android:paddingBottom="15dip">
+					<ImageView android:src="@drawable/arrow" android:layout_width="wrap_content"
+							   android:layout_height="wrap_content"/>			  
+				</LinearLayout>
+				<LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+							  android:orientation="vertical" android:gravity="center"
+							  android:layout_weight="1" android:paddingBottom="5dip">
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							   android:src="@drawable/step3_hover" android:id="@+id/step3_approve_image"
+							   android:visibility="gone"/>
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							  android:text="@string/ZPay_Approve" android:id="@+id/step3_approve_txt"
+							  android:textSize="12sp" android:textColor="@color/step_font_color"
+							  android:textStyle="bold"/>		  
+				</LinearLayout>		  
+			</LinearLayout>
+			<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+						  android:orientation="vertical" android:padding="5dip"
+						  android:id="@+id/step3_details">
+					<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+							      android:orientation="vertical" android:background="@drawable/border_new"
+							      android:padding="1dip">
+						<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+									  android:paddingLeft="20dip" android:paddingRight="20dip"
+									  android:paddingTop="5dip" android:paddingBottom="5dip"
+									  android:orientation="vertical">
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:layout_weight="1">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+										  	  android:text="Store Name" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+									 		  android:layout_weight="0.5" android:id="@+id/step3_storename"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="McDee's Store" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+											  android:id="@+id/step3_storename_value" android:paddingRight="10dip"
+											  android:visibility="gone"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+										  	  android:text="Card &amp; Digit" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+									 		  android:layout_weight="0.5" android:id="@+id/step3_cardanddigit"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="****-****-****-4321" android:textSize="15dip"
+											  android:textColor="@color/black"  android:textStyle="bold"
+											  android:id="@+id/step3_cardanddigit_value" android:paddingRight="10dip"
+											  android:visibility="gone"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+										  	  android:text="Amount" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+									 		  android:layout_weight="0.5" android:id="@+id/step3_amount"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="100.00" android:textSize="15dip"
+											  android:textColor="@color/black"  android:textStyle="bold"
+											  android:id="@+id/step3_amount_value" android:paddingRight="10dip"
+											  android:visibility="gone"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+										  	  android:text="Tip" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+									 		  android:layout_weight="0.5" android:id="@+id/step3_tip"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="abcd" android:textSize="15dip"
+											  android:textColor="@color/black"  android:textStyle="bold"
+											  android:id="@+id/step3_tip_value" android:paddingRight="10dip"
+											  android:visibility="gone"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="5dip"/>
+								<TextView android:layout_width="fill_parent" android:layout_height="1dip"
+										  android:background="@color/black"/>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal" android:visibility="visible">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="Total" android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"
+											  android:layout_weight="1" android:id="@+id/step3_total"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text="abcd" android:textSize="15dip"
+											  android:textColor="@color/black"  android:textStyle="bold"
+											  android:id="@+id/step3_total_value" android:paddingRight="10dip"
+											  android:visibility="gone"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal" android:visibility="visible">
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+									  		  android:text="Pin" android:textSize="15dip"
+									  		  android:textColor="@color/black" android:textStyle="bold"
+									  		  android:layout_weight="1" android:id="@+id/step3_pin"/>
+									<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+											  android:text=" " android:textSize="15dip"
+											  android:textColor="@color/black" android:textStyle="bold"/>
+									<EditText android:layout_width="100dip" android:layout_height="wrap_content"
+											  android:textSize="15dip" android:textColor="@color/black"
+											  android:id="@+id/step3_pin_value" android:singleLine="true"/>
+								</LinearLayout>
+								<TextView android:layout_width="fill_parent" android:layout_height="10dip"/>		  
+								<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+											  android:orientation="horizontal" android:gravity="center">
+									<Button android:layout_width="100dip" android:layout_height="40dip"
+											android:textSize="15dip" android:textColor="@color/black"
+											android:text="Authorize" android:background="@drawable/buttonhover"
+											android:id="@+id/step3_authorize" android:textStyle="bold"/>		  
+								</LinearLayout>								
+						</LinearLayout>
+					</LinearLayout>	  
+			</LinearLayout>
+			</LinearLayout>
+			</ScrollView>
+		</LinearLayout>
+	</RelativeLayout>
+
+	<!-- Freeze Step3 Approve -->
+	<Button android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:id="@+id/approve_freeze" android:visibility="gone"
+			android:background="@color/qrcode_transparent"/>	
+</RelativeLayout>

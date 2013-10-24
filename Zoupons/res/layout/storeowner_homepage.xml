@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/storeowner_homepage_app"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="2dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="5dip"
+        android:background="@color/custombackground" >
+
+        <LinearLayout
+            android:id="@+id/storeowner_homepage_header"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/registration_contactinformation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/applogo" />
+
+                <TextView
+                    android:id="@+id/registration_usermessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dream Big, Shop Small"
+                    android:textColor="@color/black"
+                    android:textSize="13dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="10dip" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/black"
+                    android:text=" " />
+            </LinearLayout>
+
+            <!-- Enter as customer -->
+
+            <LinearLayout
+                android:id="@+id/storeowner_homepage_middleview1_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dip" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="1dp"
+                    android:text="Enter as customer :"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <Button
+                    android:id="@+id/storeowner_homepage_customeraccount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/buttonhover_new"
+                    android:text="Customer Account"
+                    android:padding="10dip" />
+
+                 <!-- Store Information Container -->
+
+                <LinearLayout
+                    android:id="@+id/storeowner_homepage_storeinfo_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:text="Enter here to modify store level information : "
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dip" />
+
+                    <Button
+                        android:id="@+id/storeowner_homepage_storeinformation"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/buttonhover_new"
+                        android:text="Store Information"
+                        android:padding="10dip"
+                        android:visibility="gone" />
+
+                    
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Store Location List View -->
+
+            <LinearLayout
+                android:id="@+id/storeowner_homepage_middleview2_container"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="5dip" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="1dp"
+                    android:text="Select any of your store locations here : "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="5dip" />
+
+                <ListView
+                    android:id="@+id/storeowner_homepage_listview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="#00000000"
+                    android:clickable="true"
+                    android:divider="@color/custombackground"
+                    android:dividerHeight="10dip"
+                    android:drawSelectorOnTop="false"
+                    android:padding="3dip" >
+                </ListView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

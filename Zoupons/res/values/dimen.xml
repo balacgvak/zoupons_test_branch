@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gridview">60dp</dimen>
+    <dimen name="addPhotofont">4sp</dimen>
+    <dimen name="cancelbuttonwidth">100dip</dimen>
+    <dimen name="cancelbuttonheight">45dip</dimen>
+    <dimen name="generalinfo_storelogo_width">250dip</dimen>
+    <dimen name="generalinfo_storelogo_height">150dip</dimen>
+</resources>

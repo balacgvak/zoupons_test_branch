@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter note details"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/notes_value"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Enter notes"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="5"
+        android:gravity="top"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/notes_save_buttonId"
+        android:layout_width="65dip"
+        android:layout_height="40dip"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonhover"
+        android:padding="10dip"
+        android:text="Save"
+        android:textColor="@color/black" />
+
+</LinearLayout>

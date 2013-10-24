@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/border">
+
+    <ImageView
+        android:id="@+id/social_netwoking_logo_id"
+        android:layout_width="100dip"
+        android:layout_height="45dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="3dp" />
+
+    <TextView
+        android:id="@+id/social_netwoking_friends_count_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/social_netwoking_logo_id"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/social_netwoking_friends_lastupdate_id"
+        android:layout_below="@id/social_netwoking_friends_count_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_alignLeft="@id/social_netwoking_friends_count_id"
+        android:layout_toLeftOf="@+id/social_netwoking_friends_importId"
+        />
+
+    <Button
+        android:id="@+id/social_netwoking_friends_importId"
+        android:layout_width="100dip"
+        android:layout_height="45dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/buttonhover"
+        android:text="Import"
+        android:layout_marginRight="5dp" />
+
+</RelativeLayout>
