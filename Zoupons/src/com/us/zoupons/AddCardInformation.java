@@ -84,6 +84,7 @@ import com.us.zoupons.zpay.NormalPaymentAsyncTask;
  */
 public class AddCardInformation extends Activity implements TextWatcher {
 
+	
 	public static final String TAG = "AddCardInformation";
 	public static MyHorizontalScrollView scrollView;
 	public static View leftMenu;
@@ -162,6 +163,9 @@ public class AddCardInformation extends Activity implements TextWatcher {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		Log.i("changes", "updating changes in branch_1.04");
+		
+		
 		LayoutInflater inflater = LayoutInflater.from(this);
 		scrollView=(MyHorizontalScrollView) inflater.inflate(R.layout.horz_scroll_with_list_menu, null);
 		setContentView(scrollView);
