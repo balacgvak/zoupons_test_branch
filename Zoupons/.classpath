@@ -10,6 +10,7 @@
 	<classpathentry kind="lib" path="libs/google-play-services.jar"/>
 	<classpathentry kind="lib" path="libs/annotations.jar"/>
 	<classpathentry kind="lib" path="libs/card.io.jar"/>
+	<classpathentry kind="lib" path="libs/facebooksdk.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="output" path="bin/classes"/>
