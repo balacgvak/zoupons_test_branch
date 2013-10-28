@@ -163,9 +163,9 @@ public class AddCardInformation extends Activity implements TextWatcher {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Log.i("changes", "updating changes in branch_last");
-		
-		
+
+		Log.i("changes", "updating changes in test test");
+	
 		LayoutInflater inflater = LayoutInflater.from(this);
 		scrollView=(MyHorizontalScrollView) inflater.inflate(R.layout.horz_scroll_with_list_menu, null);
 		setContentView(scrollView);
