@@ -163,7 +163,7 @@ public class AddCardInformation extends Activity implements TextWatcher {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Log.i("changes", "updating changes in test");
+		Log.i("changes", "updating changes in test..");
 		
 		
 		LayoutInflater inflater = LayoutInflater.from(this);
