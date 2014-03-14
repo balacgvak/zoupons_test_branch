@@ -183,6 +183,7 @@
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
                 android:background="@color/menubarsplitter"
+                android:orientation="vertical"
                 android:visibility="visible" />
 
             <LinearLayout
@@ -223,7 +224,7 @@
                         android:singleLine="true"
                         android:text="QR CODE"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -232,6 +233,7 @@
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
                 android:background="@color/menubarsplitter"
+                android:orientation="vertical"
                 android:visibility="invisible" />
 
             <LinearLayout
@@ -281,6 +283,7 @@
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
                 android:background="@color/menubarsplitter"
+                android:orientation="vertical"
                 android:visibility="invisible" />
 
             <LinearLayout
@@ -354,6 +357,7 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/buttonhover"
                 android:text="Cancel"
+                android:layout_marginLeft="7dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -364,6 +368,7 @@
                 android:layout_height="@dimen/cancelbuttonheight"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
                 android:background="@drawable/buttonhover"
                 android:text="Send"
                 android:textColor="@color/black"

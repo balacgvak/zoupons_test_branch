@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -15,18 +16,25 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.us.zoupons.NetworkCheck;
-import com.us.zoupons.WebService.ZouponsParsingClass;
-import com.us.zoupons.WebService.ZouponsWebService;
-import com.us.zoupons.invoice.InvoiceApproval;
+import com.us.zoupons.shopper.invoice.InvoiceApproval;
+import com.us.zoupons.shopper.webService.ZouponsParsingClass;
+import com.us.zoupons.shopper.webService.ZouponsWebService;
+import com.us.zoupons.storeowner.customercenter.CustomerCenter;
 import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
 import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
+
+/**
+ * 
+ * Asynchronous task to communicate with server to raise invoice for active customers 
+ *
+ */
 
 public class SendInvoiceTask extends AsyncTask<String, String, String>{
 
 	private InvoiceCenter mContext;
 	private NetworkCheck mConnectionAvailabilityChecking=null;
-	private StoreownerWebserivce zouponswebservice=null;
-	private StoreownerParsingclass parsingclass=null;
+	private StoreownerWebserivce mZouponswebservice=null;
+	private StoreownerParsingclass mParsingclass=null;
 	private ZouponsWebService Customerzouponswebservice = null;
 	private ZouponsParsingClass Customerparsingclass = null;
 	private ProgressDialog progressdialog=null;
@@ -41,8 +49,8 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 		this.mEventFlag = EventFlag;
 		this.mClassName = classname;
 		mConnectionAvailabilityChecking= new NetworkCheck();
-		zouponswebservice= new StoreownerWebserivce(context);
-		parsingclass= new StoreownerParsingclass(this.mContext);
+		mZouponswebservice= new StoreownerWebserivce(context);
+		mParsingclass= new StoreownerParsingclass(this.mContext);
 		Customerzouponswebservice= new ZouponsWebService(context);
 		Customerparsingclass= new ZouponsParsingClass(context);
 		progressdialog=new ProgressDialog(context);
@@ -63,12 +71,12 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 					String user_id = mPrefs.getString("user_id", "");
 					String user_type = mPrefs.getString("user_type", "");
 					if(params[5].equalsIgnoreCase("ZouponsCustomer")){
-						mResponse=zouponswebservice.raise_Invoice(user_id, params[0], user_type, params[1], location_id, params[2], params[3],params[4]);	
+						mResponse=mZouponswebservice.raise_Invoice(user_id, params[0], user_type, params[1], location_id, params[2], params[3],params[4]);	
 					}else{
-						mResponse=zouponswebservice.raise_Invoice(user_id, params[0], user_type, params[1], location_id, params[2], params[3],params[4]);
+						mResponse=mZouponswebservice.raise_Invoice(user_id, params[0], user_type, params[1], location_id, params[2], params[3],params[4]);
 					}
 					if(!mResponse.equalsIgnoreCase("noresponse") && !mResponse.equalsIgnoreCase("failure")){
-						String mParsingResponse = parsingclass.parseRaiseInvoice(mResponse);
+						String mParsingResponse = mParsingclass.parseRaiseInvoice(mResponse);
 						if(!mParsingResponse.equals("failure") && !mParsingResponse.equals("no records")){
 							result = mParsingResponse;
 						}else if(mParsingResponse.equalsIgnoreCase("failure")){
@@ -119,8 +127,6 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 			if(progressdialog != null && progressdialog.isShowing()){
 				progressdialog.dismiss();
 			}
-			Log.i("Task", "onPOstExecute");		
-
 			if(result.equals("nonetwork")){
 				Toast.makeText(mContext, "No Network Connection", Toast.LENGTH_SHORT).show();
 			}else if(result.equals("Response Error.")){
@@ -137,7 +143,7 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 				}else{
 					if(InvoiceApproval.mRejectInvoiceMessage.equalsIgnoreCase("Failure")){
 						alertBox_service("Information", "Failed to Reject Invoice.");
-					}else if(InvoiceApproval.mRejectInvoiceMessage.equalsIgnoreCase("Success")){
+					}else if(InvoiceApproval.mRejectInvoiceMessage.equalsIgnoreCase("Invoice Rejected")){
 						alertBox_service("Information", "Invoice Rejected Sucessfully.");
 					}else{
 						alertBox_service("Information", InvoiceApproval.mRejectInvoiceMessage);
@@ -153,10 +159,10 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 
 	@Override
 	protected void onPreExecute() {
+		super.onPreExecute();
 		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
 		//Start a status dialog
 		progressdialog = ProgressDialog.show(mContext,"Loading...","Please Wait!",true);
-		super.onPreExecute();
 	}
 
 	@Override
@@ -164,6 +170,7 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
 		super.onProgressUpdate(values);
 	}
 
+	// To show alert pop up with respective message
 	private void alertBox_service(String title,final String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);
 		service_alert.setTitle(title);
@@ -177,10 +184,13 @@ public class SendInvoiceTask extends AsyncTask<String, String, String>{
                 	if(mClassName.equalsIgnoreCase("Invoice")){
                 		mTelephoneLayout.setVisibility(View.VISIBLE);
                     	mAddInvoiceLayout.setVisibility(View.GONE);	
+                	}else if(mClassName.equalsIgnoreCase("CustomerCenter")){
+                		Intent intent_rightmenuCustomercenter = new Intent().setClass(mContext,CustomerCenter.class);
+        				intent_rightmenuCustomercenter.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        				mContext.startActivity(intent_rightmenuCustomercenter);	
                 	}else{
                 		mContext.finish();
                 	}
-                	
                 }else if(msg.equalsIgnoreCase("Invoice Rejected Sucessfully.")){
                 	mContext.updateViews();
                 }

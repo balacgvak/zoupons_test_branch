@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".AddCardInformation" >
+    tools:context=".AddCreditCard" >
 
     <RelativeLayout
         android:id="@+id/header_id"
@@ -638,6 +638,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
 
         <LinearLayout
@@ -685,6 +686,7 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -733,6 +735,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="visible" />
 

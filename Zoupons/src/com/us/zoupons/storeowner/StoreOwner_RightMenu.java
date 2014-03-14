@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.AsyncTask.Status;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,61 +15,58 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.us.zoupons.ManageCards;
 import com.us.zoupons.R;
-import com.us.zoupons.FlagClasses.MenuOutClass;
-import com.us.zoupons.receipts.Receipts;
-import com.us.zoupons.storeowner.Coupons.StoreOwnerAdd_EditCoupon;
-import com.us.zoupons.storeowner.Coupons.StoreOwnerCoupons;
-import com.us.zoupons.storeowner.Employees.StoreOwner_Employees;
-import com.us.zoupons.storeowner.GeneralScrollingClass.StoreOwnerClickListenerForScrolling;
-import com.us.zoupons.storeowner.Info.StoreOwner_Info;
-import com.us.zoupons.storeowner.Locations.StoreOwner_Locations;
-import com.us.zoupons.storeowner.Photos.StoreOwner_Photos;
-import com.us.zoupons.storeowner.Reviews.StoreOwnerReviews;
-import com.us.zoupons.storeowner.communication.StoreOwner_Communication;
-import com.us.zoupons.storeowner.communication.StoreOwner_ContactStore;
+import com.us.zoupons.flagclasses.MenuOutClass;
+import com.us.zoupons.shopper.receipts.Receipts;
+import com.us.zoupons.shopper.wallet.ManageWallets;
+import com.us.zoupons.storeowner.coupons.StoreOwnerAdd_EditCoupon;
+import com.us.zoupons.storeowner.coupons.StoreOwnerCoupons;
 import com.us.zoupons.storeowner.customercenter.StoreEmailComposer;
+import com.us.zoupons.storeowner.customercenter.StoreOwner_chatsupport;
+import com.us.zoupons.storeowner.employees.StoreOwner_Employees;
+import com.us.zoupons.storeowner.generalscrollingclass.StoreOwnerClickListenerForScrolling;
 import com.us.zoupons.storeowner.invoice.InvoiceCenter;
+import com.us.zoupons.storeowner.locations.StoreOwner_Locations;
+import com.us.zoupons.storeowner.photos.StoreOwner_Photos;
+import com.us.zoupons.storeowner.reviews.StoreOwnerReviews;
+import com.us.zoupons.storeowner.store_info.StoreOwner_Info;
 import com.us.zoupons.storeowner.videos.VideosDetails;
+
+/**
+ * 
+ * Class to manage store right menu 
+ *
+ */
 
 public class StoreOwner_RightMenu {
 
-	public LinearLayout mStoreRightMenu_Info,mStoreRightMenu_Locations,mStoreRightMenu_Employees,mStoreRightMenu_Coupons,mStoreRightMenu_Customercenter,mStoreRightMenu_Reviews,mStoreRightMenu_Communication,mStoreRightMenu_Photos,mStoreRightMenu_Videos,mStoreRightMenu_Billing;
-	public TextView mStoreRightMenu_InfoText,mStoreRightMenu_LocationsText,mStoreRightMenu_EmployeesText,mStoreRightMenu_CouponsText,mStoreRightMenu_CustomercenterText,mStoreRightMenu_ReviewsText,mStoreRightMenu_CommunicationText,mStoreRightMenu_PhotosText,mStoreRightMenu_VideosText,mStoreRightMenu_BillingText,mStoreRightMenu_StoreName,
+	// Initializing views,view groups and variables
+	private LinearLayout mStoreRightMenu_Info,mStoreRightMenu_Locations,mStoreRightMenu_Employees,mStoreRightMenu_Coupons,mStoreRightMenu_Reviews,mStoreRightMenu_Communication,mStoreRightMenu_Photos,mStoreRightMenu_Videos,mStoreRightMenu_Billing;
+	private TextView mStoreRightMenu_InfoText,mStoreRightMenu_LocationsText,mStoreRightMenu_EmployeesText,mStoreRightMenu_CouponsText,mStoreRightMenu_ReviewsText,mStoreRightMenu_CommunicationText,mStoreRightMenu_PhotosText,mStoreRightMenu_VideosText,mStoreRightMenu_BillingText,
 	mStoreCustomerCenterRightMenu_ChatText,mStoreCustomerCenterRightMenu_CouponText,mStoreCustomerCenterRightMenu_InvoiceText,mStoreCustomerCenterRightMenu_TransactionHistoryText;
-	public ImageView mStoreRightMenu_InfoImage,mStoreRightMenu_LocationsImage,mStoreRightMenu_EmployeesImage,mStoreRightMenu_CouponsImage,mStoreRightMenu_CustomercenterImage,mStoreRightMenu_ReviewsImage,mStoreRightMenu_CommunicationImage,mStoreRightMenu_PhotosImage,mStoreRightMenu_VideosImage,mStoreRightMenu_BillingImage,
-	mStoreCustomerCenterRightMenu_ChatImage,mStoreCustomerCenterRightMenu_CouponImage,mStoreCustomerCenterRightMenu_InvoiceImage,mStoreCustomerCenterRightMenu_TransactionHistoryImage;
-	Activity mContext;
-	HorizontalScrollView mScrollView;
-	View mLeftMenu,mRightMenu,mMainView;
-	int mMenuFlag;
-	Button mFreezeView;
-	String mTag;
-	public LinearLayout mStoreCustomerCenterRightMenu_Chat,mStoreCustomerCenterRightMenu_Coupon,mStoreCustomerCenterRightMenu_Invoice,mStoreCustomerCenterRightMenu_TransactionHistory;
-	public LinearLayout mStoreRightMenuContainer,mStoreCustomerCenterRightMenuContainer;
+	private ImageView mStoreRightMenu_InfoImage,mStoreRightMenu_LocationsImage,mStoreRightMenu_EmployeesImage,mStoreRightMenu_CouponsImage,mStoreRightMenu_ReviewsImage,mStoreRightMenu_CommunicationImage,mStoreRightMenu_PhotosImage,mStoreRightMenu_VideosImage,mStoreRightMenu_BillingImage,
+	mStoreCustomerCenterRightMenu_CouponImage,mStoreCustomerCenterRightMenu_InvoiceImage,mStoreCustomerCenterRightMenu_TransactionHistoryImage;
+	private Activity mContext;
+	private HorizontalScrollView mScrollView;
+	private View mLeftMenu;
+	private int mMenuFlag;
+	private Button mFreezeView;
+	private String mTag;
+	private LinearLayout mStoreCustomerCenterRightMenu_Chat,mStoreCustomerCenterRightMenu_Coupon,mStoreCustomerCenterRightMenu_Invoice,mStoreCustomerCenterRightMenu_TransactionHistory;
 	public static TextView mStoreRightMenu_EmailText;
 	public static ImageView mStoreRightMenu_EmailImage;
 	public static LinearLayout mStoreCustomerCenterRightMenu_Mail;
 	public static String mCustomer_id="",mCustomer_FirstName="",mCustomer_LastName="",mCustomer_ProfileImage="",IsFavouriteStoreRemoved="";
 	private TextView mStoreName,mStoreLocationName;
-	Typeface mZouponsFont;
+	private Typeface mZouponsFont;
 
 	public StoreOwner_RightMenu(Activity context,HorizontalScrollView scrollView, View leftmenu, View rightmenu,int menuflag,Button freezeview,String tag) {
 		this.mContext = context;
 		this.mScrollView=scrollView;
 		this.mLeftMenu=leftmenu;
-		this.mRightMenu=rightmenu;
 		this.mMenuFlag=menuflag;
 		this.mFreezeView=freezeview;
 		this.mTag=tag;
-
-		if(StoreOwner_Photos.storePhotoLoaderAsyncTask!=null){
-			if(StoreOwner_Photos.storePhotoLoaderAsyncTask.getStatus()==Status.RUNNING){
-				StoreOwner_Photos.storePhotoLoaderAsyncTask.cancel(true);
-				StoreOwner_Photos.storePhotoLoaderAsyncTask=null;
-			}
-		}
 	}
 
 	public View intializeInflater(){
@@ -81,8 +77,8 @@ public class StoreOwner_RightMenu {
 		return rightCustomerCenterInflater();
 	}
 
+	// Initializing right menu items
 	private View rightMenuInflater(){
-
 		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View mRightMenuItems = inflater.inflate(R.layout.rightmenu_store, null);
 		try{
@@ -115,7 +111,6 @@ public class StoreOwner_RightMenu {
 			mStoreRightMenu_PhotosImage = (ImageView) mRightMenuItems.findViewById(R.id.store_rightmenu_photosimage);
 			mStoreRightMenu_VideosImage = (ImageView) mRightMenuItems.findViewById(R.id.store_rightmenu_videoimage);
 			mStoreRightMenu_BillingImage = (ImageView) mRightMenuItems.findViewById(R.id.store_rightmenu_Billingimage);
-			mStoreRightMenuContainer = (LinearLayout) mRightMenuItems.findViewById(R.id.store_rightmenu_container);
 			mZouponsFont=Typeface.createFromAsset(mContext.getAssets(), "helvetica.ttf");
 			mStoreRightMenu_InfoText.setTypeface(mZouponsFont);
 			mStoreRightMenu_LocationsText.setTypeface(mZouponsFont);
@@ -128,26 +123,25 @@ public class StoreOwner_RightMenu {
 			mStoreRightMenu_BillingText.setTypeface(mZouponsFont);
 			// to get user type from preference
 			SharedPreferences mPrefs = mContext.getSharedPreferences("StoreDetailsPrefences", Context.MODE_PRIVATE);
-			String user_type = mPrefs.getString("user_type", "");
 			mStoreName.setText(mPrefs.getString("store_name", ""));
 			mStoreLocationName.setText(mPrefs.getString("store_location_address", ""));
-			if(user_type.equalsIgnoreCase("store_employee")){
-				enable_disableMenu(mContext, mStoreRightMenu_Info, mStoreRightMenu_InfoText,mStoreRightMenu_InfoImage,mPrefs.getString("information_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Locations, mStoreRightMenu_LocationsText,mStoreRightMenu_LocationsImage,mPrefs.getString("locations_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Coupons, mStoreRightMenu_CouponsText,mStoreRightMenu_CouponsImage,mPrefs.getString("coupons_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Reviews, mStoreRightMenu_ReviewsText,mStoreRightMenu_ReviewsImage,mPrefs.getString("reviews_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Communication, mStoreRightMenu_CommunicationText,mStoreRightMenu_CommunicationImage,mPrefs.getString("communication_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Employees, mStoreRightMenu_EmployeesText,mStoreRightMenu_EmployeesImage,mPrefs.getString("employees_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Photos,mStoreRightMenu_PhotosText,mStoreRightMenu_PhotosImage,mPrefs.getString("photos_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Videos, mStoreRightMenu_VideosText,mStoreRightMenu_VideosImage,mPrefs.getString("videos_access", ""));
-				enable_disableMenu(mContext, mStoreRightMenu_Billing, mStoreRightMenu_BillingText,mStoreRightMenu_BillingImage,mPrefs.getString("billing_access", ""));
-			}
+			// Enabling and disabling based upon store type and employee permission 
+			enable_disableMenu(mContext, mStoreRightMenu_Info, mStoreRightMenu_InfoText,mStoreRightMenu_InfoImage,mPrefs.getString("information_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Locations, mStoreRightMenu_LocationsText,mStoreRightMenu_LocationsImage,mPrefs.getString("locations_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Coupons, mStoreRightMenu_CouponsText,mStoreRightMenu_CouponsImage,mPrefs.getString("coupons_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Reviews, mStoreRightMenu_ReviewsText,mStoreRightMenu_ReviewsImage,mPrefs.getString("reviews_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Communication, mStoreRightMenu_CommunicationText,mStoreRightMenu_CommunicationImage,mPrefs.getString("communication_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Employees, mStoreRightMenu_EmployeesText,mStoreRightMenu_EmployeesImage,mPrefs.getString("employees_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Photos,mStoreRightMenu_PhotosText,mStoreRightMenu_PhotosImage,mPrefs.getString("photos_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Videos, mStoreRightMenu_VideosText,mStoreRightMenu_VideosImage,mPrefs.getString("videos_access", ""));
+			enable_disableMenu(mContext, mStoreRightMenu_Billing, mStoreRightMenu_BillingText,mStoreRightMenu_BillingImage,mPrefs.getString("billing_access", ""));
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		return mRightMenuItems;
 	}
 
+	/* Customercenter right menu initialization */
 	private View rightCustomerCenterInflater(){
 		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View mRightMenuItems = inflater.inflate(R.layout.storeowner_customercenter_rightmenu, null);
@@ -176,8 +170,7 @@ public class StoreOwner_RightMenu {
 		// to get email enable status from preference
 		SharedPreferences mPrefs = mContext.getSharedPreferences("StoreDetailsPrefences", Context.MODE_PRIVATE);
 		String email_enable_status = mPrefs.getString("email_status", "");
-		String user_type = mPrefs.getString("user_type", "");
-		if(email_enable_status.equalsIgnoreCase("no")){
+		if(email_enable_status.equalsIgnoreCase("no")){ 
 			mStoreCustomerCenterRightMenu_Mail.setBackgroundColor(mContext.getResources().getColor(R.color.translucent_white));
 			mStoreRightMenu_EmailText.setTextColor(Color.GRAY);
 			mStoreRightMenu_EmailImage.setAlpha(100);
@@ -188,32 +181,32 @@ public class StoreOwner_RightMenu {
 			mStoreRightMenu_EmailImage.setAlpha(255);
 			mStoreCustomerCenterRightMenu_Mail.setEnabled(true);
 		}
-
-		if(user_type.equalsIgnoreCase("store_employee")){
-			enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_Coupon, mStoreCustomerCenterRightMenu_CouponText,mStoreCustomerCenterRightMenu_CouponImage,mPrefs.getString("coupons_access", ""));
-			enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_Invoice, mStoreCustomerCenterRightMenu_InvoiceText,mStoreCustomerCenterRightMenu_InvoiceImage,mPrefs.getString("invoice_center_access", ""));
-			enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_TransactionHistory, mStoreCustomerCenterRightMenu_TransactionHistoryText,mStoreCustomerCenterRightMenu_TransactionHistoryImage,mPrefs.getString("point_of_sale_access", ""));
-		}
+		enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_Coupon, mStoreCustomerCenterRightMenu_CouponText,mStoreCustomerCenterRightMenu_CouponImage,mPrefs.getString("coupons_access", ""));
+		enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_Invoice, mStoreCustomerCenterRightMenu_InvoiceText,mStoreCustomerCenterRightMenu_InvoiceImage,mPrefs.getString("invoice_center_access", ""));
+		enable_disableMenu(mContext, mStoreCustomerCenterRightMenu_TransactionHistory, mStoreCustomerCenterRightMenu_TransactionHistoryText,mStoreCustomerCenterRightMenu_TransactionHistoryImage,mPrefs.getString("point_of_sale_access", ""));
 		return mRightMenuItems;
 	}
 
 	public void clickListener(View leftmenu,View rightmenu){
 
 		this.mLeftMenu=leftmenu;
-		this.mRightMenu=rightmenu;
 
 		mStoreRightMenu_Info.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Info")){
+				stopChatTimerIfRunning(); // To stop communication timer if running
+				if(mTag.equalsIgnoreCase("StoreOwner_Info")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else {  // Launch store informatin activity if we click INFO from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_rightmenuinfo = new Intent().setClass(mContext.getApplicationContext(),StoreOwner_Info.class);
+					intent_rightmenuinfo.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_rightmenuinfo);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -221,14 +214,18 @@ public class StoreOwner_RightMenu {
 
 			@Override
 			public void onClick(View v) {
+				stopChatTimerIfRunning(); // To stop communication timer if running
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Locations")){
+				if(mTag.equalsIgnoreCase("StoreOwner_Locations")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch locations activity if we click Locations from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_locations = new Intent().setClass(mContext.getApplicationContext(),StoreOwner_Locations.class);
+					intent_locations.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_locations);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -237,13 +234,16 @@ public class StoreOwner_RightMenu {
 
 			@Override
 			public void onClick(View v) {
+				stopChatTimerIfRunning(); // To stop communication timer if running
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwnerCoupons")){
+				if(mTag.equalsIgnoreCase("StoreOwnerCoupons")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch Coupons activity if we click COUPONS from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_rightmenucoupons = new Intent().setClass(mContext.getApplicationContext(),StoreOwnerCoupons.class);
+					intent_rightmenucoupons.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_rightmenucoupons);
+					mContext.finish();
 				}
 			}
 		});
@@ -252,14 +252,18 @@ public class StoreOwner_RightMenu {
 
 			@Override
 			public void onClick(View v) {
+				stopChatTimerIfRunning(); // To stop communication timer if running
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwnerReviews")){
+				if(mTag.equalsIgnoreCase("StoreOwnerReviews")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch StoreReviews activity if we click REVIEWS from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_rightmenureviews = new Intent().setClass(mContext.getApplicationContext(),StoreOwnerReviews.class);
+					intent_rightmenureviews.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_rightmenureviews);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -268,15 +272,19 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Communication")){
+				if(mTag.equalsIgnoreCase("StoreOwner_chatsupport") || mTag.equalsIgnoreCase("StoreOwner_TalkToUs")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu/*, mRightMenu*/, mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch zoupons support activity if we click ZOUPONS SUPPORT from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
-					Intent intent_talktous = new Intent(mContext,StoreOwner_ContactStore.class);
+					Intent intent_talktous = new Intent(mContext,StoreOwner_chatsupport.class);
+					intent_talktous.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					intent_talktous.putExtra("source", "talk_to_us");
 					intent_talktous.putExtra("class_name", "talk_to_us");
 					mContext.startActivity(intent_talktous);
+					stopChatTimerIfRunning(); // To stop communication timer if running
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -285,13 +293,17 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Employees")){
+				stopChatTimerIfRunning(); // To stop communication timer if running
+				if(mTag.equalsIgnoreCase("StoreOwner_Employees")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch employee activity if we click EMPLOYEE from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_employees = new Intent().setClass(mContext.getApplicationContext(),StoreOwner_Employees.class);
+					intent_employees.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_employees);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -300,13 +312,17 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Photos")){
+				stopChatTimerIfRunning(); // To stop communication timer if running
+				if(mTag.equalsIgnoreCase("StoreOwner_Photos")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch store photos activity if we click PHOTOS from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_photos = new Intent(mContext,StoreOwner_Photos.class);
+					intent_photos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_photos);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -315,13 +331,17 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwnerVideos")){
+				stopChatTimerIfRunning(); // To stop communication timer if running
+				if(mTag.equalsIgnoreCase("StoreOwnerVideos")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch store video activity if we click VIDEOS from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_videos = new Intent(mContext,VideosDetails.class);
+					intent_videos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					mContext.startActivity(intent_videos);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -330,14 +350,18 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_Billing")){
+				stopChatTimerIfRunning(); // To stop communication timer if running
+				if(mTag.equalsIgnoreCase("ManageWallets")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else {
+				}else { // Launch Billings activity if we click BILLINGS from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
-					Intent intent_rightmenuBilling = new Intent(mContext,ManageCards.class);
+					Intent intent_rightmenuBilling = new Intent(mContext,ManageWallets.class);
+					intent_rightmenuBilling.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 					intent_rightmenuBilling.putExtra("FromStoreOwnerBilling", true);
 					mContext.startActivity(intent_rightmenuBilling);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -346,23 +370,31 @@ public class StoreOwner_RightMenu {
 	public void customercentermenuClickListener(View leftmenu,View rightmenu){
 
 		this.mLeftMenu=leftmenu;
-		this.mRightMenu=rightmenu;
 
 		mStoreCustomerCenterRightMenu_Chat.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_ContactStore")){
+				if(mTag.equalsIgnoreCase("StoreOwner_chatsupport")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else{
+				}else{ // Launch Contact customer activity if we click INITIATE CHAT from other activitys
+					if(StoreOwner_chatsupport.sCommunicationTimer!=null){ // To cancel chat timer
+						StoreOwner_chatsupport.sCommunicationTimer.cancel();
+						StoreOwner_chatsupport.sCommunicationTimer=null;
+					}if(StoreOwner_chatsupport.sCommunicationTimerTask!=null){
+						StoreOwner_chatsupport.sCommunicationTimerTask.cancel();
+						StoreOwner_chatsupport.sCommunicationTimerTask=null;
+					}
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
-					Intent intent_talktous = new Intent(mContext,StoreOwner_ContactStore.class);
+					Intent intent_talktous = new Intent(mContext,StoreOwner_chatsupport.class);
 					intent_talktous.putExtra("class_name","Contact_store");
 					intent_talktous.putExtra("source", "customercenter");
 					intent_talktous.putExtra("customer_id",StoreOwner_RightMenu.mCustomer_id);
 					mContext.startActivity(intent_talktous);
+					mContext.finish();
 				}
+				
 			}
 		});
 
@@ -371,14 +403,16 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwner_EmailComposer")){
+				if(mTag.equalsIgnoreCase("StoreOwner_EmailComposer")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else{
-					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
+				}else{ // Launch Email composer activity if we click SEND EMAIL from other activitys
+					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT ;
 					Intent intent_sendEmail = new Intent(mContext,StoreEmailComposer.class);
 					intent_sendEmail.putExtra("classname", "StoreEmailComposer");
 					mContext.startActivity(intent_sendEmail);
+					mContext.finish();
 				}
+				stopChatTimerIfRunning(); // To stop communication timer if running
 			}
 		});
 
@@ -387,15 +421,17 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwnerAddCoupon")){
+				if(mTag.equalsIgnoreCase("StoreOwnerAddCoupon")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else{
+				}else{ // Launch send coupon activity if we click SEND COUPON from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_sendCoupon = new Intent(mContext,StoreOwnerAdd_EditCoupon.class);
 					intent_sendCoupon.putExtra("FromCustomerCenter", true);
 					intent_sendCoupon.putExtra("customer_id",StoreOwner_RightMenu.mCustomer_id);
 					mContext.startActivity(intent_sendCoupon);
+					mContext.finish();
 				}
+				stopChatTimerIfRunning(); // To stop communication timer if running
 			}
 		});
 
@@ -404,14 +440,16 @@ public class StoreOwner_RightMenu {
 			@Override
 			public void onClick(View v) {
 				v.setBackgroundResource(R.drawable.gradient_bg_hover);
-				if(mTag.equalsIgnoreCase("StoreOwnerInvoiceCenter")){
+				if(mTag.equalsIgnoreCase("StoreOwnerInvoiceCenter")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else{
+				}else{  // Launch Invoice center activity if we click SEND INVOICE from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					Intent intent_invoicecenter = new Intent(mContext,InvoiceCenter.class);
 					intent_invoicecenter.putExtra("FromCustomerCenter", true);
 					mContext.startActivity(intent_invoicecenter);
+					mContext.finish();
 				}
+				stopChatTimerIfRunning(); // To stop communication timer if running
 			}
 		});
 
@@ -419,26 +457,39 @@ public class StoreOwner_RightMenu {
 
 			@Override
 			public void onClick(View v) {
-				if(mTag.equalsIgnoreCase("Receipts")){
+				if(mTag.equalsIgnoreCase("Receipts")){ // To close sliding menu
 					new StoreOwnerClickListenerForScrolling(mScrollView, mLeftMenu,/* mRightMenu,*/ mMenuFlag, mFreezeView, mTag).toCloseMenu();
-				}else{
+				}else{  // Launch transaction history activity if we click TRANSACTION HISTORY from other activitys
 					MenuOutClass.STOREOWNER_MENUOUT=!MenuOutClass.STOREOWNER_MENUOUT;
 					v.setBackgroundResource(R.drawable.gradient_bg_hover);
 					Intent intent_receipts = new Intent(mContext,Receipts.class);
 					intent_receipts.putExtra("FromStoreOwner_TransactionHistory", true);
 					mContext.startActivity(intent_receipts);
+					mContext.finish();
 				}
+				stopChatTimerIfRunning(); // To stop communication timer if running
 			}
 		});
 	}
 
+	// To enable or disable sliding menu items based upon store type and employee permissions 
 	public void enable_disableMenu(Context context,LinearLayout menu,TextView menutext,ImageView menuimage, String result){
-
 		if(result.equalsIgnoreCase("no")){
 			menu.setBackgroundColor(context.getResources().getColor(R.color.translucent_white));
 			menutext.setTextColor(Color.GRAY);
 			menuimage.setAlpha(100);
 			menu.setEnabled(false);
+		}
+	}
+	
+	// To stop communication timer if running
+	private void stopChatTimerIfRunning(){
+		if(StoreOwner_chatsupport.sCommunicationTimer!=null){ // To cancel chat timer
+			StoreOwner_chatsupport.sCommunicationTimer.cancel();
+			StoreOwner_chatsupport.sCommunicationTimer=null;
+		}if(StoreOwner_chatsupport.sCommunicationTimerTask!=null){
+			StoreOwner_chatsupport.sCommunicationTimerTask.cancel();
+			StoreOwner_chatsupport.sCommunicationTimerTask=null;
 		}
 	}
 }

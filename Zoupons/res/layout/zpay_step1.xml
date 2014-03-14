@@ -22,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:background="@drawable/header_1"
+                android:orientation="vertical"
                 android:gravity="left" />
  
             <RelativeLayout
@@ -138,7 +139,6 @@
             android:id="@+id/step1_searchbar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/step1_tabBar"
             android:background="@color/searchbackground"
             android:visibility="visible" >
 
@@ -261,7 +261,7 @@
                             android:drawableTop="@drawable/qrcode_brown"
                             android:padding="5dip"
                             android:text="QRCode"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -281,7 +281,7 @@
                             android:drawableTop="@drawable/favorites_brown"
                             android:padding="5dip"
                             android:text="Favorites"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -301,7 +301,7 @@
                             android:drawableTop="@drawable/search_brown"
                             android:padding="5dip"
                             android:text="Search"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -320,7 +320,7 @@
                             android:drawableTop="@drawable/map_view_brown"
                             android:padding="5dip"
                             android:text="Map View"
-                            android:textSize="10sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
@@ -519,6 +519,7 @@
                     android:id="@+id/step1_menubar_splitter1"
                     android:layout_width="1dip"
                     android:layout_height="fill_parent"
+                    android:orientation="vertical"
                     android:background="@color/menubarsplitter" />
 
                 <LinearLayout
@@ -564,6 +565,7 @@
                     android:id="@+id/step1_menubar_splitter2"
                     android:layout_width="1dip"
                     android:layout_height="fill_parent"
+                    android:orientation="vertical"
                     android:background="@color/menubarsplitter"
                     android:visibility="gone" />
 
@@ -603,7 +605,7 @@
                             android:singleLine="true"
                             android:text="Receipts"
                             android:textColor="@color/white"
-                            android:textSize="10sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -611,6 +613,7 @@
                     android:id="@+id/step1_menubar_splitter3"
                     android:layout_width="1dip"
                     android:layout_height="fill_parent"
+                    android:orientation="vertical"
                     android:background="@color/menubarsplitter"
                     android:visibility="gone" />
 
@@ -650,7 +653,7 @@
                             android:singleLine="true"
                             android:text="Manage Cards"
                             android:textColor="@color/white"
-                            android:textSize="10sp" />
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

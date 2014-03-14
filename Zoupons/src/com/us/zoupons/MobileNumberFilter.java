@@ -8,7 +8,7 @@ import android.text.Spanned;
 import android.text.method.NumberKeyListener;
 
 /**
- * @author Zoupons
+ * 
  * This class Ensures PhoneNumber Matches XXX-XXX-XXXX format
  */
 public class MobileNumberFilter extends NumberKeyListener{
@@ -21,7 +21,6 @@ public class MobileNumberFilter extends NumberKeyListener{
 		if(end > start){
 			String destTxt = dest.toString();
 			String resultingTxt = destTxt.substring(0, dstart) + source.subSequence(start, end) + destTxt.substring(dend);
-			
 			if(!resultingTxt.matches("^\\d{1,1}(\\d{1,1}(\\d{1,1}(\\-(\\d{1,1}(\\d{1,1}(\\d{1,1}(\\-(\\d{1,1}(\\d{1,1}(\\d{1,1}(\\d{1,1}?)?)?)?)?)?)?)?)?)?)?)?")){
 				return "";
 			}

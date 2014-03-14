@@ -2,19 +2,24 @@ package com.us.zoupons.storeowner.billing;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.view.Window;
 
-import com.us.zoupons.android.listview.inflater.classes.CardOnFiles_Adapter;
+import com.us.zoupons.classvariables.CardOnFiles_ClassVariables;
+import com.us.zoupons.collections.WebServiceStaticArrays;
+import com.us.zoupons.listview_inflater_classes.CardOnFiles_Adapter;
 import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
 import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
 
+/**
+ * 
+ * AsyncTask to communicate with Server for activating Credit card for Billing Purposes
+ *
+ */
 public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object>>{
 
 	private Context context;
@@ -44,10 +49,9 @@ public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object
 	protected void onPreExecute() {
 		// TODO Auto-generated method stub
 		super.onPreExecute();
-		((Activity) context).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
 		//Start a status dialog
 		progressdialog = ProgressDialog.show(context,"Loading..","Please Wait!",true);
-		super.onPreExecute();
+		
 	}
 	
 	@Override
@@ -57,7 +61,7 @@ public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object
 			SharedPreferences mPrefs = context.getSharedPreferences("StoreDetailsPrefences", Context.MODE_PRIVATE);
 			String mUser_id = mPrefs.getString("user_id", "");
 			String mResponse=zouponswebservice.activateCardForBilling(mUser_id, mCreditcardId);
-			if(!mResponse.equals("")){
+			if(!mResponse.equals("")){ 
 				if(!mResponse.equals("failure") && !mResponse.equals("noresponse")){ // Success
 					return parsingclass.parseActivateCreditCardResponse(mResponse);
 				}else{ // service issues
@@ -83,6 +87,16 @@ public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object
 			if(result!=null && result.size() >0){
 				String response =  (String) result.get(0);
 				if(response.equalsIgnoreCase("Credit card Activated.")){
+					// Updating status for credit cards for internal purpose
+					for(int i=0;i<WebServiceStaticArrays.mCardOnFiles.size();i++){
+					   CardOnFiles_ClassVariables mCardDetails = (CardOnFiles_ClassVariables) WebServiceStaticArrays.mCardOnFiles.get(i);
+					   if(mCardDetails.cardId.equalsIgnoreCase(mCreditcardId)){
+					        mCardDetails.status = "active";
+						}else{
+							mCardDetails.status = "Inactive";
+						}
+					   WebServiceStaticArrays.mCardOnFiles.set(i, mCardDetails);
+					 }
 					alertBox_service("Information", "Credit card has been successfully activated");
 				}else{
 					alertBox_service("Information", "Credit card not activated,please try after sometime");
@@ -93,11 +107,12 @@ public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object
 				alertBox_service("Information", "Unable to reach service.");
 			}
 		}catch(Exception e){
-			
+			e.printStackTrace();
 		}
 			
 	}
 	
+	// Funtion to show alert pop up with respective message
 	private void alertBox_service(String title,final String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.context);
 		service_alert.setTitle(title);
@@ -109,6 +124,10 @@ public class ActivateCardTask extends AsyncTask<String, String, ArrayList<Object
 			public void onClick(DialogInterface dialog, int which) {
 				if(msg.equalsIgnoreCase("Credit card has been successfully activated")){
 					CardOnFiles_Adapter.checked_position = checked_position;
+					CardOnFiles_Adapter.previous_checked_position = checked_position;
+					mAdapter.notifyDataSetChanged();
+				}else{
+					CardOnFiles_Adapter.checked_position = CardOnFiles_Adapter.previous_checked_position;
 					mAdapter.notifyDataSetChanged();
 				}
 				dialog.dismiss();

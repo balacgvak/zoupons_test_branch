@@ -31,6 +31,7 @@ import com.us.zoupons.R;
 import com.us.zoupons.android.lib.qrcode.camera.CameraManager;
 import com.us.zoupons.android.lib.qrcode.config.QRCodeLibConfig;
 
+@SuppressWarnings("deprecation")
 public final class CaptureActivity extends Activity implements SurfaceHolder.Callback{
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
@@ -217,7 +218,8 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
      * @param rawResult The contents of the barcode.
      * @param barcode A greyscale bitmap of the camera data which was decoded.
      */
-    public void handleDecode(Result rawResult, Bitmap barcode) {
+    @SuppressWarnings("deprecation")
+	public void handleDecode(Result rawResult, Bitmap barcode) {
         inactivityTimer.onActivity();
 
         beepManager.playBeepSoundAndVibrate();

@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/header_2"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <TextView
             android:id="@+id/friends_leftFooterText"
@@ -150,7 +150,8 @@
             android:text="Import Friends"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:drawableTop="@drawable/import_friends" />
+            android:drawableTop="@drawable/import_friends"
+            android:visibility="visible" />
 
         <View
             android:id="@+id/friendlist_importmenusplitter"
@@ -159,7 +160,8 @@
             android:layout_alignBottom="@id/friends_leftFooterText"
             android:layout_alignTop="@id/friends_leftFooterText"
             android:layout_toLeftOf="@id/friends_import_friends_menuId"
-            android:background="@color/menubarsplitter" />
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
     </RelativeLayout>
 
     <RelativeLayout

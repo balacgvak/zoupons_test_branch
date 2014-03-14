@@ -111,6 +111,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:orientation="vertical"
                             android:paddingBottom="5dip" >
 
                             <TextView
@@ -162,6 +163,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:orientation="vertical"
                             android:paddingBottom="5dip" >
 
                             <TextView
@@ -213,6 +215,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:orientation="vertical"
                             android:paddingBottom="5dip" >
 
                             <TextView
@@ -338,6 +341,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:orientation="vertical"
                                 android:paddingBottom="5dip" >
 
                                 <TextView
@@ -391,6 +395,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:orientation="vertical"
                             android:paddingBottom="5dip" >
 
                             <TextView
@@ -462,7 +467,7 @@
             android:id="@+id/storeowner_addlocations_back"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.25"
             android:gravity="center"
             android:background="@drawable/gradient_menubar_new"
             android:orientation="vertical"
@@ -485,6 +490,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
 
         <LinearLayout
@@ -516,6 +522,7 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -547,6 +554,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="visible" />
 
@@ -554,7 +562,7 @@
             android:id="@+id/storeowner_addlocations_inactivate"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.75"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="2dp"
@@ -566,7 +574,6 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="2dp"
-                android:drawableTop="@drawable/back"
                 android:gravity="center"
                 android:singleLine="false"
                 android:text="InActivate Location"

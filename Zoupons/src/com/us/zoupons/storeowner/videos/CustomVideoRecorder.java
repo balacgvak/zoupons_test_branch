@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
@@ -24,8 +24,6 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
 import android.provider.MediaStore.Video.Thumbnails;
-import android.util.Log;
-import android.view.OrientationEventListener;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -36,42 +34,40 @@ import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.us.zoupons.NetworkCheck;
 import com.us.zoupons.R;
 
+/**
+ * 
+ * Activity which displays custom camera preview to record store videos
+ *
+ */
 
 public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callback{
 
+	// Initializing views and variables
 	private Camera mCamera;
 	private MediaRecorder mMediarecoder;
 	private SurfaceView mPreviewView;
 	private SurfaceHolder mPreviewHolder;
-	private boolean mIsTablet,mIsHandSet;
 	private Button mRecord_StopButton,mPause_Resume_PlayButton,mUploadButton;
 	private TextView mCountDownTimerTextview;
 	private ImageView mVideoThumbnail,mVideoPlay;
-	private float oldDist;
-	private OrientationEventListener myOrientationEventListener;
-	String timeStamp ="";
+	private String mTimeStamp ="";
 	private RelativeLayout mVideoPreviewContainer;
 	private LinearLayout mFooterContainer;
 	private VideoView mVideoPlaybackView;
 	private MediaController mediaController;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.videorecorder);
 		try{
-			boolean xlarge = ((this.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 4);
-			boolean large = ((this.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
-			// Check for handset or tablet so that corresponding rotation is set.
-			if (xlarge == true || large == true) {
-				mIsTablet = true;
-			} else {
-				mIsHandSet = true;
-			}
+			// Referencing view from layout file
 			mPreviewView = (SurfaceView)findViewById(R.id.mSurfaceViewId);
 			mCountDownTimerTextview = (TextView) findViewById(R.id.mCameraPreviewTimerId);
 			mPreviewHolder = mPreviewView.getHolder();
@@ -97,24 +93,24 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 					try{
 						if(mRecord_StopButton.getText().toString().equalsIgnoreCase("Record")){ // Record
 							if (mCamera == null)
-								mCamera = Camera.open();
-							if(mVideoPreviewContainer.getVisibility() == View.VISIBLE){
+								mCamera = Camera.open();  // To open global Camera
+							if(mVideoPreviewContainer.getVisibility() == View.VISIBLE){ // To hide preview container  
 								mPreviewView.setVisibility(View.VISIBLE);
 								mCountDownTimerTextview.setVisibility(View.VISIBLE);
 								mCountDownTimerTextview.setText("00:00");
 								mVideoPreviewContainer.setVisibility(View.GONE);
 								mFooterContainer.setBackgroundColor(0);
-								File file = new File("/sdcard/vid_"+timeStamp+".mp4");
+								File file = new File("/sdcard/vid_"+mTimeStamp+".mp4");
 								if(file != null && file.exists())
 									file.delete();
 								mUploadButton.setVisibility(View.INVISIBLE);
-							}else{
+							}else{ // To start recording
 								if(mPreviewView.getVisibility() == View.GONE){
 									mPreviewView.setVisibility(View.VISIBLE);
 									mCountDownTimerTextview.setVisibility(View.VISIBLE);
 									mVideoPreviewContainer.setVisibility(View.GONE);
 									mFooterContainer.setBackgroundColor(0);
-									File file = new File("/sdcard/vid_"+timeStamp+".mp4");
+									File file = new File("/sdcard/vid_"+mTimeStamp+".mp4");
 									if(file != null && file.exists())
 										file.delete();
 								}
@@ -128,15 +124,22 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 								mMediarecoder.setAudioSource(MediaRecorder.AudioSource.MIC);
 								mMediarecoder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
 								//Step 3: Set a CamcorderProfile (requires API Level 8 or higher)
-								if(android.os.Build.VERSION.SDK_INT < 11){
+								/*if(android.os.Build.VERSION.SDK_INT < 11){
 									mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-								}else{
-									mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_HIGH));
-									//mMediarecoder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
-								}
-								timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+								}else{*/
+									if (CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_480P)) {
+										mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_480P));
+									} else if (CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_CIF)) {
+										mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_CIF));
+									} else if (CamcorderProfile.hasProfile(CamcorderProfile.QUALITY_QCIF)) {
+										mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_QCIF));
+									}else{
+										mMediarecoder.setProfile(CamcorderProfile.get(CamcorderProfile.QUALITY_LOW));
+									}
+								//}
+								mTimeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 								// Step 4: Set output file
-								mMediarecoder.setOutputFile("/sdcard/vid_"+timeStamp+".mp4");
+								mMediarecoder.setOutputFile("/sdcard/vid_"+mTimeStamp+".mp4");
 								// Step 5: Set the preview output
 								mMediarecoder.setPreviewDisplay(mPreviewHolder.getSurface());
 								// Step 6: Prepare configured MediaRecorder
@@ -144,10 +147,10 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 									mMediarecoder.prepare();
 									mCountDownTimer.start();
 								} catch (IllegalStateException e) {
-									Log.d("Video recorder", "IllegalStateException preparing MediaRecorder: " + e.getMessage());
+									e.printStackTrace();
 									releaseMediaRecorder();
 								} catch (IOException e) {
-									Log.d("Video recorder", "IOException preparing MediaRecorder: " + e.getMessage());
+									e.printStackTrace();
 									releaseMediaRecorder();
 								}
 								mMediarecoder.start();
@@ -179,8 +182,13 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 
 				@Override
 				public void onClick(View v) {
-					UploadVideoToServerTask mUploadTask = new UploadVideoToServerTask(CustomVideoRecorder.this, new File("/sdcard/vid_"+timeStamp+".mp4"),"Camera");
-					mUploadTask.execute();
+					
+					if(new NetworkCheck().ConnectivityCheck(CustomVideoRecorder.this)){ // network check..
+						UploadVideoToServerTask mUploadTask = new UploadVideoToServerTask(CustomVideoRecorder.this, new File("/sdcard/vid_"+mTimeStamp+".mp4"),"Camera");
+						mUploadTask.execute();	
+					}else{
+						Toast.makeText(CustomVideoRecorder.this, "Network connection not available", Toast.LENGTH_SHORT).show();
+					}
 				}
 			});
 
@@ -191,7 +199,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 					mVideoPlaybackView.setVisibility(View.VISIBLE);
 					mVideoThumbnail.setVisibility(View.GONE);
 					mVideoPlay.setVisibility(View.GONE);
-					mVideoPlaybackView.setVideoURI(Uri.parse("/sdcard/vid_"+timeStamp+".mp4"));
+					mVideoPlaybackView.setVideoURI(Uri.parse("/sdcard/vid_"+mTimeStamp+".mp4"));
 					mVideoPlaybackView.start();
 				}
 			});
@@ -200,7 +208,6 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 
 				@Override
 				public void onCompletion(MediaPlayer arg0) {
-					Log.i("Dialog", "Dialog Video Completed");
 					mVideoPlaybackView.setVisibility(View.GONE);
 					mVideoThumbnail.setVisibility(View.VISIBLE);
 					mVideoPlay.setVisibility(View.VISIBLE);
@@ -211,6 +218,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 		}
 	}
 
+	// To start countdown timer for 10 seconds 
 	CountDownTimer mCountDownTimer = new CountDownTimer(11000, 1000) {
 		@Override
 		public void onFinish() {
@@ -233,10 +241,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 		super.onResume();
 		// Initializing Camera class
 		if (mCamera == null && mPreviewView.getVisibility() == View.VISIBLE) {
-			Log.i("camera ", "null");
 			mCamera = Camera.open();
-		}else{
-			Log.i("camera ", "not null");
 		}
 	}
 
@@ -266,6 +271,14 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 		if(mCountDownTimer != null)
 			mCountDownTimer.cancel();
 	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		// To notify  system that its time to run garbage collector service
+		System.gc();
+	}
 
 	private void releaseMediaRecorder(){
 		if (mMediarecoder != null) {
@@ -276,6 +289,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 		}
 	}
 
+	/*To stop video recording and release camera resource */
 	private void StopRecording(){
 		try{
 			mMediarecoder.stop();
@@ -294,7 +308,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 			mVideoPreviewContainer.setVisibility(View.VISIBLE);
 			mFooterContainer.setBackgroundColor(getResources().getColor(R.color.custombackground));
 			// To create video thumbnail
-			Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail("/sdcard/vid_"+timeStamp+".mp4",Thumbnails.FULL_SCREEN_KIND);
+			Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail("/sdcard/vid_"+mTimeStamp+".mp4",Thumbnails.FULL_SCREEN_KIND);
 			mVideoThumbnail.setImageBitmap(bmThumbnail);
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -306,7 +320,6 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
-		Log.i("surface call backs", "on surface changed");
 		try{
 			if (mPreviewHolder.getSurface() == null) {
 				return;
@@ -314,7 +327,9 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 			// Setting supported preview size.
 			if(mCamera!=null && mPreviewView.getVisibility() == View.VISIBLE){
 				Camera.Parameters mCameraParameters = mCamera.getParameters();
-				mCameraParameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+				List<String> focusModes = mCameraParameters.getSupportedFocusModes();
+				if (focusModes.contains(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO))
+					mCameraParameters.setFocusMode(Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
 				Camera.Size mCameraSize = getBestSize(width, height, mCameraParameters);
 				if (mCameraSize != null) {
 					mCameraParameters.setPreviewSize(mCameraSize.width,mCameraSize.height);
@@ -329,7 +344,6 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		Log.i("surface call backs", "on surface created");
 		try {
 			if(mCamera!=null && mPreviewView.getVisibility() == View.VISIBLE)
 				mCamera.setPreviewDisplay(mPreviewHolder);
@@ -341,9 +355,7 @@ public class CustomVideoRecorder extends Activity implements SurfaceHolder.Callb
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
-		Log.i("surface call backs", "on surface destroyed");
 	}
-
 
 	// To get best preview screen size.
 	private Size getBestSize(int width, int height, Parameters mCameraParameters) {

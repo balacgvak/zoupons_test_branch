@@ -8,15 +8,18 @@ import java.util.Date;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.widget.EditText;
 
-public class DateValidator implements TextWatcher{
+/**
+ *  class used for validating date as like Paypal cardIO format  
+ */
 
+public class DateValidator implements TextWatcher{
+	
+	// Initialization of views and variables
 	private EditText mExpirationDateValue,mCVVvalue;
 	private boolean mIsForRemove;
 	private Context mContext;
-
 
 	public DateValidator(Context context,EditText expirationdate , EditText cvvValue) {
 		// TODO Auto-generated constructor stub
@@ -32,8 +35,7 @@ public class DateValidator implements TextWatcher{
 	}
 
 	@Override
-	public void beforeTextChanged(CharSequence s, int start, int count,
-			int after) {
+	public void beforeTextChanged(CharSequence s, int start, int count,int after) {
 		// TODO Auto-generated method stub
 
 	}
@@ -41,10 +43,8 @@ public class DateValidator implements TextWatcher{
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		// TODO Auto-generated method stub
-		Log.i("before s", s.toString()+" " + s.toString().length());
 		try{
 			if(!s.toString().equalsIgnoreCase("") && !s.toString().startsWith("0")){  // Check for empty to avoid exception while clearing all text
-
 				if((s.toString().length()>2 && s.toString().length()<=5) && (s.toString().contains("/")|| s.toString().contains(""))){
 					checkForRemoveAndAssignCharacters(s);
 				}else{
@@ -59,39 +59,34 @@ public class DateValidator implements TextWatcher{
 					}else{
 						mIsForRemove = false; // useful for whether to append '/' or not when length is 2
 					}
-					Log.i("after s", s.toString()+" " + s.toString().length());
 					int enteredvalue = Integer.valueOf(s.toString());
-					Log.i("entered value", enteredvalue+"");
-					if(enteredvalue <=1){
+					if(enteredvalue <=1){ // Initial set up
 						mExpirationDateValue.removeTextChangedListener(this);
 						mExpirationDateValue.setText(s.toString());
 						mExpirationDateValue.setSelection(s.toString().length());
 						mExpirationDateValue.setTextColor(mContext.getResources().getColor(R.color.black));
 						mExpirationDateValue.setTag("valid");
 						mExpirationDateValue.addTextChangedListener(this);
-					}else if(enteredvalue > 12 && enteredvalue < 20){
+					}else if(enteredvalue > 12 && enteredvalue < 20){  // if month entered greater than 12 ,just set "1"
 						mExpirationDateValue.removeTextChangedListener(this);
 						mExpirationDateValue.setText("1");
 						mExpirationDateValue.setSelection(1);
 						mExpirationDateValue.setTextColor(mContext.getResources().getColor(R.color.black));
 						mExpirationDateValue.setTag("valid");
 						mExpirationDateValue.addTextChangedListener(this);
-					}else{
+					}else{ // Formation as like cardIO format
 						String date = String.format("%02d",enteredvalue);
-						Log.i("Before append date", date.toString() + " "+mIsForRemove);
 						if(date.length() < 2){
 							date = date+" / ";
 						}else if(!mIsForRemove && date.length() == 2){
 							date = date+" / ";
 						}else if(mIsForRemove && date.length() == 2){
-
 						}else{
 							date = date.substring(0, 2)+" / "+date.substring(2, date.length());
 						}
-						if(date.length() == 7){
+						if(date.length() == 7){ // Check for date validation and set text color based upon entered date
 							checkDate(date);
-						}else{
-							Log.i("After append date", date.toString());
+						}else{ // set resulting appended text
 							mExpirationDateValue.removeTextChangedListener(this);
 							mExpirationDateValue.setText(date.toString());
 							mExpirationDateValue.setSelection(mExpirationDateValue.getText().toString().length());
@@ -126,7 +121,7 @@ public class DateValidator implements TextWatcher{
 						mExpirationDateValue.setTag("valid");
 					}
 				}
-			}else if(!s.toString().equalsIgnoreCase("") && s.toString().equalsIgnoreCase("00")){
+			}else if(!s.toString().equalsIgnoreCase("") && s.toString().equalsIgnoreCase("00")){  // if "00" is entered
 				mExpirationDateValue.removeTextChangedListener(this);
 				mExpirationDateValue.setText("0");
 				mExpirationDateValue.setSelection(1);
@@ -139,6 +134,7 @@ public class DateValidator implements TextWatcher{
 		}
 	}
 
+	// Check and remove "/"
 	private void checkForRemoveAndAssignCharacters(CharSequence s){
 		if(s.toString().endsWith(" ") || s.toString().endsWith("/")){
 			mExpirationDateValue.removeTextChangedListener(this);
@@ -158,9 +154,9 @@ public class DateValidator implements TextWatcher{
 		}
 	}
 
+	//Check date and set text color based upon result	
 	private void checkDate(String date){
 		try{
-			Log.i("splitted date", date.split(" ")[0]+date.split(" ")[1]+date.split(" ")[2]);
 			Calendar mCurrentCalandar = Calendar.getInstance();
 			Calendar mValidityCheckCalandar = Calendar.getInstance();
 			Calendar mEnteredCalandar = Calendar.getInstance();
@@ -168,17 +164,12 @@ public class DateValidator implements TextWatcher{
 			DateFormat dateFormat = new SimpleDateFormat("MM/yy"); 
 			Date startDate = dateFormat.parse(date.split(" ")[0]+date.split(" ")[1]+date.split(" ")[2]);
 			mEnteredCalandar.setTime(startDate);
-			Log.i("cal check", mCurrentCalandar.getTime()+" ");
-			Log.i("cal check", mValidityCheckCalandar.getTime()+" ");
-			Log.i("Year check", mEnteredCalandar.get(Calendar.YEAR)+" "+mValidityCheckCalandar.get(Calendar.YEAR));
 			if((startDate.compareTo(mCurrentCalandar.getTime()) < 0) || (mEnteredCalandar.get(Calendar.YEAR) > mValidityCheckCalandar.get(Calendar.YEAR)) ){
 				mExpirationDateValue.setTextColor(mContext.getResources().getColor(R.color.red));
 				mExpirationDateValue.setTag("invalid");
-				Log.i("color", "red");
 			}else{
 				mExpirationDateValue.setTextColor(mContext.getResources().getColor(R.color.black));
 				mExpirationDateValue.setTag("valid");
-				Log.i("color", "black");
 				mCVVvalue.requestFocus();
 			}
 		}catch(Exception e){

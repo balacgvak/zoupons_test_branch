@@ -8,43 +8,42 @@ import android.text.Selection;
 import android.text.TextWatcher;
 
 /**
- * @author Zoupons
  * Class to watch the mobilenumber edittext to add "-" while adding remove " - and its previous number (4-)" while deleting
  */
 public class MobileNumberTextWatcher implements TextWatcher{
 
-	private boolean isFormatting;
-    private boolean deletingHyphen;
-    private int hyphenStart;
-    private boolean deletingBackward;
+	private boolean mIsFormatting;
+    private boolean mDeletingHyphen;
+    private int mHyphenStart;
+    private boolean mDeletingBackward;
     
 	@Override
 	public void afterTextChanged(Editable text) {
-		if (isFormatting)
+		if (mIsFormatting)
             return;
 
-        isFormatting = true;
+        mIsFormatting = true;
 
         // If deleting hyphen, also delete character before or after it
-        if (deletingHyphen && hyphenStart > 0) {
-            if (deletingBackward) {
-                if (hyphenStart - 1 < text.length()) {
-                    text.delete(hyphenStart - 1, hyphenStart);
+        if (mDeletingHyphen && mHyphenStart > 0) {
+            if (mDeletingBackward) {
+                if (mHyphenStart - 1 < text.length()) {
+                    text.delete(mHyphenStart - 1, mHyphenStart);
                 }
-            } else if (hyphenStart < text.length()) {
-                text.delete(hyphenStart, hyphenStart + 1);
+            } else if (mHyphenStart < text.length()) {
+                text.delete(mHyphenStart, mHyphenStart + 1);
             }
         }
         if (text.length() == 3 || text.length() == 7) {
             text.append('-');
         }
 
-        isFormatting = false;
+        mIsFormatting = false;
 	}
 
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-		if (isFormatting)
+		if (mIsFormatting)
             return;
 
         // Make sure user is deleting one char, without a selection
@@ -55,16 +54,16 @@ public class MobileNumberTextWatcher implements TextWatcher{
                 && after == 0 // Deleting
                 && s.charAt(start) == '-' // a hyphen
                 && selStart == selEnd) { // no selection
-            deletingHyphen = true;
-            hyphenStart = start;
+            mDeletingHyphen = true;
+            mHyphenStart = start;
             // Check if the user is deleting forward or backward
             if (selStart == start + 1) {
-                deletingBackward = true;
+                mDeletingBackward = true;
             } else {
-                deletingBackward = false;
+                mDeletingBackward = false;
             }
         } else {
-            deletingHyphen = false;
+            mDeletingHyphen = false;
         }
 	}
 

@@ -5,10 +5,16 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.RelativeLayout;
 
+/**
+ * 
+ * Custom Animation listner for header view in home page while we browse store
+ *
+ */
+
 public class CustomAnimationListener implements AnimationListener{
 
-	RelativeLayout mHeaderLayout;
-	String mVisibiltyMode;
+	private RelativeLayout mHeaderLayout;
+	private String mVisibiltyMode;
 	public CustomAnimationListener(RelativeLayout HeaderLayout,String Visibilitymode) {
 		this.mHeaderLayout = HeaderLayout;
 		mVisibiltyMode = Visibilitymode;

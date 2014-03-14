@@ -743,6 +743,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
 
         <!-- Invisible 1 -->
@@ -794,6 +795,7 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -846,6 +848,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 

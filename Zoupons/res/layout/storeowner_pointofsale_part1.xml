@@ -67,6 +67,7 @@
                 android:inputType="phone"
                 android:singleLine="true"
                 android:textSize="15sp"
+                android:maxLength="11"
                 android:imeOptions="actionNext"/>
 
             <TextView
@@ -454,7 +455,8 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:orientation="vertical" />
 
         <LinearLayout
             android:id="@+id/storeowner_pointofsale_part1_invisible1"
@@ -486,7 +488,8 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:orientation="vertical" />
 
         <LinearLayout
             android:id="@+id/storeowner_pointofsale_part1_invisible2"
@@ -517,7 +520,8 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:orientation="vertical" />
 
         <LinearLayout
             android:id="@+id/storeowner_pointofsale_part1_rightFooter"

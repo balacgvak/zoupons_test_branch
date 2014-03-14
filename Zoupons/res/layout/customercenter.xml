@@ -145,54 +145,10 @@
             android:paddingBottom="5dip" >
 
             <LinearLayout
-                android:id="@+id/customercenter_notifications"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="5dip"
-                android:background="@drawable/buttonhover_new"
-                android:orientation="horizontal"
-                android:padding="10dip"
-                android:text="Notification"
-                android:textColor="@color/black" >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
-                    android:gravity="center" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:text="Notifications"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.1"
-                    android:gravity="center" >
-
-                    <TextView
-                        android:id="@+id/customercenter_notificationcount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/customercenter_customerstore"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_below="@id/customercenter_notifications"
                 android:layout_margin="5dip"
                 android:background="@drawable/buttonhover_new"
                 android:orientation="horizontal"

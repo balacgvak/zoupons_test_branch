@@ -5,36 +5,49 @@
     android:background="@drawable/border_curve" >
 
     <TextView
-        android:id="@+id/purchased_username"
-        android:layout_width="100dip"
+        android:id="@+id/purchased_facevalueId"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dip"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="5dip"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:visibility="visible"
-        android:singleLine="false"/>
+        android:layout_toLeftOf="@id/purchased_facevalueId" >
 
-    <TextView
-        android:id="@+id/purchased_facevalueId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@id/purchased_username"
-        android:text="$100.00"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/purchased_userfirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="visible" />
+        
+         <TextView
+            android:id="@+id/purchased_userlastname"
+            android:layout_below="@id/purchased_userfirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/purchased_remaining"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_toRightOf="@id/purchased_facevalueId"
         android:layout_marginLeft="15dip"
-        android:text="0"
+        android:layout_toRightOf="@id/purchased_facevalueId"
         android:textColor="@color/black"
         android:textSize="14sp" />
 

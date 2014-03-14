@@ -12,22 +12,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.us.zoupons.R;
-import com.us.zoupons.cards.ImageLoader;
-import com.us.zoupons.invoice.POJOInvoiceList;
+import com.us.zoupons.shopper.cards.ImageLoader;
+import com.us.zoupons.shopper.invoice.POJOInvoiceList;
+
+/**
+ * 
+ * Custom adapter class to populate invoice details
+ *
+ */
 
 public class CustomInvoiceListAdapter extends BaseAdapter {
     
-    private Context context;
-    public ImageLoader imageLoader; 
+    private Context mContext;
+    private ImageLoader mImageLoader; 
     private ArrayList<Object> mInvoiceDetailsList;
-    String mEventFlag;
+    private String mEventFlag;
         
     public CustomInvoiceListAdapter(Context context, ArrayList<Object> InvoiceDetails, String EventFlag) {
-       Log.i("adapter", "constructor");
-       this.context = context;
+       this.mContext = context;
        this.mInvoiceDetailsList = InvoiceDetails;
        this.mEventFlag = EventFlag;
-       imageLoader=new ImageLoader(context);
+       mImageLoader=new ImageLoader(context);
     }
 
     public int getCount() {
@@ -48,7 +53,7 @@ public class CustomInvoiceListAdapter extends BaseAdapter {
     	try{
     		ViewHolder holder;
     		if(view == null) {
-    			LayoutInflater inflater = LayoutInflater.from(context);
+    			LayoutInflater inflater = LayoutInflater.from(mContext);
     			view = inflater.inflate(R.layout.invoice_list_row, null);
     			holder = new ViewHolder();
     			holder.mCustomerName = (TextView)view.findViewById(R.id.invoice_customerNameId);
@@ -60,12 +65,12 @@ public class CustomInvoiceListAdapter extends BaseAdapter {
     		}else{
     			holder=(ViewHolder) convertView.getTag();
     		}
-
+            // To get invoice details from collection for each list row
     		POJOInvoiceList mInvoiceDetails = (POJOInvoiceList) mInvoiceDetailsList.get(position);
     		if(mInvoiceDetails != null) {
     			holder.mCustomerImage.setVisibility(View.GONE);
     			holder.mCustomerName.setText(mInvoiceDetails.Customer_Name);
-    			imageLoader.DisplayImage(mInvoiceDetails.Customer_Image+"&w="+70+"&h="+70+"&zc=0",holder.mCustomerImage);
+    			mImageLoader.DisplayImage(mInvoiceDetails.Customer_Image+"&w="+70+"&h="+70+"&zc=0",holder.mCustomerImage);
     			if(mEventFlag.equalsIgnoreCase("outstanding")){ // Outstanding invoices
     				holder.mInvoiceDays_Status.setText(mInvoiceDetails.Days);
     				holder.mInvoiceAmount.setText("$"+mInvoiceDetails.Amount);

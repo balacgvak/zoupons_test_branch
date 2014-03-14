@@ -7,13 +7,15 @@
     android:background="@color/white" >
 
     <!-- Header -->
+
     <com.us.zoupons.storeowner.Header
         android:id="@+id/purchased_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
     </com.us.zoupons.storeowner.Header>
-	
+
     <!-- Footer View -->
+
     <LinearLayout
         android:id="@+id/purchased_footerLayoutId"
         android:layout_width="fill_parent"
@@ -23,57 +25,57 @@
         android:visibility="visible" >
 
         <TextView
-            android:id="@+id/purchased_availabletextId"
-            android:layout_width="wrap_content"
+            android:id="@+id/storeownerdeals_dealsId"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/giftcard_white"
+            android:gravity="center"
+            android:text="Deals"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/purchased_menubar_splitter1"
+            android:layout_width="1dip"
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
+            android:background="@color/menubarsplitter"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/purchased_availabletextId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:drawableTop="@drawable/availablegc"
             android:gravity="center"
             android:text="Available"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:layout_weight="1" />
+            android:textSize="12sp" />
 
         <LinearLayout
-            android:id="@+id/purchased_menubar_splitter1"
+            android:id="@+id/purchased_menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
-            android:background="@color/menubarsplitter"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/purchased_historytextId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:drawableTop="@drawable/back"
-            android:gravity="center"
-            android:text="History"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:visibility="gone"
-            android:layout_weight="1" />        
-
-        <LinearLayout
-            android:id="@+id/purchased_menubar_splitter1"
-            android:layout_width="1dip"
-            android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
-        
+
         <TextView
             android:id="@+id/purchased_purchasedtextId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:drawableTop="@drawable/purchasedgc"
             android:gravity="center"
             android:text="Purchased"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:layout_weight="1" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <!-- MiddleView -->
+
     <RelativeLayout
         android:id="@+id/purchased_container"
         android:layout_width="fill_parent"
@@ -83,43 +85,118 @@
         android:layout_margin="2dp"
         android:background="@drawable/custombackground" >
 
-        <!-- Store Name Header -->
-        
-        <RelativeLayout
-            android:id="@+id/purchased_storename_header"
+        <LinearLayout
+            android:id="@+id/giftcard_dealcardlist_date_container"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp" >
+            android:visibility="visible" >
 
-            <TextView
-                android:id="@+id/purchased_storetitle_textId"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:paddingRight="30dp"
-                android:text="Store Name"
-                android:textColor="@android:color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/purchased_rightmenu"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/txtFromDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="From Date"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/giftcard_dealcardlist_fromdate_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/giftcard_dealcardlist_fromdate_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="From Date"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingRight="50dp"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/giftcard_dealcardlist_fromdate_contextImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="0dip"
+                        android:layout_marginTop="1dip"
+                        android:background="@drawable/step2_downarrow" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/sample" />
-        </RelativeLayout>
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txtToDate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="To Date"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/giftcard_dealcardlist_Todate_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/giftcard_dealcardlist_Todate_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:enabled="true"
+                        android:focusable="false"
+                        android:hint="To Date"
+                        android:maxLines="2"
+                        android:minLines="2"
+                        android:paddingRight="50dp"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/giftcard_dealcardlist_Todate_contextImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="0dip"
+                        android:layout_marginTop="1dip"
+                        android:background="@drawable/step2_downarrow" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
+        
+        
+        <!-- Store Name Header -->
 
         <RelativeLayout
             android:id="@+id/purchased_usernamesearch_layout"
-            android:layout_below="@id/purchased_storename_header"
+            android:layout_below="@id/giftcard_dealcardlist_date_container"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:visibility="visible" >
 
             <Button
@@ -138,19 +215,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dip"
                 android:layout_toLeftOf="@id/purchased_search_buttonId"
-                android:hint="user name"
-                android:singleLine="true"
                 android:focusable="false"
-                android:focusableInTouchMode="false" />
+                android:focusableInTouchMode="false"
+                android:hint="user name"
+                android:singleLine="true" />
         </RelativeLayout>
-        
+
         <TextView
             android:id="@+id/purchased_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/purchased_usernamesearch_layout"
             android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
             android:layout_marginLeft="20dip"
             android:text="Name "
             android:textColor="@color/black"
@@ -161,8 +237,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/purchased_usernamesearch_layout"
-            android:layout_toRightOf="@id/purchased_username"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dip"
         	android:text="| Face Value |"
             android:textColor="@color/black" />
@@ -179,7 +254,7 @@
 
         <ListView
             android:id="@+id/purchased_listId"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/purchased_facevaluetextId"
             android:layout_marginLeft="5dp"
@@ -195,6 +270,7 @@
     </RelativeLayout>
 
     <!-- Freeze Button -->
+
     <Button
         android:id="@+id/purchased_freeze"
         android:layout_width="fill_parent"

@@ -3,12 +3,13 @@ package com.us.zoupons;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import android.util.Log;
+/**
+ * Helper class to encrypt string to MD5[message-digest] algorithm format 
+ */
 
 public class EncryptionClass {
 
 	public String md5(String in) {
-
 		MessageDigest digest;
 		try {
 			digest = MessageDigest.getInstance("MD5");

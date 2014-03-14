@@ -7,13 +7,15 @@
     android:orientation="vertical" >
 
     <!-- Header -->
-    <com.us.zoupons.storeowner.Header 
+
+    <com.us.zoupons.storeowner.Header
         android:id="@+id/header"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-    </com.us.zoupons.storeowner.Header>    
+        android:layout_height="wrap_content" >
+    </com.us.zoupons.storeowner.Header>
 
     <!-- MiddleView and MenuBar Container -->
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -30,6 +32,7 @@
             android:visibility="visible" >
 
             <!-- Store Header Text -->
+
             <TextView
                 android:id="@+id/store_title_textId"
                 android:layout_width="wrap_content"
@@ -63,6 +66,7 @@
             android:visibility="invisible" >
 
             <!-- Store Header Text -->
+
             <TextView
                 android:id="@+id/store_subtitle_textId"
                 android:layout_width="wrap_content"
@@ -79,36 +83,47 @@
         <LinearLayout
             android:id="@+id/middleview"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_above="@id/menubar"
-            android:layout_below="@id/subtitle"
-            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
             android:padding="3dip" >
-            <LinearLayout
-                android:id="@+id/storeownerhomepageList"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="5dip"
-                android:visibility="visible" >
-                <ListView
-                    android:id="@+id/storeownerhomepageListView"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:cacheColorHint="#00000000"
-                    android:clickable="true"
-                    android:divider="@color/searchbackground"
-                    android:dividerHeight="10dip"
-                    android:drawSelectorOnTop="false"
-                    android:visibility="gone" >
-                </ListView>
-            </LinearLayout>
+
+            <Button
+                android:id="@+id/dashboard_point_of_sale_buttonID"
+                android:layout_width="@dimen/dashboardbuttonwidth"
+                android:layout_height="@dimen/dashboardbuttonheight"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/buttonhover"
+                android:text="Point of Sale"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:drawableLeft="@drawable/photo_switcher_left"
+                android:paddingRight="10dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/dashboard_store_setup_buttonID"
+                android:layout_width="@dimen/dashboardbuttonwidth"
+                android:layout_height="@dimen/dashboardbuttonheight"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/buttonhover"
+                android:text="Store Setup"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:paddingLeft="10dp"
+                android:drawableRight="@drawable/photo_switcher"
+                android:textStyle="bold" />
         </LinearLayout>
     </RelativeLayout>
     <!-- FreezeView -->
+
     <Button
         android:id="@+id/freezeview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@color/qrcode_transparent"
         android:visibility="gone" />
+
 </RelativeLayout>

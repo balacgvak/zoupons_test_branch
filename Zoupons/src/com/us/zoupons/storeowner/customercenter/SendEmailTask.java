@@ -5,9 +5,9 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -15,16 +15,21 @@ import com.us.zoupons.NetworkCheck;
 import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
 import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
 
+/**
+ * 
+ * Asynchronous task to send email to customer
+ *
+ */
+
 public class SendEmailTask extends AsyncTask<String, String, String>{
 
 	private Activity mContext;
-	private StoreownerWebserivce zouponswebservice=null;
-	private StoreownerParsingclass parsingclass=null;
-	private ProgressDialog progressdialog=null;
-	private String TAG="StoreOwnerSendEmailTask",mUserID="",mSubject="",mEmailBody="";
-	public NetworkCheck mConnectionAvailabilityChecking;
-	
-		
+	private StoreownerWebserivce mZouponswebservice=null;
+	private StoreownerParsingclass mParsingclass=null;
+	private ProgressDialog mProgressdialog=null;
+	private String mUserID="",mSubject="",mEmailBody="";
+	private NetworkCheck mConnectionAvailabilityChecking;
+			
 	// For Sending email
 	public SendEmailTask(Activity context,String user_id,String subject,String email_body) {
 		this.mContext = context;
@@ -32,13 +37,21 @@ public class SendEmailTask extends AsyncTask<String, String, String>{
 		this.mSubject = subject;
 		this.mEmailBody = email_body;
 		mConnectionAvailabilityChecking= new NetworkCheck();
-		zouponswebservice= new StoreownerWebserivce(context);
-		parsingclass= new StoreownerParsingclass(this.mContext);
-		progressdialog=new ProgressDialog(this.mContext);
-		progressdialog.setCancelable(true);
-		progressdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressdialog.setProgress(0);
-		progressdialog.setMax(100);
+		mZouponswebservice= new StoreownerWebserivce(context);
+		mParsingclass= new StoreownerParsingclass(this.mContext);
+		mProgressdialog=new ProgressDialog(this.mContext);
+		mProgressdialog.setCancelable(true);
+		mProgressdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		mProgressdialog.setProgress(0);
+		mProgressdialog.setMax(100);
+	}
+	
+	@Override
+	protected void onPreExecute() {
+		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
+		//Start a status dialog
+		mProgressdialog = ProgressDialog.show(mContext,"Loading","Please Wait!",true);
+		super.onPreExecute();
 	}
 	
 	@Override
@@ -48,9 +61,9 @@ public class SendEmailTask extends AsyncTask<String, String, String>{
 	    	if(mConnectionAvailabilityChecking.ConnectivityCheck(this.mContext)){
 	    		SharedPreferences mPrefs = mContext.getSharedPreferences("StoreDetailsPrefences", Context.MODE_PRIVATE);
 				String mLocationId = mPrefs.getString("location_id", "");
-	    		String mResponse=zouponswebservice.sendEmail(mUserID,mLocationId,mSubject,mEmailBody);
+	    		String mResponse=mZouponswebservice.sendEmail(mUserID,mLocationId,mSubject,mEmailBody);
 	    		if(!mResponse.equalsIgnoreCase("noresponse") && !mResponse.equalsIgnoreCase("failure")){
-	    			String mParsingResponse = parsingclass.parseSendMailResponse(mResponse);
+	    			String mParsingResponse = mParsingclass.parseSendMailResponse(mResponse);
 	    			if(!mParsingResponse.equals("failure") && !mParsingResponse.equals("no records")){
 	    				mresult = mParsingResponse;
 	    			}else if(mParsingResponse.equalsIgnoreCase("failure")){
@@ -75,10 +88,9 @@ public class SendEmailTask extends AsyncTask<String, String, String>{
 	protected void onPostExecute(String result) {
 		super.onPostExecute(result);
 		try{
-			if(progressdialog != null && progressdialog.isShowing()){
-				progressdialog.dismiss();
+			if(mProgressdialog != null && mProgressdialog.isShowing()){
+				mProgressdialog.dismiss();
 			}
-			
 			if(result.equalsIgnoreCase("failure")){
 				alertBox_service("Information", "Unable to reach service.");
 			}else if(result.equalsIgnoreCase("norecords")){
@@ -99,18 +111,11 @@ public class SendEmailTask extends AsyncTask<String, String, String>{
     }
 
 	@Override
-	protected void onPreExecute() {
-		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
-		//Start a status dialog
-		progressdialog = ProgressDialog.show(mContext,"Loading","Please Wait!",true);
-		super.onPreExecute();
-	}
-
-	@Override
 	protected void onProgressUpdate(String... values) {
 		super.onProgressUpdate(values);
 	}
 
+	// To show alert box with respective message
 	private void alertBox_service(String title,final String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);
 		service_alert.setTitle(title);
@@ -120,10 +125,12 @@ public class SendEmailTask extends AsyncTask<String, String, String>{
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
-                if(msg.equalsIgnoreCase("Sent Mail to Customer")){
-                	mContext.finish();
-                }
-                }
+				if(msg.equalsIgnoreCase("Sent Mail to Customer")){
+					Intent intent_rightmenuCustomercenter = new Intent().setClass(mContext,CustomerCenter.class);
+					intent_rightmenuCustomercenter.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+					mContext.startActivity(intent_rightmenuCustomercenter);
+				}
+			}
 		});
 		service_alert.show();
 	}

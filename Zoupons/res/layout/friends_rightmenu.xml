@@ -55,7 +55,6 @@
             android:id="@+id/rightmenu_sendGiftcard"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/translucent_white"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -64,7 +63,8 @@
                 android:gravity="center|center_horizontal"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
-                android:paddingTop="10dp" >
+                android:paddingTop="10dp"
+                android:background="@color/translucent_white" >
 
                 <ImageView
                     android:id="@+id/rightmenu_sendgiftImageId"
@@ -72,8 +72,9 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
+                    android:alpha="0.5"
                     android:src="@drawable/giftcards"
-                    android:alpha="0.5" />
+                     />
 
                 <TextView
                     android:id="@+id/rightmenu_sendGiftcardTextId"
@@ -81,10 +82,10 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:text="Send Giftcard"
-                    android:textColor="@color/white"
+                    android:textColor="@color/gray"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    android:alpha="0.5" />
+                     />
             </LinearLayout>
         </LinearLayout>
 

@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="2dip"
-            android:textSize="2sp"
+            android:textSize="12sp"
             android:visibility="visible" />
 
         <TextView
@@ -97,7 +97,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="2dip"
-            android:textSize="2sp"
+            android:textSize="12sp"
             android:visibility="visible" />
 
         <TextView

@@ -42,8 +42,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:orientation="vertical"
-                android:paddingRight="7dip"
-                android:paddingLeft="7dip" >
+                android:paddingLeft="7dip"
+                android:paddingRight="7dip" >
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                         android:focusableInTouchMode="false"
                         android:padding="2dp"
                         android:textColor="@color/white"
-                        android:visibility="gone" />
+                        android:visibility="gone" />
                     -->
                 </RelativeLayout>
 
@@ -208,6 +208,17 @@
                 android:textSize="13sp" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/transaction_history_pending"
+                android:layout_alignBottom="@+id/transaction_history_pending"
+                android:layout_toRightOf="@+id/transaction_history_pending"
+                android:layout_weight="1"
+                android:text="P - Pending"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
                 android:id="@+id/transaction_history_rejected"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -215,7 +226,7 @@
                 android:layout_alignBottom="@+id/transaction_history_approved"
                 android:layout_toRightOf="@+id/transaction_history_approved"
                 android:layout_weight="1"
-                android:text="D - Declined"
+                android:text="R - Refunded"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
         </LinearLayout>

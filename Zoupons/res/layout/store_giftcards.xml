@@ -146,6 +146,7 @@
             android:id="@+id/step1_menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
     </LinearLayout>
 
@@ -239,8 +240,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/choose_card_layout"
             android:layout_centerInParent="true"
-            android:paddingRight="80dp"
-            android:text="Face Value |"
+            android:text="Face Value"
             android:textColor="@color/black" />
 
         <TextView
@@ -251,7 +251,8 @@
             android:layout_centerInParent="true"
             android:paddingLeft="40dp"
             android:text=" Price "
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/store_giftcardcard_remainingid"

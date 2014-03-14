@@ -59,6 +59,7 @@
 	    android:id="@+id/shoplistview_space"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
 	    android:layout_below="@id/shoplistview_storename_container"
 	    android:layout_toRightOf="@id/shoplistview_image_container"/>
 	

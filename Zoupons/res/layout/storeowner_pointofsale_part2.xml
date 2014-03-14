@@ -170,7 +170,8 @@
                                             android:layout_width="fill_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:paddingBottom="5dip" >
+                                            android:paddingBottom="5dip"
+                                            android:orientation="vertical" >
 
                                             <EditText
                                                 android:id="@+id/storeowner_customer_pointofsale_part2_FirstName"
@@ -220,7 +221,8 @@
                                         <LinearLayout
                                             android:layout_width="fill_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1" >
+                                            android:layout_weight="1"
+                                            android:orientation="vertical" >
 
                                             <EditText
                                                 android:id="@+id/storeowner_customer_pointofsale_part2_LastName"
@@ -325,6 +327,7 @@
                             android:layout_marginTop="5dp"
                             android:hint="Email id"
                             android:singleLine="true"
+                            android:inputType="textEmailAddress"
                             android:textColor="@color/black" />
                     </LinearLayout>
                     
@@ -594,14 +597,15 @@
             android:text="Back"
             android:textColor="@color/white"
             android:textSize="12sp"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="invisible" />
+            android:visibility="visible"
+            android:orientation="vertical" />
 
         <!-- Invisible views -->
 

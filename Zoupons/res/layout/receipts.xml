@@ -9,7 +9,8 @@
     <LinearLayout
         android:id="@+id/receipts_tabbar_container"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
         <LinearLayout
             android:id="@+id/receipts_tabbar"

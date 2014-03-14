@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<!--<color name="qrcode_status_text">#ffffffff</color> white  
-	<color name="qrcode_transparent">#00000000</color> Black   
-	<color name="qrcode_viewfinder_frame">#ff000000</color> Red  
-	<color name="qrcode_viewfinder_laser">#ffff0000</color> Yellow  
-	<color name="qrcode_viewfinder_mask">#60000000</color> Coffee Brown  
-	<color name="qrcode_result_view">#b0000000</color> Blood Red  
-	<color name="qrcode_possible_result_points">#c0ffff00</color> lighter skyblue  
-	<color name="qrcode_result_image_border">#ffffffff</color> white  #013e73
-	<color name="qrcode_result_points">#c000ff00</color> Violet  
-	-->
-	<color name="qrcode_status_text">#013e73</color><!-- white -->
-	<color name="qrcode_transparent">#00000000</color><!-- Black -->
-	<color name="qrcode_viewfinder_frame">#013e73</color><!-- Red -->
-	<color name="qrcode_viewfinder_laser">#ffff0000</color><!-- Yellow -->
-	<color name="qrcode_viewfinder_mask">#C0FFFFFF</color><!-- Coffee Brown -->
-	<!--<color name="qrcode_result_view">#66FFFFFF</color> skyblue -->
-	<color name="qrcode_result_view">#CCCCFFFF</color>
-	<color name="qrcode_possible_result_points">#99FF33</color><!-- green -->
-	<color name="qrcode_result_image_border">#013e73</color><!-- zoupons border Blue  -->
-	<color name="qrcode_result_points">#FFFF00</color><!-- Violet -->
-	<color name="light_blue">#357EC7</color><!-- Violet -->
-	<color name="litegrey">#2e2e2e</color>
+
+    <color name="qrcode_status_text">#013e73</color>
+    <!-- white -->
+    <color name="qrcode_transparent">#00000000</color>
+    <!-- Black -->
+    <color name="qrcode_viewfinder_frame">#013e73</color>
+    <!-- Red -->
+    <color name="qrcode_viewfinder_laser">#ffff0000</color>
+    <!-- Yellow -->
+    <color name="qrcode_viewfinder_mask">#C0FFFFFF</color>
+    <!-- Coffee Brown -->
+    <!-- <color name="qrcode_result_view">#66FFFFFF</color> skyblue -->
+    <color name="qrcode_result_view">#CCCCFFFF</color>
+    <color name="qrcode_possible_result_points">#99FF33</color>
+    <!-- green -->
+    <color name="qrcode_result_image_border">#013e73</color>
+    <!-- zoupons border Blue -->
+    <color name="qrcode_result_points">#FFFF00</color>
+    <color name="light_blue">#357EC7</color>
+    <color name="litegrey">#2e2e2e</color>
     <color name="dividerblack">#1f1f1f</color>
     <color name="white">#ffffff</color>
+    <color name="smoke_white">#F5F5F5</color>
     <color name="black">#000000</color>
     <color name="searchbordercolor">#dbdbdb</color>
     <color name="searchbackground">#e3e3e3</color>
@@ -47,4 +46,10 @@
     <color name="blue">#436694</color>
     <color name="chatblue">#d0ebf5</color>
     <color name="talktous_contactstore_background">#dae1eb</color>
+    <color name="guest_login_selector">#51a351</color>
+    <color name="guest_login_selector_fade">#9551a351</color>
+    <color name="notification_unread">#e4e9f2</color>
+    <color name="notification_read">#F4F4F7</color>
+    <color name = "gray">#FF888888</color>
+
 </resources>

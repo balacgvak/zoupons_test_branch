@@ -12,8 +12,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.us.zoupons.NetworkCheck;
-import com.us.zoupons.WebService.ZouponsParsingClass;
-import com.us.zoupons.WebService.ZouponsWebService;
+import com.us.zoupons.shopper.webService.ZouponsParsingClass;
+import com.us.zoupons.shopper.webService.ZouponsWebService;
 
 public class IssueRefundTask extends AsyncTask<String, String, String>{
 

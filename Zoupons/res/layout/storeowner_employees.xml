@@ -181,6 +181,7 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="invisible" />
 
         <!-- Invisible 1 -->
@@ -232,6 +233,7 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="invisible" />
 
         <!-- Invisible 2 -->
@@ -282,6 +284,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="visible" />
 

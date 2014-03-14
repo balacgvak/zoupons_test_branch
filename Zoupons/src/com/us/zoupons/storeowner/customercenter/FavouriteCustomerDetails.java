@@ -1,8 +1,11 @@
 package com.us.zoupons.storeowner.customercenter;
 
-public class FavouriteCustomerDetails {
-	
-	public String mCustomerName="",mCustomerFirstName="",mCustomerLastName="",mCustomerId="",mCustomerProfileImage="",mMessage="",mIsFavouriteStoreRemoved="",mTransactionAmount="0";
-	
+/**
+ * 
+ * Class variables to hold favorite customer details
+ *
+ */
 
+public class FavouriteCustomerDetails {
+	public String mCustomerName="",mCustomerFirstName="",mCustomerLastName="",mCustomerId="",mCustomerProfileImage="",mMessage="",mIsFavouriteStoreRemoved="",mTransactionAmount="0";
 }

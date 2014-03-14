@@ -1,62 +1,96 @@
 package com.us.zoupons.storeowner.batchsales;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.Window;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.us.zoupons.NetworkCheck;
-import com.us.zoupons.WebService.ZouponsParsingClass;
-import com.us.zoupons.WebService.ZouponsWebService;
+import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
+import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
 
-public class GetBatchSalesTask extends AsyncTask<String, String, String>{
+/**
+ * 
+ * Asynctask to get batch sales details from webservice
+ *
+ */
 
-	private Context mContext;
-	private NetworkCheck mConnectionAvailabilityChecking=null;
-	private ZouponsWebService zouponswebservice=null;
-	private ZouponsParsingClass parsingclass=null;
-	private ProgressDialog progressdialog=null;
-	private String TAG="StoreOwnerBatchsalesAsynchTask";
-	private ListView mBatchsalesList;
+public class GetBatchSalesTask extends AsyncTask<String, String, ArrayList<Object>>{
 
-	public GetBatchSalesTask(Context context,ListView batchsaleslist) {
+	private BatchSalesDetails mContext;
+	private StoreownerWebserivce mZouponswebservice=null;
+	private StoreownerParsingclass mParsingclass=null;
+	private ProgressDialog mProgressdialog=null;
+	private String mEventFlag="";
+	private String mSelectedFromDate="",mSelectedToDate="";
+	private double mTotalTransactionAmount,mTotalTip,mTotalZouponsFee,mTotalNetAmount;
+	private TextView mTotalAmountText,mTotalTipText,mTotalZouponsFeeText,mTotalNetAmountText;
+	private ListView mBatchSalesList;
+
+	 // To get Batch sales List
+	public GetBatchSalesTask(BatchSalesDetails context,String eventFlag,String selectedFromDate, String selectedToDate,TextView totalAmountText, TextView totalTipText, TextView totalZouponsFeeText, TextView totalNetAmountText,ListView batchsalesList) {
 		this.mContext = context;
-		this.mBatchsalesList = batchsaleslist;
-		mConnectionAvailabilityChecking= new NetworkCheck();
-		zouponswebservice= new ZouponsWebService(context);
-		parsingclass= new ZouponsParsingClass(this.mContext);
-		progressdialog=new ProgressDialog(this.mContext);
-		progressdialog.setCancelable(true);
-		progressdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressdialog.setProgress(0);
-		progressdialog.setMax(100);
+		this.mEventFlag = eventFlag;
+		this.mSelectedFromDate = selectedFromDate;
+		this.mSelectedToDate = selectedToDate;
+		this.mTotalAmountText = totalAmountText;
+		this.mTotalTipText = totalTipText;
+		this.mTotalZouponsFeeText = totalZouponsFeeText;
+		this.mTotalNetAmountText = totalNetAmountText;
+		this.mBatchSalesList = batchsalesList;
+		mZouponswebservice= new StoreownerWebserivce(context);
+		mParsingclass= new StoreownerParsingclass(this.mContext);
+		mProgressdialog=new ProgressDialog(this.mContext);
+		mProgressdialog.setCancelable(false);
 	}
 
 	@Override
-	protected String doInBackground(String... params) {
-		String result="";
+	protected void onPreExecute() {
+		super.onPreExecute();
+		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
+		//Start a status dialog
+		mProgressdialog = ProgressDialog.show(mContext,"Loading...","Please Wait!",true);
+	}
+
+	@Override
+	protected ArrayList<Object> doInBackground(String... params) {
 		try{
-			if(mConnectionAvailabilityChecking.ConnectivityCheck(this.mContext)){
-				if(result.equals("")){
-					result="success";
-				}else{
-					result="Response Error.";
+			// To get store information from preferences
+			SharedPreferences mPrefs = mContext.getSharedPreferences("StoreDetailsPrefences", Context.MODE_PRIVATE);
+			String mLocationId = mPrefs.getString("location_id", "");
+			String mResponse=mZouponswebservice.getBatchsales(mLocationId,mEventFlag,mSelectedFromDate,mSelectedToDate,"");
+			if(!mResponse.equals("")){
+				if(!mResponse.equals("failure") && !mResponse.equals("noresponse")){ // Success
+					ArrayList<Object> result = mParsingclass.parseBatchSalesDetais(mResponse); 
+					if(result!= null){
+						for(int i=0;i<result.size();i++){
+							BatchDetailsClassVariables mBatchsalesdetails = (BatchDetailsClassVariables) result.get(i);
+							mTotalTransactionAmount = mTotalTransactionAmount + Double.parseDouble(mBatchsalesdetails.amount);
+							mTotalTip = mTotalTip + Double.parseDouble(mBatchsalesdetails.tip);
+							mTotalZouponsFee = mTotalZouponsFee + Double.parseDouble(mBatchsalesdetails.zouponsfee);
+							mTotalNetAmount = mTotalNetAmount + Double.parseDouble(mBatchsalesdetails.net_amount);
+						}
+						return result;	
+					}else{
+						return null;
+					}
+				}else{ // service issues
+					return null;
 				}
-			}else{
-				result="nonetwork";
+			}else { // failure
+				return null;
 			}
-		}catch(Exception e){
-			e.printStackTrace();
-			Log.i(TAG,"Thread Error");
-			result="Thread Error";
+		}catch (Exception e) {
+			// TODO: hande exception
+			return null;
 		}
-		return result;
 	}
 
 	@Override
@@ -65,40 +99,26 @@ public class GetBatchSalesTask extends AsyncTask<String, String, String>{
 	}
 
 	@Override
-	protected void onPostExecute(String result) {
+	protected void onPostExecute(ArrayList<Object> result) {
 		super.onPostExecute(result);
-		if(progressdialog != null && progressdialog.isShowing()){
-			progressdialog.dismiss();
-		}
-		Log.i("Task", "onPOstExecute");		
-
-		if(result.equals("nonetwork")){
-			Toast.makeText(mContext, "No Network Connection", Toast.LENGTH_SHORT).show();
-		}else if(result.equals("Response Error.")){
-			alertBox_service("Information", "Unable to reach service.");
-		}else if(result.equals("No Records")){
-			alertBox_service("Information", result);
-		}else if(result.equals("Thread Error")){
-			alertBox_service("Information", "Unable to process.");
+		if(mProgressdialog != null && mProgressdialog.isShowing())
+			mProgressdialog.dismiss();
+		if(result!=null && result.size() >0){
+			mTotalAmountText.setText("$"+String.format("%.2f",mTotalTransactionAmount));
+			mTotalTipText.setText("$"+String.format("%.2f",mTotalTip));
+			mTotalZouponsFeeText.setText("$"+String.format("%.2f",mTotalZouponsFee));
+			mTotalNetAmountText.setText("$"+String.format("%.2f",mTotalNetAmount));
+			CustomBatchSalesAdapter mBatchsalesListAdapter = new CustomBatchSalesAdapter(mContext, result, mEventFlag);
+			mBatchSalesList.setAdapter(mBatchsalesListAdapter);	
+		}else if(result!=null && result.size() == 0){
+			mBatchSalesList.setAdapter(new CustomBatchSalesAdapter(mContext, new ArrayList<Object>(), mEventFlag));
+			alertBox_service("Information", "Batchsales report not available");
 		}else{
-			Log.i(TAG,"Success: ");
-
+			alertBox_service("Information", "Unable to reach service.");
 		}
 	}
 
-	@Override
-	protected void onPreExecute() {
-		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
-		//Start a status dialog
-		progressdialog = ProgressDialog.show(mContext,"Loading...","Please Wait!",true);
-		super.onPreExecute();
-	}
-
-	@Override
-	protected void onProgressUpdate(String... values) {
-		super.onProgressUpdate(values);
-	}
-
+	/* To show alert pop up with respective message */
 	private void alertBox_service(String title,final String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);
 		service_alert.setTitle(title);

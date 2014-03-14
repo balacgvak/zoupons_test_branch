@@ -89,8 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
-            android:rotation="180"
-            android:src="@drawable/photo_switcher"
+            android:src="@drawable/photo_switcher_left"
             android:visibility="invisible" />
 
         <ImageView
@@ -103,7 +102,7 @@
 
         </FrameLayout>
         
-        <com.us.zoupons.StoreInfo.UnderlinePageIndicator
+        <com.us.zoupons.shopper.photos.UnderlinePageIndicator
             android:id="@+id/mIndicator"
             android:layout_width="fill_parent"
             android:layout_height="2dp"

@@ -1,27 +1,29 @@
 package com.us.zoupons.android.mapviewcallouts;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.model.Marker;
 import com.us.zoupons.R;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.TextView;
+/**
+ * 
+ * Customized Map Callout(Info Window)
+ *
+ */
 
 public class CustomMapViewCallout implements InfoWindowAdapter{
 
-	private Context context;
 	private  View convertView;
 	
 	public CustomMapViewCallout(Context context) {
-		this.context = context;
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		convertView = inflater.inflate(R.layout.callout_overlay, null);
 	}
-	
-	
+		
 	@Override
 	public View getInfoContents(Marker marker) {
 		// TODO Auto-generated method stub

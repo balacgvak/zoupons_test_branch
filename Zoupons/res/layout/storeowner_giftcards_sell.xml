@@ -40,7 +40,8 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
-            android:background="@color/menubarsplitter" />
+            android:background="@color/menubarsplitter"
+            android:orientation="vertical" />
 
         <!-- Invisible views -->
 
@@ -187,6 +188,7 @@
                             android:orientation="vertical" >
 
                             <RelativeLayout
+                                android:id="@+id/storeownergifcards_purchase_ActivecustomerDetails"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/settings_contactborder"
@@ -293,6 +295,71 @@
                                 </LinearLayout>
                             </RelativeLayout>
 
+                            <!-- Non Zoupons customer Info details -->
+
+                            <LinearLayout
+                                android:id="@+id/storeownergifcards_purchase_nonzouponscustomer_container"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/settings_contactborder"
+                                android:orientation="vertical"
+                                android:padding="3dp"
+                                android:visibility="gone" >
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="First Name"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/storeownergifcards_purchase_customerFirstNameValue"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:hint="First name"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Last Name"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/storeownergifcards_purchase_customerLastNameValue"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:hint="Last Name"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:id="@+id/txtEmail"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Email"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/storeownergifcards_purchase_customerEmailAddressValue"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:hint="Email id"
+                                    android:inputType="textEmailAddress"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black" />
+                            </LinearLayout>
+
                             <!-- Giftcard image and face value code -->
 
                             <LinearLayout
@@ -307,7 +374,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/coupons" />
+                                    android:src="@drawable/giftcards" />
 
                                 <TextView
                                     android:id="@+id/storeownergifcards_purchase_GiftcardFaceValue"
@@ -316,7 +383,63 @@
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="20dp"
                                     android:text="$ 100"
-                                    android:textColor="@color/black" />
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/storeownergifcards_purchase_customerCardDetailsContainer"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:orientation="vertical"
+                                android:visibility="gone" >
+
+                                <LinearLayout
+                                    android:id="@+id/storeownergifcards_purchase_customerAddedCardContainer"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:orientation="horizontal"
+                                    android:padding="3dp"
+                                    android:visibility="gone" >
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="right"
+                                        android:text="Card Added : "
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/storeownergifcards_purchase_customerCreditcardMask"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="left"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/storeownergifcards_purchase_customerAddCardButton"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/cancelbuttonheight"
+                                    android:layout_marginBottom="10dip"
+                                    android:layout_marginTop="10dip"
+                                    android:background="@drawable/buttonhover"
+                                    android:paddingBottom="5dp"
+                                    android:paddingLeft="30dp"
+                                    android:paddingRight="30dp"
+                                    android:paddingTop="5dp"
+                                    android:text="Add Card"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible"
+                                     />
                             </LinearLayout>
 
                             <!-- employee pin layout -->
@@ -335,7 +458,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Verify amount with user &amp; enter your employee pin"
-                                    android:textColor="@color/black" />
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
 
                                 <RelativeLayout
                                     android:layout_width="fill_parent"
@@ -434,23 +558,28 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
+                                android:background="@drawable/settings_contactborder"
                                 android:orientation="vertical"
+                                android:padding="5dp"
                                 android:visibility="gone" >
 
                                 <LinearLayout
                                     android:id="@+id/storeownergifcards_purchase_addcardContainer"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:background="@drawable/step2_insideborder" >
+                                    android:layout_marginTop="5dp" >
 
                                     <Button
                                         android:id="@+id/storeownergifcards_purchase_addcard"
                                         android:layout_width="fill_parent"
                                         android:layout_height="wrap_content"
-                                        android:background="@drawable/customtable_new"
-                                        android:padding="5dp"
-                                        android:text="ADD CARD" />
+                                        android:background="@drawable/yellw_bg_hover"
+                                        android:paddingBottom="5dp"
+                                        android:paddingLeft="30dp"
+                                        android:paddingRight="30dp"
+                                        android:paddingTop="5dp"
+                                        android:text="ADD CARD" 
+                                        android:gravity="center"/>
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -540,7 +669,7 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-       </ScrollView>
+        </ScrollView>
     </RelativeLayout>
 
     <!-- Freeze Button -->

@@ -47,33 +47,36 @@
 
             <TextView
                 android:id="@+id/listitem_storename"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:text="store name"
                 android:visibility="visible"
+                android:layout_toRightOf="@id/listitem_shopimage"
                 android:layout_centerHorizontal="true"
-                android:paddingTop="10dip"
+                android:gravity="center"
+                android:paddingTop="5dip"
                 android:singleLine="false"
+                android:paddingRight="70dp"
                 android:lines="2"/>
             
             <LinearLayout
                 android:id="@+id/giftcards_listitem_text_holder1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignLeft="@id/listitem_storename" >
+                android:layout_centerInParent="true"
+                android:layout_below="@id/listitem_storename"
+                 >
 
                 <TextView
                     android:id="@+id/listitem_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="2dip"
-                    android:paddingTop="20dip"
                     android:singleLine="false"
                     android:text="$0"
+                    android:paddingRight="3dp"
                     android:textColor="@color/black"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -96,17 +99,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_below="@id/listitem_storename"
                 android:layout_alignParentRight="true"
-                android:layout_alignLeft="@id/listitem_storename_new" >
+                  >
 
                 <TextView
                     android:id="@+id/listitem_balance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dip"
                     android:singleLine="false"
                     android:text="$0"
+                    android:layout_marginRight="30dp"
                     android:textColor="@color/black"
                     android:textSize="13sp" />
             </LinearLayout>

@@ -7,228 +7,325 @@
     android:orientation="vertical"
     android:padding="2dip" >
 
-    <ScrollView
-        android:id="@+id/registration_scrollview"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/custombackground"
-        android:scrollbars="none"
-        android:visibility="visible" >
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/registration_contactinformation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/Registration_ContactInformation"
+            android:textColor="@color/black"
+            android:textSize="18dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/black"
+            android:text=" " />
 
         <LinearLayout
+            android:id="@+id/signup_stepsLayoutId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/signup_verifyEmailStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow"
+                android:gravity="center"
+                android:text="Verify Email"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/signup_verifyMobileStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow"
+                android:gravity="center"
+                android:text="Verify Mobile"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/signup_choosePasswordStepId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:text="Choose Password"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/registration_scrollview"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:padding="5dip" >
-
-            <!-- Contacts Information Page-1 -->
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:visibility="visible" >
+            
 
             <LinearLayout
-                android:id="@+id/registration_page1container"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:orientation="vertical"
-                android:visibility="visible" >
+                android:padding="5dip" >
+
+                <!-- Contacts Information Page-1 -->
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/registration_contactinformation"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Registration_ContactInformation"
-                        android:textColor="@color/black"
-                        android:textSize="18dip"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dip"
-                        android:background="@color/black"
-                        android:text=" " />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border_curve" >
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal" >
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="0.4"
-                            android:gravity="center" >
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent"
-                                android:background="@drawable/border_curve"
-                                android:gravity="center"
-                                android:orientation="vertical" >
-
-                                <LinearLayout
-                                    android:id="@+id/registration_layout_addimage"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:gravity="center"
-                                    android:orientation="vertical"
-                                    android:visibility="visible" >
-
-                                    <ImageView
-                                        android:id="@+id/registration_add_userimage"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="100dip"
-                                        android:src="@drawable/profileimage"
-                                        android:visibility="visible" />
-
-                                    <TextView
-                                        android:id="@+id/registration_addimage"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Add Image"
-                                        android:textColor="@color/black"
-                                        android:textSize="16sp"
-                                        android:textStyle="bold"
-                                        android:visibility="visible" />
-                                </LinearLayout>
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="5dip"
-                            android:layout_height="fill_parent" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="0.6"
-                            android:orientation="vertical" >
-
-                            <TextView
-                                android:id="@+id/registration_firstname"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:text="First Name"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/registration_firstname_value"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:hint="First Name"
-                                android:singleLine="true"
-                                android:textSize="15sp" />
-
-                            <TextView
-                                android:id="@+id/registration_lastname"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Last Name"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/registration_lastname_value"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:hint="Last Name"
-                                android:singleLine="true"
-                                android:textSize="15sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <TextView
-                    android:id="@+id/registration_usermessage"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="1dp"
-                    android:text="@string/zoupons_signup_usermessage"
-                    android:textColor="@color/red"
-                    android:textSize="13sp" />
-
-                <!--
-                     <LinearLayout
-                    android:id="@+id/registration_mobilenumber_above_space"
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />                -->
-
-                <RelativeLayout
-                    android:id="@+id/registration_mobilenumber_whole_container"
+                    android:id="@+id/registration_page1container"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone" >
-
-                    <!--
-                         <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical">
-                    -->
-
-
-                    <!-- Mobile Number with send mobile verification code -->
+                    android:visibility="visible" >
 
                     <LinearLayout
-                        android:id="@+id/registration_mobilenumber_container"
+                        android:id="@+id/registration_contact_info_container"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_alignParentTop="true"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_curve"
                         android:orientation="vertical" >
-
-                        <TextView
-                            android:id="@+id/registration_mobilenumber"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="1dp"
-                            android:text="Mobile Number"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="fill_parent"
-                            android:layout_height="5dip" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.4"
+                                android:gravity="center" >
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:background="@drawable/border_curve"
+                                    android:gravity="center"
+                                    android:orientation="vertical" >
+
+                                    <LinearLayout
+                                        android:id="@+id/registration_layout_addimage"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:visibility="visible" >
+
+                                        <ImageView
+                                            android:id="@+id/registration_add_userimage"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="100dip"
+                                            android:src="@drawable/profileimage"
+                                            android:visibility="visible" />
+
+                                        <TextView
+                                            android:id="@+id/registration_addimage"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Add Image"
+                                            android:textColor="@color/black"
+                                            android:textSize="16sp"
+                                            android:textStyle="bold"
+                                            android:visibility="visible" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="5dip"
+                                android:layout_height="fill_parent" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.6"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/registration_firstname"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="First Name"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:visibility="invisible" />
+
+                                <EditText
+                                    android:id="@+id/registration_firstname_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:hint="First Name"
+                                    android:singleLine="true"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/registration_lastname"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Last Name"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:visibility="invisible" />
+
+                                <EditText
+                                    android:id="@+id/registration_lastname_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:hint="Last Name"
+                                    android:singleLine="true"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/registration_emailid_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:hint="EmailID"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textSize="15sp" />
 
                         <EditText
                             android:id="@+id/registration_mobilenumber_value"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="5dp"
                             android:hint="Mobile Number"
                             android:inputType="phone"
                             android:maxLength="12"
                             android:singleLine="true"
-                            android:textSize="15sp" />
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="10dip" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <Button
+                            android:id="@+id/registration_email_cancel"
+                            android:layout_width="@dimen/cancelbuttonwidth"
+                            android:layout_height="@dimen/cancelbuttonheight"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/buttonhover_new"
+                            android:gravity="center"
+                            android:text="Cancel"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/registration_sendmobileactivationcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/cancelbuttonheight"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@id/registration_email_cancel"
+                            android:background="@drawable/buttonhover_new"
+                            android:gravity="center"
+                            android:text="@string/zoupons_signup_sendmobileactivationcode"
+                            android:textColor="@color/black"
+                            android:textSize="15dip"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/registration_usermessage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="1dp"
+                        android:text="@string/zoupons_signup_usermessage"
+                        android:textColor="@color/red"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <!--
+                     <LinearLayout
+                    android:id="@+id/registration_mobilenumber_above_space"
+                    android:layout_width="fill_parent"
+                    android:layout_height="10dip" />
+                    -->
+
+                    <RelativeLayout
+                        android:id="@+id/registration_mobilenumber_whole_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
 
                         <!--
+                         <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+                        -->
+
+
+                        <!-- Mobile Number with send mobile verification code -->
+
+                        <LinearLayout
+                            android:id="@+id/registration_mobilenumber_container"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentTop="true"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/registration_mobilenumber"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="1dp"
+                                android:text="Mobile Number"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="5dip" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="10dip" />
+
+                            <!--
                              <TextView
                             android:id="@+id/registration_sendmobileactivationcode"
                             android:layout_width="fill_parent"
@@ -237,11 +334,11 @@
                             android:paddingLeft="1dp"
                             android:text="@string/zoupons_signup_sendmobileactivationcode"
                             android:textColor="@color/blue"
-                            android:textSize="13dp" />
-                        -->
+                            android:textSize="13dp" />
+                            -->
 
 
-                        <!--
+                            <!--
                              <Button
                             android:id="@+id/registration_sendmobileactivationcode"
                             android:layout_width="220dip"
@@ -252,22 +349,23 @@
                             android:text="@string/zoupons_signup_sendmobileactivationcode"
                             android:background="@drawable/buttonhover_new"
                             android:layout_gravity="right"
-                            android:gravity="center" />
-                        -->
-                    </LinearLayout>
+                            android:gravity="center" />
+                            -->
+                        </LinearLayout>
 
-                    <!--
+                        <!--
                          <LinearLayout
                         android:id="@+id/registration_mobilenumber_below_space"
                         android:layout_width="fill_parent"
                         android:layout_height="10dip"
-                        android:layout_below="@id/registration_mobilenumber_container" />                    -->
+                        android:layout_below="@id/registration_mobilenumber_container" />
+                        -->
 
 
-                    <!-- Mobile Verification code -->
+                        <!-- Mobile Verification code -->
 
 
-                    <!--
+                        <!--
                     <LinearLayout
                         android:id="@+id/registration_mobileactivationcode_container"
                         android:layout_width="fill_parent"
@@ -289,93 +387,285 @@
                             android:inputType="phone"
                             android:maxLength="12"
                             android:singleLine="true" />
-                    </LinearLayout>
-                    -->
+                    </LinearLayout>
+                        -->
 
 
-                    <!-- </LinearLayout> -->
+                        <!-- </LinearLayout> -->
 
-                    <Button
-                        android:id="@+id/registration_mobilenumber_freezeview"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:background="@color/qrcode_transparent"
-                        android:visibility="gone" />
-                </RelativeLayout>
+                        <Button
+                            android:id="@+id/registration_mobilenumber_freezeview"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@color/qrcode_transparent"
+                            android:visibility="gone" />
+                    </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/registration_emailid_above_space"
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
+                    <!-- Email -->
 
-                <!-- Email -->
-
-                <LinearLayout
-                    android:id="@+id/registration_emailid_container"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="visible" >
-
-                    <TextView
-                        android:id="@+id/registration_emailid"
+                    <LinearLayout
+                        android:id="@+id/registration_emailid_container"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="1dp"
-                        android:text="EmailID"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/registration_emailid"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="1dp"
+                            android:text="EmailID"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="5dip"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/registration_emailid_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:hint="EmailID"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dip"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:id="@+id/registration_mobilecarrier"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="2dp"
+                                android:text="Mobile Carrier"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="5dip" />
+
+                            <FrameLayout
+                                android:id="@+id/registration_mobilecarrier_container"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/registration_mobilecarrier_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:enabled="true"
+                                    android:focusable="false"
+                                    android:hint="Mobile Carrier"
+                                    android:singleLine="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" />
+
+                                <ImageView
+                                    android:id="@+id/registration_mobilecarrier_contextmenu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="0dip"
+                                    android:layout_marginTop="1dip"
+                                    android:background="@drawable/step2_downarrow" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Contacts Information Page-2 -->
+
+                <LinearLayout
+                    android:id="@+id/registration_page2container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
 
                     <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/registration_password"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Choose a Password (minimum 6 characters)"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="5dip" />
+
+                        <EditText
+                            android:id="@+id/registration_password_value"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textSize="15sp" />
+                    </LinearLayout>
 
                     <EditText
-                        android:id="@+id/registration_emailid_value"
+                        android:id="@+id/registration_confirmpassword_value"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:hint="EmailID"
-                        android:inputType="textEmailAddress"
+                        android:layout_marginTop="5dp"
+                        android:hint="ConfirmPassword"
+                        android:inputType="textPassword"
                         android:singleLine="true"
                         android:textSize="15sp" />
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="10dip" />
 
-                        <Button
-                            android:id="@+id/registration_email_cancel"
-                            android:layout_width="@dimen/cancelbuttonwidth"
-                            android:layout_height="@dimen/cancelbuttonheight"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/buttonhover_new"
-                            android:gravity="center"
-                            android:text="Cancel"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold"
-                            android:visibility="visible" />
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
 
-                        <Button
-                            android:id="@+id/registration_sendmobileactivationcode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="@dimen/cancelbuttonheight"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:layout_gravity="right"
-                            android:layout_marginLeft="5dip"
-                            android:layout_marginTop="10dp"
-                            android:layout_toRightOf="@id/registration_email_cancel"
-                            android:background="@drawable/buttonhover_new"
-                            android:gravity="center"
-                            android:text="@string/zoupons_signup_sendmobileactivationcode"
+                        <TextView
+                            android:id="@+id/registration_securityquestion1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Choose a security question"
                             android:textColor="@color/black"
-                            android:textSize="15dip"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
-                    </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="5dip" />
+
+                        <FrameLayout
+                            android:id="@+id/registration_securityquestion1_container"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/registration_securityquestion1_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:enabled="true"
+                                android:focusable="false"
+                                android:hint="Security Question"
+                                android:lineSpacingExtra="2dp"
+                                android:lines="3"
+                                android:paddingRight="50dip"
+                                android:singleLine="false"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/registration_securityquestion1_contextmenu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="0dip"
+                                android:layout_marginTop="1dip"
+                                android:background="@drawable/step2_downarrow" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/registration_answer1_value"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="Answer"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dip" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/registration_securityquestion2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Security Question 2"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="5dip" />
+
+                        <FrameLayout
+                            android:id="@+id/registration_securityquestion2_container"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/registration_securityquestion2_value"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:enabled="true"
+                                android:focusable="false"
+                                android:hint="Security Question 2"
+                                android:lineSpacingExtra="2dp"
+                                android:lines="3"
+                                android:paddingRight="50dip"
+                                android:singleLine="false"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:id="@+id/registration_securityquestion2_contextmenu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="0dip"
+                                android:layout_marginTop="1dip"
+                                android:background="@drawable/step2_downarrow" />
+                        </FrameLayout>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="fill_parent"
@@ -389,11 +679,10 @@
                         android:visibility="gone" >
 
                         <TextView
-                            android:id="@+id/registration_mobilecarrier"
+                            android:id="@+id/registration_answer2"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="2dp"
-                            android:text="Mobile Carrier"
+                            android:text="Answer 2"
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -402,620 +691,295 @@
                             android:layout_width="fill_parent"
                             android:layout_height="5dip" />
 
-                        <FrameLayout
-                            android:id="@+id/registration_mobilecarrier_container"
+                        <EditText
+                            android:id="@+id/registration_answer2_value"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:orientation="horizontal" >
-
-                            <EditText
-                                android:id="@+id/registration_mobilecarrier_value"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:clickable="true"
-                                android:enabled="true"
-                                android:focusable="false"
-                                android:hint="Mobile Carrier"
-                                android:singleLine="true"
-                                android:textColor="@color/black"
-                                android:textSize="15sp" />
-
-                            <ImageView
-                                android:id="@+id/registration_mobilecarrier_contextmenu"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_marginRight="0dip"
-                                android:layout_marginTop="1dip"
-                                android:background="@drawable/step2_downarrow" />
-                        </FrameLayout>
+                            android:hint="Answer 2"
+                            android:singleLine="true"
+                            android:textSize="15sp" />
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <!-- Contacts Information Page-2 -->
-
-            <LinearLayout
-                android:id="@+id/registration_page2container"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:visibility="gone" >
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone" >
-
-                    <TextView
-                        android:id="@+id/signup_verification_userinformation"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/SignUp_Verification_UserInformation"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dip"
-                        android:background="@color/black"
-                        android:text=" " />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip"
-                    android:visibility="gone" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
 
                     <LinearLayout
                         android:layout_width="fill_parent"
+                        android:layout_height="5dip" />
+
+                    <!-- Zoupons Enter Pin -->
+
+                    <LinearLayout
+                        android:id="@+id/registration_zouponspinContainer"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal" >
+                        android:orientation="vertical"
+                        android:visibility="visible" >
 
                         <TextView
-                            android:id="@+id/registration_password"
-                            android:layout_width="wrap_content"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text="Password"
+                            android:text="Choose a 4-digit pin"
                             android:textColor="@color/black"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.45"
+                                android:orientation="vertical" >
+
+                               <EditText
+                                    android:id="@+id/registration_enterpin_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="PIN Number"
+                                    android:inputType="phone"
+                                    android:maxLength="4"
+                                    android:nextFocusDown="@+id/registration_reenterpin_value"
+                                    android:password="true"
+                                    android:singleLine="true"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="0.1" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.45"
+                                android:orientation="vertical" >
+
+                                <EditText
+                                    android:id="@+id/registration_reenterpin_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="PIN Number"
+                                    android:inputType="phone"
+                                    android:maxLength="4"
+                                    android:password="true"
+                                    android:singleLine="true"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Terms and conditons layout -->
+
+                    <RelativeLayout
+                        android:id="@+id/zoupons_termsandConditionsLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+
                         <TextView
-                            android:id="@+id/registration_password"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/zoupons_termsandconditionsId"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text=" (minimum 6 characters)"
+                            android:layout_marginLeft="50dp"
+                            android:padding="5dp"
+                            android:text="I accept the terms and conditions in the Zoupons license agreement"
                             android:textColor="@color/blue"
-                            android:textSize="11dip" />
-                    </LinearLayout>
+                            android:textSize="16sp" />
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <EditText
-                        android:id="@+id/registration_password_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Password"
-                        android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/registration_confirmpassword"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Confirm Password"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <EditText
-                        android:id="@+id/registration_confirmpassword_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="ConfirmPassword"
-                        android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/registration_securityquestion1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Security Question"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <FrameLayout
-                        android:id="@+id/registration_securityquestion1_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:orientation="horizontal" >
-
-                        <EditText
-                            android:id="@+id/registration_securityquestion1_value"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:clickable="true"
-                            android:enabled="true"
-                            android:focusable="false"
-                            android:hint="Security Question"
-                            android:lineSpacingExtra="2dp"
-                            android:lines="3"
-                            android:paddingRight="50dip"
-                            android:singleLine="false"
-                            android:textColor="@color/black"
-                            android:textSize="10sp" />
-
-                        <ImageView
-                            android:id="@+id/registration_securityquestion1_contextmenu"
+                        <CheckBox
+                            android:id="@+id/zoupons_termsandconditions_Checkbox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="0dip"
-                            android:layout_marginTop="1dip"
-                            android:background="@drawable/step2_downarrow" />
-                    </FrameLayout>
+                            android:layout_alignParentLeft="true" />
+                    </RelativeLayout>
+                    
+                    <Button
+                        android:id="@+id/registration_next"
+                        android:layout_width="@dimen/TakeMeHomebuttonwidth"
+                        android:layout_height="@dimen/TakeMeHomebuttonheight"
+                        android:layout_gravity="center"
+                        android:background="@drawable/buttonhover"
+                        android:text="Take Me Home"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:visibility="visible" />
                 </LinearLayout>
+
+                <!-- Button Container -->
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="10dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:id="@+id/registration_answer1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Answer"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <EditText
-                        android:id="@+id/registration_answer1_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Answer"
-                        android:inputType="textPassword"
-                        android:singleLine="true"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone" >
-
-                    <TextView
-                        android:id="@+id/registration_securityquestion2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Security Question 2"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <FrameLayout
-                        android:id="@+id/registration_securityquestion2_container"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:orientation="horizontal" >
-
-                        <EditText
-                            android:id="@+id/registration_securityquestion2_value"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:clickable="true"
-                            android:enabled="true"
-                            android:focusable="false"
-                            android:hint="Security Question 2"
-                            android:lineSpacingExtra="2dp"
-                            android:lines="3"
-                            android:paddingRight="50dip"
-                            android:singleLine="false"
-                            android:textColor="@color/black"
-                            android:textSize="10sp" />
-
-                        <ImageView
-                            android:id="@+id/registration_securityquestion2_contextmenu"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="0dip"
-                            android:layout_marginTop="1dip"
-                            android:background="@drawable/step2_downarrow" />
-                    </FrameLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip"
-                    android:visibility="gone" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone" >
-
-                    <TextView
-                        android:id="@+id/registration_answer2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Answer 2"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <EditText
-                        android:id="@+id/registration_answer2_value"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Answer 2"
-                        android:singleLine="true"
-                        android:textSize="15sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="5dip" />
-
-                <!-- Zoupons Enter Pin -->
-
-                <LinearLayout
-                    android:id="@+id/registration_zouponspinContainer"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="visible" >
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/addcardinformation_pinhint"
-                        android:textColor="@color/red"
-                        android:textSize="13dip" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/addcardinformation_warning"
-                        android:textColor="@color/red"
-                        android:textSize="13dip"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="5dip" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal" >
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.45"
-                            android:orientation="vertical" >
-
-                            <TextView
-                                android:id="@+id/addcardinformation_enterpin"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Enter PIN"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="5dip" />
-
-                            <EditText
-                                android:id="@+id/registration_enterpin_value"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="PIN Number"
-                                android:inputType="phone"
-                                android:maxLength="4"
-                                android:nextFocusDown="@+id/registration_reenterpin_value"
-                                android:password="true"
-                                android:singleLine="true"
-                                android:textSize="15sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="0.1" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.45"
-                            android:orientation="vertical" >
-
-                            <TextView
-                                android:id="@+id/addcardinformation_reenterpin"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Re-Enter PIN"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="5dip" />
-
-                            <EditText
-                                android:id="@+id/registration_reenterpin_value"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="PIN Number"
-                                android:inputType="phone"
-                                android:maxLength="4"
-                                android:password="true"
-                                android:singleLine="true"
-                                android:textSize="15sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <!-- Terms and conditons layout -->
 
                 <RelativeLayout
-                    android:id="@+id/zoupons_termsandConditionsLayout"
+                    android:id="@+id/registration_buttoncontainer"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp" >
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
 
-                    <TextView
-                        android:id="@+id/zoupons_termsandconditionsId"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="5dp"
-                        android:padding="5dp"
-                        android:text="I accept the terms and conditions in the Zoupons license agreement"
-                        android:textColor="@color/blue"
-                        android:textSize="16sp" />
+                    <Button
+                        android:id="@+id/registration_cancel"
+                        android:layout_width="@dimen/cancelbuttonwidth"
+                        android:layout_height="@dimen/cancelbuttonheight"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/buttonhover_new"
+                        android:gravity="center"
+                        android:text="Cancel"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
 
-                    <CheckBox
-                        android:id="@+id/zoupons_termsandconditions_Checkbox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true" />
+                    
                 </RelativeLayout>
             </LinearLayout>
+        </ScrollView>
+        <!-- Mobile and Email Verification View -->
 
-            <!-- Button Container -->
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="10dip" />
-
-            <RelativeLayout
-                android:id="@+id/registration_buttoncontainer"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="visible" >
-
-                <Button
-                    android:id="@+id/registration_cancel"
-                    android:layout_width="@dimen/cancelbuttonwidth"
-                    android:layout_height="@dimen/cancelbuttonheight"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/buttonhover_new"
-                    android:gravity="center"
-                    android:text="Cancel"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-
-                <Button
-                    android:id="@+id/registration_next"
-                    android:layout_width="@dimen/cancelbuttonwidth"
-                    android:layout_height="@dimen/cancelbuttonheight"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/buttonhover"
-                    android:text="Next"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- Mobile and Email Verification View -->
-
-    <RelativeLayout
-        android:id="@+id/registration_verificationpopup_container"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/custombackground"
-        android:tag="mobile"
-        android:visibility="gone" >
-
-        <ScrollView
+        <RelativeLayout
+            android:id="@+id/registration_verificationpopup_container"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true" >
+            android:layout_height="fill_parent"
+            android:background="@drawable/custombackground"
+            android:tag="mobile"
+            android:visibility="gone" >
 
-            <RelativeLayout
+            <ScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:orientation="vertical"
-                android:paddingBottom="3dip"
-                android:paddingLeft="10dip"
-                android:paddingRight="10dip"
-                android:paddingTop="3dip" >
-
-                <TextView
-                    android:id="@+id/registration_popup_header"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="Enter Mobile Verification Code"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/space1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip"
-                    android:layout_below="@id/registration_popup_header" />
+                android:fillViewport="true" >
 
                 <RelativeLayout
-                    android:id="@+id/registration_ad_container"
-                    android:layout_width="fill_parent"
-                    android:layout_height="150dp"
-                    android:layout_below="@id/space1" >
-
-                    <ImageView
-                        android:id="@+id/registration_animateimage"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_below="@id/space1"
-                        android:layout_centerHorizontal="true"
-                        android:scaleType="fitXY"
-                        android:visibility="invisible" />
-
-                    <ProgressBar
-                        android:id="@+id/mProgressBar"
-                        style="@android:attr/progressBarStyleSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:indeterminateOnly="true" />
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:id="@+id/space2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip"
-                    android:layout_below="@id/registration_ad_container" />
-
-                <EditText
-                    android:id="@+id/registration_mobileverificationcodevalue"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/space2"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:hint="Mobile Verification Code"
-                    android:inputType="phone"
-                    android:singleLine="true"
-                    android:textSize="15sp" >
-                </EditText>
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="3dip"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="3dip" >
 
-                <LinearLayout
-                    android:id="@+id/space3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip"
-                    android:layout_below="@id/registration_mobileverificationcodevalue" />
+                    <RelativeLayout
+                        android:id="@+id/registration_ad_container"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp" >
 
-                <Button
-                    android:id="@+id/registration_popup_cancel"
-                    android:layout_width="100dip"
-                    android:layout_height="45dip"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/space3"
-                    android:background="@drawable/buttonhover"
-                    android:text="Cancel"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/registration_animateimage"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_centerHorizontal="true"
+                            android:scaleType="fitXY"
+                            android:visibility="invisible" />
 
-                <Button
-                    android:id="@+id/registration_popup_verify"
-                    android:layout_width="100dip"
-                    android:layout_height="45dip"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/space3"
-                    android:background="@drawable/buttonhover"
-                    android:text="Verify"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-        </ScrollView>
+                        <ProgressBar
+                            android:id="@+id/mProgressBar"
+                            style="@android:attr/progressBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:indeterminateOnly="true" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/registration_popup_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/registration_ad_container"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="We just Emailed you a Verification code"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/registration_popup_verify"
+                        android:layout_width="100dip"
+                        android:layout_height="45dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/registration_popup_header"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonhover"
+                        android:text="Verify"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/registration_mobileverificationcodevalue"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/registration_popup_header"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toLeftOf="@id/registration_popup_verify"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="Mobile Verification Code"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textSize="15sp" >
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/registration_popup_cancel"
+                        android:layout_width="100dip"
+                        android:layout_height="45dip"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/buttonhover"
+                        android:text="Cancel"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/app_introduction_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/app_introduction_bottom_container"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/app_intro_skip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/buttonhover"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="skip"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/app_introduction_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/app_introduction_bottom_container"
+            android:scaleType="fitXY"
+            android:src="@drawable/app_introduction" />
     </RelativeLayout>
 
 </LinearLayout>

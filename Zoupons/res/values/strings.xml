@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="hello">Hello World, LeftToRight!</string>
     <string name="app_name">Zoupons</string>
-    
     <string name="storecategory">Select Category</string>
     <string name="scan">Scan</string>
-	<string name="scan_resut_lable">Scan Result:</string>
-	<string name="QRCodeScanner_app_name">QRCodeLib</string>
-	<string name="QRCodeScanner_msg_default_status">Zoupons QRCode Scanner</string>
+    <string name="scan_resut_lable">Scan Result:</string>
+    <string name="QRCodeScanner_app_name">QRCodeLib</string>
+    <string name="QRCodeScanner_msg_default_status">Zoupons QRCode Scanner</string>
+
     <string-array name="list_entries">
         <item>Item1</item>
         <item>Item2</item>
@@ -15,6 +16,7 @@
         <item>Item4</item>
         <item>Item5</item>
     </string-array>
+
     <string name="LoginHeader">Log into Zoupons</string>
     <string name="zoupons_login_username">Email</string>
     <string name="zoupons_login_password">Password</string>
@@ -36,7 +38,7 @@
     <string name="Rewards_ReferFacebookFriends">Refer facebook friends who can sign up</string>
     <string name="Rewards_ZpayUse">First Zpay use</string>
     <string name="Rewards_ReferStore">Refer a store who signs up</string>
-    <string name="Registration_ContactInformation">Contact Information</string>
+    <string name="Registration_ContactInformation">Sign Up</string>
     <string name="SignUp_Verification_UserInformation">User Information</string>
     <string name="talktous_header">Talk to Us</string>
     <string name="talktous_post">The effects of Global Warming is very dangerous for our existence and survival. The sun’s scorching heat comes to earth in a direct way. Therefore, the earth’s surface becomes seriously heated. Agriculture, forestry and fishery is seriously be damaged. This can catastrophically reduce mankind’s ability to grow foods, destroy wildlife. Global Warming also cause sea-water to swell up.</string>
@@ -48,7 +50,7 @@
     <string name="addcardinformation_pinhint">To Secure your card to the vault, please choose a 4 digit PIN number. You will use this pin number and your mobile number to make purchases at participating stores.</string>
     <string name="addcardinformation_warning">NEVER SHARE YOUR PIN NUMBER WITH ANYONE.</string>
     <string name="forgotpassword_emailidheader">Please enter the email address used to setup your account.</string>
-    <string name="forgotpassword_username">Username</string>
+    <string name="forgotpassword_username">Email</string>
     <string name="forgotpassword_securityquestion_header">Please answer the following security question</string>
     <string name="forgotpassword_securityquestion1_header">Security Question</string>
     <string name="forgotpassword_securityquestion2_header">Security Question 2</string>
@@ -62,7 +64,7 @@
     <string name="LeftMenu_Receipts">Receipts</string>
     <string name="LeftMenu_MyFriends">Friends</string>
     <string name="LeftMenu_TalkToUs">Talk to Us</string>
-    <string name="LeftMenu_CustomerCenter">Customer Service</string>
+    <string name="LeftMenu_CustomerCenter">Chat Support</string>
     <string name="LeftMenu_Rewards">Refer a Store</string>
     <string name="LeftMenu_Settings">Settings</string>
     <string name="LeftMenu_Logout">Logout</string>
@@ -100,7 +102,7 @@
     <string name="zpay_step2_giftcard_amount_alertmsg_new">The entered amount exceeded the selected Giftcard\'s balance amount.Please choose another Giftcard/Credit card for purchase.</string>
     <string name="rewards_add_photo_text">Please add two photos of store to share.</string>
     <!-- <string name="zoupons_signup_sendmobileactivationcode"><u>Send mobile verification code</u></string> -->
-    <string name="zoupons_signup_sendmobileactivationcode">Send verification code</string>
+    <string name="zoupons_signup_sendmobileactivationcode">Email verification code</string>
     <string name="zoupons_signup_usermessage">For security of your free mobile payment account, please take one minute to verify your email address &amp; mobile number.</string>
     <!-- Store LeftMenu -->
     <string name="LeftMenu_Store_Home">Home</string>
@@ -134,8 +136,11 @@
     <string name="add_notes"><u>Add note</u></string>
     <string name="app_id_unsigned">532558480136413</string>
     <string name="app_id">399356956837551</string>
+    <!-- <string name="app_id">485276881578654</string> -->
     <string name="referstore_information">Support your favorite store. Give them the gift of a free account on Zoupons. Simply fill out a short reference page and we will be sure to reach out on your behalf.</string>
     <string name="reviewpayment">Review Payment</string>
     <string name="map_api_key_signed">AIzaSyCOFoLZTAWrkJbQ4ebZtF0rcbF-RcXeCEs</string>
     <string name="map_api_key_unsigned">AIzaSyCJPw4p702TKo_fFU93RUaH1sbHF_2FZNg</string>
+    <string name="app_intro_skip_text">Do not show again</string>
+
 </resources>

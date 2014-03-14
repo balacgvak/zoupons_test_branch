@@ -33,7 +33,7 @@ public class GetAllInvoiceListTask extends AsyncTask<String, String, ArrayList<O
 	    zouponswebservice= new StoreownerWebserivce(context);
 		parsingclass= new StoreownerParsingclass(this.mContext);
 		progressdialog=new ProgressDialog(this.mContext);
-		progressdialog.setCancelable(true);
+		progressdialog.setCancelable(false);
 	}
 	
 	@Override
@@ -80,6 +80,7 @@ public class GetAllInvoiceListTask extends AsyncTask<String, String, ArrayList<O
 		}
 	}
 	
+	// To show alert box with respective message
 	private void alertBox_service(String title,final String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);
 		service_alert.setTitle(title);
@@ -89,7 +90,6 @@ public class GetAllInvoiceListTask extends AsyncTask<String, String, ArrayList<O
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
-				
 			}
 		});
 		service_alert.show();

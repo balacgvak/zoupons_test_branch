@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-<style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
-<item name="android:windowBackground">@color/translucent_black</item>
-<item name="android:windowIsFloating">true</item>
-<item name="android:windowNoTitle">true</item>
-</style>
-<style name="boldText">
-	<item name="android:textStyle">bold</item>
-	<item name="android:textColor">@color/black</item>
-</style>
-<style name="businesshoursheader">
-	<item name="android:textStyle">bold</item>
-	<item name="android:textColor">@color/black</item>
-	<item name="android:textSize">15sp</item>
-</style>
+
+    <!-- Custom dialog style -->
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/translucent_black</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="boldText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="businesshoursheader">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
 </resources>

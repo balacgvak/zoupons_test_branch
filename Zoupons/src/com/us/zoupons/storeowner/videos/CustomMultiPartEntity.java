@@ -8,6 +8,12 @@ import java.nio.charset.Charset;
 import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntity;
 
+/**
+ * 
+ * To send multiple parameter along with file and also to get updloaded information
+ *
+ */
+
 public class CustomMultiPartEntity extends MultipartEntity
 {
  

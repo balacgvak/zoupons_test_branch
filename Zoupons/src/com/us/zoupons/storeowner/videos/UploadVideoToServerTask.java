@@ -20,40 +20,44 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
 import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
 
+/**
+ * 
+ * Asynchronous task to upload recorded video or from gallery to webservice.
+ *
+ */
+
 public class UploadVideoToServerTask extends AsyncTask<String, Long, String>{
 
 	private Activity mContext;
-	private StoreownerParsingclass parsingclass=null;
-	private ProgressDialog progressdialog = null;
-	private String TAG="StoreOwnerVideosAsynchTask",mEventFlag="",mUploadFilePath="";
-	private File file;
-	private long totalsize;
+	private StoreownerParsingclass mParsingclass=null;
+	private ProgressDialog mProgressdialog = null;
+	private File mUploadFile;
+	private long mTotalsize;
 	private String mFileSource="";
 	
 	UploadVideoToServerTask(Activity context,File file,String filesource){
 		this.mContext = context;
-		this.file = file;
+		this.mUploadFile = file;
 		this.mFileSource = filesource;
-		this.totalsize = file.length();
-		Log.i("size", (totalsize/1024/1024)+"");
-		parsingclass= new StoreownerParsingclass(this.mContext);
+		this.mTotalsize = file.length();
+		mParsingclass= new StoreownerParsingclass(this.mContext);
 	}
 	
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
-		progressdialog = new ProgressDialog(mContext);
-		progressdialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		progressdialog.setMessage("Uploading Video...");
-		progressdialog.setProgressNumberFormat("%1d B of %2d B");
-		progressdialog.setMax((int)totalsize);
-		progressdialog.setCancelable(false);
-		progressdialog.show();
+		// Horizontal progress bar with buffer details
+		mProgressdialog = new ProgressDialog(mContext);
+		mProgressdialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		mProgressdialog.setMessage("Uploading Video...");
+		mProgressdialog.setProgressNumberFormat("%1d B of %2d B");
+		mProgressdialog.setMax((int)mTotalsize);
+		mProgressdialog.setCancelable(false);
+		mProgressdialog.show();
 	}
 		
 	@Override
@@ -64,9 +68,7 @@ public class UploadVideoToServerTask extends AsyncTask<String, Long, String>{
 			String location_id = mPrefs.getString("location_id", "");
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(StoreownerWebserivce.URL+StoreownerWebserivce.UPLOAD_VIDEO);
-			FileBody filebodyVideo = new FileBody(file);
-			StringBody location = null;
-			location = new StringBody(location_id, "text/plain", Charset.forName("UTF-8"));
+			FileBody filebodyVideo = new FileBody(mUploadFile);
 			CustomMultiPartEntity reqEntity = new CustomMultiPartEntity(new CustomMultiPartEntity.ProgressListener() {
 				
 				@Override
@@ -77,11 +79,9 @@ public class UploadVideoToServerTask extends AsyncTask<String, Long, String>{
 			reqEntity.addPart("location_id", new StringBody(location_id, "text/plain", Charset.forName("UTF-8")));
 			reqEntity.addPart("uploadedfile", filebodyVideo);
 			httppost.setEntity(reqEntity);
-			System.out.println( "executing request " + httppost.getRequestLine( ) );
-			System.out.println( "executing location id param " + location.getCharset() + " "+location.getMimeType());
 			String content = EntityUtils.toString(httpclient.execute(httppost).getEntity(), "UTF-8");
 			if(!content.equals("")){
-				mReturnValue = parsingclass.parseUploadVideoStatus(content);
+				mReturnValue = mParsingclass.parseUploadVideoStatus(content);
 			}else { // failure
 				mReturnValue = "failure";
 			}
@@ -100,10 +100,10 @@ public class UploadVideoToServerTask extends AsyncTask<String, Long, String>{
 	protected void onPostExecute(String result) {
 		super.onPostExecute(result);
 		try{
-			progressdialog.dismiss();
+			mProgressdialog.dismiss();
 			if(result.equalsIgnoreCase("success")){
 				if(mFileSource.equalsIgnoreCase("Camera"))
-				file.delete();
+				mUploadFile.delete();
 				alertBox_service("Information","Video has been successfully submitted to Zoupons for review");
 			}else{
 				alertBox_service("Information","unable to upload video please try after some time");
@@ -116,9 +116,10 @@ public class UploadVideoToServerTask extends AsyncTask<String, Long, String>{
 	@Override
 	protected void onProgressUpdate(Long... values) {
 		super.onProgressUpdate(values);
-		progressdialog.setProgress(values[0].intValue());
+		mProgressdialog.setProgress(values[0].intValue()); // To update progress dialog with transferred bytes
 	}
 	
+	// To show alert pop up with respective message
 	private void alertBox_service(String title,final String msg) {
 		// TODO Auto-generated method stub
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);

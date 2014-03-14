@@ -462,7 +462,8 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
-            android:background="@color/menubarsplitter" />
+            android:background="@color/menubarsplitter"
+            android:orientation="vertical" />
 
         <!-- Invisible 1 -->
 
@@ -513,7 +514,8 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:orientation="vertical" />
 
         <!-- Invisible 2 -->
 
@@ -564,7 +566,8 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:orientation="vertical" />
 
         <!-- Add Employee -->
 

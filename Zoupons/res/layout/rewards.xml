@@ -22,22 +22,6 @@
                 android:layout_height="fill_parent"
                 android:background="@drawable/header_1" />
 
-            <!--
-            <LinearLayout
-                android:id="@+id/rewards_logout_container"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="right" >
-
-                <ImageView
-                    android:id="@+id/rewards_logout_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:paddingRight="5dip"
-                    android:src="@drawable/logout_main" />
-            </LinearLayout>
-            -->
-
             <RelativeLayout
                 android:id="@+id/zoupons_logout_container"
                 android:layout_width="fill_parent"

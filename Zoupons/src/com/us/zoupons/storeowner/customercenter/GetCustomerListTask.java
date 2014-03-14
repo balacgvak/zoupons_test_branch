@@ -9,37 +9,47 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.Window;
 import android.widget.ListView;
 
-import com.us.zoupons.NetworkCheck;
 import com.us.zoupons.storeowner.webservice.StoreownerParsingclass;
 import com.us.zoupons.storeowner.webservice.StoreownerWebserivce;
 
+/**
+ * 
+ * Asynchronous task to fetch favorite customer list from web server
+ *
+ */
+
 public class GetCustomerListTask extends AsyncTask<String, String, ArrayList<Object>>{
-	CustomerCenter mContext;
-	NetworkCheck mConnectionAvailabilityChecking=null;
-	StoreownerWebserivce zouponswebservice=null;
-	StoreownerParsingclass parsingclass=null;
-	ProgressDialog progressdialog=null;
-	String mProgressStatus,mEventFlag;
-	ListView mListView;
-	private String TAG="StoreOwner_CustomCenterAsyncTask";
+	
+	private CustomerCenter mContext;
+ 	private StoreownerWebserivce zouponswebservice=null;
+ 	private StoreownerParsingclass parsingclass=null;
+ 	private ProgressDialog progressdialog=null;
+ 	private String mProgressStatus,mEventFlag;
 	
 	public GetCustomerListTask(CustomerCenter context,String progressStatus,ListView listview,String eventFlag) {
 		this.mContext = context;
 		this.mEventFlag = eventFlag;
-		mConnectionAvailabilityChecking= new NetworkCheck();
 		zouponswebservice= new StoreownerWebserivce(context);
 		parsingclass= new StoreownerParsingclass(this.mContext);
 		this.mProgressStatus = progressStatus;
-		this.mListView=listview;
 		progressdialog=new ProgressDialog(this.mContext);
 		progressdialog.setCancelable(true);
 		progressdialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		progressdialog.setProgress(0);
 		progressdialog.setMax(100);
+	}
+	
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
+		if(mProgressStatus.equalsIgnoreCase("PROGRESS")){
+			//Start a status dialog
+			progressdialog = ProgressDialog.show(mContext,"Loading...","Please Wait!",true);
+		}
 	}
 	
 	@Override
@@ -85,11 +95,14 @@ public class GetCustomerListTask extends AsyncTask<String, String, ArrayList<Obj
 			if(progressdialog != null && progressdialog.isShowing()){
 				progressdialog.dismiss();
 			}
-			Log.i("Task", "onPOstExecute");		
-			if(result!=null && result.size() >0){
+			if(result!=null && result.size() >0){ // Success
 				mContext.updateViews(result,mEventFlag);
 			}else if(result!=null && result.size() == 0){
-				alertBox_service("Information", "No data available");
+				if(mEventFlag.equalsIgnoreCase("customer_list")){ // Customer list
+					alertBox_service("Information", "Favorite customer list not available");
+				}else{ // add customer
+					alertBox_service("Information", "Unable to add user,please try after some time");
+				}
 			}else{
 				alertBox_service("Information", "Unable to reach service.");
 			}
@@ -99,21 +112,11 @@ public class GetCustomerListTask extends AsyncTask<String, String, ArrayList<Obj
 	}
 	
 	@Override
-	protected void onPreExecute() {
-		((Activity) mContext).getWindow().setFeatureInt(Window.FEATURE_PROGRESS,0);
-		if(mProgressStatus.equalsIgnoreCase("PROGRESS")){
-			//Start a status dialog
-			progressdialog = ProgressDialog.show(mContext,"Loading...","Please Wait!",true);
-		}
-		super.onPreExecute();
-		
-	}
-	
-	@Override
 	protected void onProgressUpdate(String... values) {
 		super.onProgressUpdate(values);
 	}
-	
+
+	// To show alert box with respective message
 	private void alertBox_service(String title, String msg) {
 		AlertDialog.Builder service_alert = new AlertDialog.Builder(this.mContext);
 		service_alert.setTitle(title);

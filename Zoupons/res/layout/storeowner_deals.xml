@@ -47,12 +47,13 @@
                 android:id="@+id/storeownerdeals_detailsView"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:visibility="gone" >
+                android:visibility="visible" >
 
                 <LinearLayout
                     android:id="@+id/storeownerdeals_details_headerView"
                     android:layout_width="fill_parent"
                     android:layout_height="100dip"
+                    android:orientation="vertical"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="20dp" >
 
@@ -184,6 +185,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -235,6 +237,7 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -286,6 +289,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 

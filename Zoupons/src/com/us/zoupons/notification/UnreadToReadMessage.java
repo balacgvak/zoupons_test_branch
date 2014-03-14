@@ -4,20 +4,23 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.us.zoupons.NetworkCheck;
-import com.us.zoupons.WebService.ZouponsParsingClass;
-import com.us.zoupons.WebService.ZouponsWebService;
+import com.us.zoupons.shopper.webService.ZouponsWebService;
+
+/**
+ * 
+ * Asynctask to communicate with server to change unread notification to read.
+ *
+ */
 
 public class UnreadToReadMessage extends AsyncTask<String, String, String> {
 
-	private ZouponsWebService zouponswebservice;
-	private ZouponsParsingClass parsingclass;
+	private ZouponsWebService mZouponswebservice;
 	private NetworkCheck mConnectivityCheck;
 	private Context mContext;
 	
 	public UnreadToReadMessage(Context context){
 		this.mContext=context;
-		zouponswebservice = new ZouponsWebService(context);
-		parsingclass = new ZouponsParsingClass(context);
+		mZouponswebservice = new ZouponsWebService(context);
 		mConnectivityCheck = new NetworkCheck();
 	}
 
@@ -25,7 +28,7 @@ public class UnreadToReadMessage extends AsyncTask<String, String, String> {
 	protected String doInBackground(String... params) {
 		String mresult="";
 		if (mConnectivityCheck.ConnectivityCheck(mContext)) {
-			String mResponse = zouponswebservice.UpdateNotificationStatus(params[0]);
+			String mResponse = mZouponswebservice.UpdateNotificationStatus(params[0]);
 			if (!mResponse.equals("")) {
 				if (!mResponse.equals("failure")&& !mResponse.equals("noresponse")) {
 					mresult = "success";
@@ -46,8 +49,5 @@ public class UnreadToReadMessage extends AsyncTask<String, String, String> {
 		super.onPostExecute(result);
 	}
 
-	@Override
-	protected void onPreExecute() {
-		super.onPreExecute();
-	}
+	
 }

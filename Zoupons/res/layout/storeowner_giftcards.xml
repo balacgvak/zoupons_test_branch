@@ -41,13 +41,13 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="visible" />
 
         <TextView
             android:id="@+id/storeownergifcards_availabletextId"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
             android:drawableTop="@drawable/availablegc"
             android:gravity="center"
@@ -59,7 +59,8 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
-            android:background="@color/menubarsplitter" />
+            android:background="@color/menubarsplitter"
+            android:orientation="vertical" />
 
         <TextView
             android:id="@+id/storeownergifcards_purchasedtextId"
@@ -186,83 +187,80 @@
             android:visibility="visible" >
         </ListView>
 
-        <RelativeLayout
+        <ScrollView
             android:id="@+id/storeownerdeals_detailsView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:fillViewport="true"
             android:visibility="gone" >
 
-            <LinearLayout
-                android:id="@+id/storeownerdeals_details_headerView"
+            <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="100dip"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="20dp" >
+                android:layout_height="fill_parent"
+                android:visibility="visible" >
 
                 <ImageView
                     android:id="@+id/storeownerdeals_details_cardImageId"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="@drawable/profileimage" />
-
-                <TextView
-                    android:id="@+id/storeownerdeals_details_cardvalueId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="50dp"
-                    android:text="$50"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:visibility="gone" />
-            </LinearLayout>
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/giftcards" />
 
-            <TextView
-                android:id="@+id/storeownerdeals_details_chargetext"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/storeownerdeals_details_headerView"
-                android:layout_margin="5dp"
-                android:text="How much would you like to charge for card"
-                android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/storeownerdeals_details_facevalueID"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/storeownerdeals_details_cardImageId"
+                    android:layout_marginTop="35dp"
+                    android:layout_alignBaseline="@id/storeownerdeals_details_cardImageId"
+                    android:layout_marginLeft="10dp"
+                    android:text="How much would you like to charge for card"
+                    android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/storeownerdeals_details_chargevalueId"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/storeownerdeals_details_chargetext"
-                android:layout_margin="5dp"
-                android:inputType="numberDecimal"
-                android:singleLine="true" />
+                <TextView
+                    android:id="@+id/storeownerdeals_details_chargetext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_cardImageId"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="40dp"
+                    android:text="How much would you like to charge for card"
+                    android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/storeownerdeals_details_weeksaletext"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/storeownerdeals_details_chargevalueId"
-                android:layout_margin="5dp"
-                android:text="How many would you like to sell for week?"
-                android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/storeownerdeals_details_chargevalueId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_chargetext"
+                    android:layout_margin="5dp"
+                    android:inputType="numberDecimal"
+                    android:singleLine="true" />
 
-            <EditText
-                android:id="@+id/storeownerdeals_details_weeksalevalueId"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/storeownerdeals_details_weeksaletext"
-                android:layout_margin="5dp"
-                android:inputType="numberDecimal"
-                android:singleLine="true" />
+                <TextView
+                    android:id="@+id/storeownerdeals_details_weeksaletext"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_chargevalueId"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="How many would you like to sell for week?"
+                    android:textColor="@color/black" />
 
-            <Button
-                android:id="@+id/storeonwerdeals_details_save"
-                android:layout_width="@dimen/cancelbuttonwidth"
-                android:layout_height="@dimen/cancelbuttonheight"
-                android:layout_below="@id/storeownerdeals_details_weeksalevalueId"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/buttonhover"
-                android:text="Save"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                <EditText
+                    android:id="@+id/storeownerdeals_details_weeksalevalueId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/storeownerdeals_details_weeksaletext"
+                    android:layout_margin="5dp"
+                    android:inputType="number"
+                    android:singleLine="true" />
+            </RelativeLayout>
+        </ScrollView>
     </LinearLayout>
 
     <!-- Giftcard MiddleView -->

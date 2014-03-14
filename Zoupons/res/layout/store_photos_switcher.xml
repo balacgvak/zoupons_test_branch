@@ -242,9 +242,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
-                android:src="@drawable/photo_switcher"
+                android:src="@drawable/photo_switcher_left"
                 android:id="@+id/storeimage_left_arrow"
-                android:rotation="180"
                 android:visibility="invisible"/>
             
             <ImageView
@@ -256,7 +255,7 @@
                 android:visibility="invisible"/>
         </FrameLayout>
 
-        <com.us.zoupons.StoreInfo.UnderlinePageIndicator
+        <com.us.zoupons.shopper.photos.UnderlinePageIndicator
             android:id="@+id/indicator"
             android:layout_width="fill_parent"
             android:layout_height="2dp"

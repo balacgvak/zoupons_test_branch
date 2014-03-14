@@ -137,6 +137,7 @@
                             android:orientation="vertical" >
 
                             <RelativeLayout
+                                android:id="@+id/storeowner_invoice_customer_details_container"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/settings_contactborder"
@@ -190,7 +191,8 @@
                                             android:layout_width="fill_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
-                                            android:paddingBottom="5dip" >
+                                            android:paddingBottom="5dip"
+                                            android:orientation="vertical" >
 
                                             <TextView
                                                 android:id="@+id/storeowner_customer_invoice_FirstNameText"
@@ -238,7 +240,8 @@
                                         <LinearLayout
                                             android:layout_width="fill_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_weight="1" >
+                                            android:layout_weight="1"
+                                            android:orientation="vertical" >
 
                                             <TextView
                                                 android:id="@+id/storeowner_customer_invoice_LastNameText"
@@ -299,6 +302,7 @@
                                         android:layout_height="wrap_content"
                                         android:hint="Email Address"
                                         android:padding="5dp"
+                                        android:inputType="textEmailAddress"
                                         android:singleLine="true"
                                         android:textColor="@color/black"
                                         android:textSize="15sp" />
@@ -1163,6 +1167,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
 
         <LinearLayout
@@ -1212,6 +1217,7 @@
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 
@@ -1219,6 +1225,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="visible" />
 

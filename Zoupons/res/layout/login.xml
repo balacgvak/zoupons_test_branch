@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/searchbackground"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/login_parent_layout_id" >
 
     <ScrollView
         android:id="@+id/defaultloginpage"
@@ -22,7 +23,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="8dip" >
+                android:padding="8dip"
+                android:visibility="visible" >
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -45,11 +47,39 @@
                         android:textColor="@color/black"
                         android:textSize="13dp" />
                 </LinearLayout>
-                
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp" >
+
+                    <Button
+                        android:id="@+id/login_choice_customer_buttonId"
+                        android:layout_width="0dp"
+                        android:layout_height="40dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/login_type_selector_drawable"
+                        android:gravity="center"
+                        android:text="Customer"
+                        android:textColor="#04498E"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/login_choice_guest_buttonId"
+                        android:layout_width="0dp"
+                        android:layout_height="40dip"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/guest_login_selector"
+                        android:gravity="center"
+                        android:text="Guest"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/border_new"
                     android:orientation="vertical" >
 
@@ -104,6 +134,7 @@
                                     android:layout_height="wrap_content"
                                     android:inputType="textEmailAddress"
                                     android:singleLine="true"
+                                    android:hint="@string/zoupons_login_username"
                                     android:textSize="15sp" />
                             </LinearLayout>
 
@@ -127,6 +158,7 @@
                                     android:layout_height="wrap_content"
                                     android:inputType="textPassword"
                                     android:singleLine="true"
+                                    android:hint="@string/zoupons_login_password"
                                     android:textSize="15sp" />
                             </LinearLayout>
 
@@ -175,9 +207,9 @@
                                 android:layout_width="100dip"
                                 android:layout_height="45dip"
                                 android:drawableLeft="@drawable/key"
+                                android:gravity="center"
                                 android:text="Login"
-                                android:textColor="@color/black"
-                                android:gravity="center" />
+                                android:textColor="@color/black" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -189,7 +221,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:visibility="visible" >
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -285,6 +318,63 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <!-- app introduction -->
+
+    <RelativeLayout
+        android:id="@+id/app_introduction_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/app_introduction_bottom_container"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/app_intro_skip_textId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/app_intro_skip_text"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/app_intro_skip_checkboxId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/app_intro_skip_textId" />
+
+            <Button
+                android:id="@+id/app_intro_skip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/buttonhover"
+                android:gravity="center"
+                android:text="skip"
+                android:textSize="16sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/app_introduction_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/app_introduction_bottom_container"
+            android:scaleType="fitXY"
+            android:src="@drawable/app_introduction" />
+    </RelativeLayout>
 
     <!-- View Change password -->
 

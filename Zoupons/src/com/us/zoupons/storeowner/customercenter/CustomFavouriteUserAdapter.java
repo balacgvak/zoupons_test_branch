@@ -11,17 +11,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.us.zoupons.R;
-import com.us.zoupons.cards.ImageLoader;
+import com.us.zoupons.shopper.cards.ImageLoader;
+
+/**
+ * 
+ * Custom adapter to populate store favorite customer's list
+ *
+ */
 
 public class CustomFavouriteUserAdapter extends BaseAdapter{
-	Context mContext;
-	LayoutInflater mStoreFavouriteUserInflater;
-	ImageLoader mImageLoader;
-	ArrayList<Object> mcustomerlist;
+	private LayoutInflater mStoreFavouriteUserInflater;
+	private ImageLoader mImageLoader;
+	private ArrayList<Object> mcustomerlist;
 	
 	public CustomFavouriteUserAdapter(Context ctx,ArrayList<Object> customerlist){
 		this.mStoreFavouriteUserInflater=LayoutInflater.from(ctx);
-		this.mContext=ctx;
 		this.mcustomerlist = customerlist;
 		this.mImageLoader = new ImageLoader(ctx);
 	}
@@ -49,8 +53,7 @@ public class CustomFavouriteUserAdapter extends BaseAdapter{
 			convertView=mStoreFavouriteUserInflater.inflate(R.layout.storeowner_storeinformation_listrow, null);
 			holder=new ViewHolder();
 			holder.mListItemImage=(ImageView) convertView.findViewById(R.id.listitem_image);
-			holder.mListItem=(TextView) convertView.findViewById(R.id.listitem_id);
-			holder.mListItemCount=(TextView) convertView.findViewById(R.id.listitemcount_id);
+			holder.mFavoriteUserName=(TextView) convertView.findViewById(R.id.listitem_id);
 			holder.mListItemArrow=(ImageView) convertView.findViewById(R.id.listitem_arrow_Id);
 			holder.mFavouriteImage =(ImageView) convertView.findViewById(R.id.listitem_roundimage_Id);
 			holder.mTotalTransaction_amount = (TextView) convertView.findViewById(R.id.customer_transaction_amount_Id);
@@ -59,17 +62,16 @@ public class CustomFavouriteUserAdapter extends BaseAdapter{
 			holder=(ViewHolder) convertView.getTag();
 		}
 		FavouriteCustomerDetails mCustomerDetails =   (FavouriteCustomerDetails) mcustomerlist.get(position);
-		holder.mListItem.setText(mCustomerDetails.mCustomerName);
+		holder.mFavoriteUserName.setText(mCustomerDetails.mCustomerName);
 		holder.mListItemArrow.setVisibility(View.VISIBLE);
 		mImageLoader.DisplayImage(mCustomerDetails.mCustomerProfileImage, holder.mListItemImage);
+		holder.mTotalTransaction_amount.setVisibility(View.VISIBLE);
+		holder.mTotalTransaction_amount.setText("$"+String.format("%.2f",Double.parseDouble(mCustomerDetails.mTransactionAmount)));
 		if(mCustomerDetails.mIsFavouriteStoreRemoved.equalsIgnoreCase("yes")){
 			holder.mFavouriteImage.setVisibility(View.VISIBLE);
 			holder.mFavouriteImage.setImageResource(R.drawable.store_like);
-			holder.mTotalTransaction_amount.setVisibility(View.VISIBLE);
-			holder.mTotalTransaction_amount.setText("$"+String.format("%.2f",Double.parseDouble(mCustomerDetails.mTransactionAmount)));
 		}else{
-			holder.mFavouriteImage.setVisibility(View.GONE);
-			holder.mTotalTransaction_amount.setVisibility(View.GONE);
+			holder.mFavouriteImage.setVisibility(View.INVISIBLE);
 		}
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -78,7 +80,7 @@ public class CustomFavouriteUserAdapter extends BaseAdapter{
 	}
 	
 	static class ViewHolder{
-		private TextView mListItem,mListItemCount,mTotalTransaction_amount;
+		private TextView mFavoriteUserName,mTotalTransaction_amount;
 		private ImageView mListItemImage,mListItemArrow,mFavouriteImage;
 	}
 }

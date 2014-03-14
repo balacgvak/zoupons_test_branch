@@ -11,7 +11,7 @@ import android.util.DisplayMetrics;
  */
 public class GetScreenDensity {
 
-	Activity context;
+	private Activity context;
 	public GetScreenDensity(Activity context){
 		this.context=context;
 	}
@@ -36,6 +36,10 @@ public class GetScreenDensity {
 			density[0]=75;
 			density[1]=45;
 			break;
+		case DisplayMetrics.DENSITY_XHIGH:
+			density[0]=100;
+			density[1]=75;
+			break;
 		default:
 			density[0] = 150;
 			density[1] = 100;      
@@ -59,6 +63,10 @@ public class GetScreenDensity {
 		case DisplayMetrics.DENSITY_HIGH:
 			density[0]=105;
 			density[1]=67;
+			break;
+		case DisplayMetrics.DENSITY_XHIGH:
+			density[0]=100;
+			density[1]=75;
 			break;
 		default:
 			density[0] = 150;

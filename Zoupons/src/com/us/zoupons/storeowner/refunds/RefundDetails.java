@@ -1,6 +1,7 @@
 package com.us.zoupons.storeowner.refunds;
 
 import android.app.Activity;
+import android.content.IntentFilter;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -21,10 +22,18 @@ import com.us.zoupons.MobileNumberTextWatcher;
 import com.us.zoupons.MyHorizontalScrollView;
 import com.us.zoupons.NetworkCheck;
 import com.us.zoupons.R;
+import com.us.zoupons.classvariables.BroadCastActionClassVariables;
+import com.us.zoupons.classvariables.ZouponsConstants;
+import com.us.zoupons.loginsession.CheckLogoutSession;
+import com.us.zoupons.loginsession.CheckUserSession;
+import com.us.zoupons.loginsession.RefreshZoupons;
+import com.us.zoupons.notification.ManageNotificationWindow;
+import com.us.zoupons.notification.NotifitcationReceiver;
+import com.us.zoupons.notification.ScheduleNotificationSync;
 import com.us.zoupons.storeowner.Header;
 import com.us.zoupons.storeowner.StoreOwner_LeftMenu;
-import com.us.zoupons.storeowner.GeneralScrollingClass.StoreOwnerClickListenerForScrolling;
-import com.us.zoupons.storeowner.GeneralScrollingClass.StoreOwnerSizeCallBackForMenu;
+import com.us.zoupons.storeowner.generalscrollingclass.StoreOwnerClickListenerForScrolling;
+import com.us.zoupons.storeowner.generalscrollingclass.StoreOwnerSizeCallBackForMenu;
 import com.us.zoupons.storeowner.invoice.CheckZouponsCustomerTask;
 
 public class RefundDetails extends Activity {
@@ -43,6 +52,9 @@ public class RefundDetails extends Activity {
 	private EditText mStoreOwnerRefundTelephoneValue,mStoreOwnerRefundCustomerFirstName,mStoreOwnerRefundCustomerLastName,mStoreOwnerRefundAmount,mStoreOwnerRefundEmployeePin;
 	private ImageView mStoreOwnerRefundCustomerImage;
 	private ListView mStoreOwnerRefundList,mStoreOwnerRefundDetailsList;
+	private CheckLogoutSession mLogoutSession;
+	private ScheduleNotificationSync mNotificationSync;
+	private NotifitcationReceiver mNotificationReceiver; // Generic class which receives for notifcation
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +78,10 @@ public class RefundDetails extends Activity {
 		int scrollToViewIdx = 1;
 		scrollView.initViews(children, scrollToViewIdx, new StoreOwnerSizeCallBackForMenu(header.mLeftMenuBtnSlide));
 		mStoreOwnerRefundsFreezeView.setOnClickListener(new StoreOwnerClickListenerForScrolling(scrollView, mLeftMenu, /*mRightMenu,*/ mMenuFlag, mStoreOwnerRefundsFreezeView, TAG));
+		mNotificationReceiver = new NotifitcationReceiver(header.mTabBarNotificationCountBtn);
+		// Notitification pop up layout declaration
+		header.mTabBarNotificationImage.setOnClickListener(new ManageNotificationWindow(this,header,header.mTabBarNotificationTriangle,ZouponsConstants.sStoreModuleFlag));
+		header.mTabBarNotificationCountBtn.setOnClickListener(new ManageNotificationWindow(this,header,header.mTabBarNotificationTriangle,ZouponsConstants.sStoreModuleFlag));
 		// Initialisation of Refunds initial telephone entry views
 		mStoreOwnerRefundTelephoneLayout = (LinearLayout) mMiddleView.findViewById(R.id.initial_telephone_layout);
 		mStoreOwnerRefundTelephoneValue = (EditText) mStoreOwnerRefundTelephoneLayout.findViewById(R.id.storeowner_refund_phoneNumberId);
@@ -151,11 +167,25 @@ public class RefundDetails extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
+		// To notify  system that its time to run garbage collector service
+		System.gc();
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
+		unregisterReceiver(mNotificationReceiver);
+		if(mNotificationSync!=null){
+			mNotificationSync.cancelAlarm();
+		}
+	}
+	
+	@Override
+	protected void onUserLeaveHint() {
+		// TODO Auto-generated method stub
+		super.onUserLeaveHint();
+		new RefreshZoupons().isApplicationGoneBackground(RefundDetails.this);
+		mLogoutSession.cancelAlarm();	//To cancel alarm when application goes background
 	}
 
 	@Override
@@ -166,8 +196,26 @@ public class RefundDetails extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		registerReceiver(mNotificationReceiver, new IntentFilter(BroadCastActionClassVariables.ACTION));
+		new CheckUserSession(RefundDetails.this).checkIfSessionExpires();
+		// To start notification sync
+		mNotificationSync = new ScheduleNotificationSync(RefundDetails.this,ZouponsConstants.sStoreModuleFlag);
+		mNotificationSync.setRecurringAlarm();
+		//To start Logout session
+		mLogoutSession = new CheckLogoutSession(RefundDetails.this);
+		mLogoutSession.setLogoutTimerAlarm();
 	}
 
+	@Override
+	public void onUserInteraction() {
+		// TODO Auto-generated method stub
+		super.onUserInteraction();
+		// Cancel and restart alarm since user interaction is detected..
+		mLogoutSession.cancelAlarm();
+		mLogoutSession.setLogoutTimerAlarm();
+	}
+	
+	
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -177,6 +225,7 @@ public class RefundDetails extends Activity {
 	protected void onStop() {
 		super.onStop();
 	}
+		
 }
 
 

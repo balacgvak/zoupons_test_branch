@@ -40,6 +40,7 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="visible" />
 
         <TextView
@@ -59,6 +60,7 @@
             android:id="@+id/step1_menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
         
         <TextView
@@ -67,7 +69,7 @@
             android:layout_height="wrap_content"
             android:drawableTop="@drawable/inappropriate"
             android:background="@drawable/gradient_menubar_new"
-            android:text="InAppropriate"
+            android:text="Report"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="12sp"

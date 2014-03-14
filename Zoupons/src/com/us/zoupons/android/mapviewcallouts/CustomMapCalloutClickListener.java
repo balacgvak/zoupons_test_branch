@@ -1,31 +1,33 @@
 package com.us.zoupons.android.mapviewcallouts;
 
-import java.math.BigDecimal;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.model.Marker;
-import com.us.zoupons.Location;
 import com.us.zoupons.MenuUtilityClass;
 import com.us.zoupons.OpenMenu;
 import com.us.zoupons.R;
-import com.us.zoupons.SlidingView;
-import com.us.zoupons.ClassVariables.POJOStoreInfo;
-import com.us.zoupons.ClassVariables.RightMenuStoreId_ClassVariables;
-import com.us.zoupons.ClassVariables.StoreLocator_ClassVariables;
-import com.us.zoupons.ClassVariables.UserDetails;
-import com.us.zoupons.FlagClasses.MenuBarFlag;
-import com.us.zoupons.StaticArrays.WebServiceStaticArrays;
-import com.us.zoupons.cards.StoreGiftCardDetails;
-import com.us.zoupons.zpay.Step2_ManageCards;
-import com.us.zoupons.zpay.ZpayStep2SearchEnable;
-import com.us.zoupons.zpay.zpay_step1;
+import com.us.zoupons.classvariables.POJOStoreInfo;
+import com.us.zoupons.classvariables.RightMenuStoreId_ClassVariables;
+import com.us.zoupons.classvariables.StoreLocator_ClassVariables;
+import com.us.zoupons.collections.WebServiceStaticArrays;
+import com.us.zoupons.flagclasses.MenuBarFlag;
+import com.us.zoupons.mobilepay.MobilePay;
+import com.us.zoupons.mobilepay.ZpayStep2SearchEnable;
+import com.us.zoupons.mobilepay.CardPurchase;
+import com.us.zoupons.shopper.cards.StoreCardDetails;
+import com.us.zoupons.shopper.home.ShopperHomePage;
+import com.us.zoupons.shopper.location.Location;
+
+/**
+ * 
+ * Customized class which listens while we tap Map callout.. 
+ *
+ */
 
 public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 
@@ -50,7 +52,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 	public void onInfoWindowClick(Marker marker) {
 		// TODO Auto-generated method stub
 		System.out.println("Index : "+marker.getId()+"\n"+"Item Title : "+marker.getTitle());
-		if(!this.context.getClass().getSimpleName().equals("zpay_step1")){
+		if(!this.context.getClass().getSimpleName().equals("CardPurchase")){
 			 if(MenuBarFlag.mMenuBarFlag!=0){
 					switch (MenuBarFlag.mMenuBarFlag) {
 					case 1:
@@ -67,17 +69,17 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 								RightMenuStoreId_ClassVariables.mSelectedStore_lat=parsedobjectvalues.latitude;
 								RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
 								
-								if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-									RightMenuStoreId_ClassVariables.mStoreLocation = "online";
+								if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+									RightMenuStoreId_ClassVariables.mStoreLocation = "online store";
 								}else{
 									RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 								}
-								SlidingView.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
-								SlidingView.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
+								ShopperHomePage.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
+								ShopperHomePage.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
 								if(RightMenuStoreId_ClassVariables.rightmenu_favourite_status.equalsIgnoreCase("yes")){
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
 								}else{
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
 								}
 								MenuUtilityClass.SetRightMenuStatus(parsedobjectvalues, context);
 								break;
@@ -98,18 +100,18 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 								RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
 								
 								RightMenuStoreId_ClassVariables.rightmenu_favourite_status=parsedobjectvalues.favorite_store;
-								if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-									RightMenuStoreId_ClassVariables.mStoreLocation = "online";
+								if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+									RightMenuStoreId_ClassVariables.mStoreLocation = "online store";
 								}else{
 									RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 								}
 								//UserId=UserDetails.mServiceUserId;
-								SlidingView.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
-								SlidingView.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
+								ShopperHomePage.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
+								ShopperHomePage.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
 								if(RightMenuStoreId_ClassVariables.rightmenu_favourite_status.equalsIgnoreCase("yes")){
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
 								}else{
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
 								}
 								MenuUtilityClass.SetRightMenuStatus(parsedobjectvalues, context);
 								break;
@@ -131,18 +133,18 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 								RightMenuStoreId_ClassVariables.mSelectedStore_lat=parsedobjectvalues.latitude;
 								RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
 								
-								if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-									RightMenuStoreId_ClassVariables.mStoreLocation = "online";	
+								if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+									RightMenuStoreId_ClassVariables.mStoreLocation = "online store";	
 								}else{
 									RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 								}
 								//UserId=UserDetails.mServiceUserId;
-								SlidingView.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
-								SlidingView.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
+								ShopperHomePage.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
+								ShopperHomePage.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
 								if(RightMenuStoreId_ClassVariables.rightmenu_favourite_status.equalsIgnoreCase("yes")){
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
 								}else{
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
 								}
 								MenuUtilityClass.SetRightMenuStatus(parsedobjectvalues, context);
 								break;
@@ -164,18 +166,18 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 								RightMenuStoreId_ClassVariables.mSelectedStore_lat=parsedobjectvalues.latitude;
 								RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
 								
-								if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-									RightMenuStoreId_ClassVariables.mStoreLocation = "online";
+								if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+									RightMenuStoreId_ClassVariables.mStoreLocation = "online store";
 								}else{
 									RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 								}
 								//UserId=UserDetails.mServiceUserId;
-								SlidingView.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
-								SlidingView.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
+								ShopperHomePage.mStoreName_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreName);
+								ShopperHomePage.mStoreLocation_RightMenu.setText(RightMenuStoreId_ClassVariables.mStoreLocation);
 								if(RightMenuStoreId_ClassVariables.rightmenu_favourite_status.equalsIgnoreCase("yes")){
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.removefavorite);
 								}else{
-									SlidingView.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
+									ShopperHomePage.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
 								}
 								MenuUtilityClass.SetRightMenuStatus(parsedobjectvalues, context);
 								break;
@@ -195,8 +197,8 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 								RightMenuStoreId_ClassVariables.mSelectedStore_lat=parsedobjectvalues.latitude;
 								RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
 								
-								if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-									RightMenuStoreId_ClassVariables.mStoreLocation = "online"; 
+								if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+									RightMenuStoreId_ClassVariables.mStoreLocation = "online store"; 
 								}else{
 									RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 								}
@@ -210,7 +212,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 									Location.mFavoriteImage_RightMenu.setImageResource(R.drawable.addfavorite);
 								}
 								
-								MenuUtilityClass.SetRightMenuStatus(parsedobjectvalues, context);
+								MenuUtilityClass.SetLocationRightMenuStatus(parsedobjectvalues, context);
 								OpenMenu.toOpenRightMenu("locations");
 								break;
 							}
@@ -222,14 +224,14 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 				}
 				if(MenuBarFlag.mMenuBarFlag<5&&MenuBarFlag.mMenuBarFlag!=0){
 					/** menu out **/
-					OpenMenu.toOpenRightMenu("SlidingView");		// Function to open RightMenu if control from home page
+					OpenMenu.toOpenRightMenu("ShopperHomePage");		// Function to open RightMenu if control from home page
 				}
 		}else{
 			//Toast.makeText(this.context, "ZPay Step2", Toast.LENGTH_SHORT).show();
 			// To enable search text in step 2
 			ZpayStep2SearchEnable.searchEnableFlag = true;
 			// If favorite has tapped
-			if(zpay_step1.mMapViewOnScrollViewFlag.equals("favorites")){
+			if(CardPurchase.mMapViewOnScrollViewFlag.equals("favorites")){
 				for(int i=0;i<WebServiceStaticArrays.mFavouriteStoreDetails.size();i++){
 					POJOStoreInfo parsedobjectvalues = (POJOStoreInfo) WebServiceStaticArrays.mFavouriteStoreDetails.get(i);
 					if(parsedobjectvalues.store_name.equals(marker.getTitle())&&i == Integer.valueOf(marker.getSnippet().split(",,")[0])){
@@ -241,7 +243,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 						RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.mLongitude;
 						
 						if(parsedobjectvalues.store_distance.equalsIgnoreCase("-1")){
-							RightMenuStoreId_ClassVariables.mStoreLocation = "online";
+							RightMenuStoreId_ClassVariables.mStoreLocation = "online store";
 						}else{
 							RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.address_line1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zip_code;		
 						}
@@ -249,7 +251,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 						if(mPageFlag.equalsIgnoreCase("giftcard")){
 			    			if(parsedobjectvalues.has_giftcard.equalsIgnoreCase("yes")){
 			    				//Move to Giftcards and zcards page
-			    				Intent intent_giftcard_zcard = new Intent(this.context,StoreGiftCardDetails.class);
+			    				Intent intent_giftcard_zcard = new Intent(this.context,StoreCardDetails.class);
 			    				intent_giftcard_zcard.putExtra("CardType", "Regular");
 			    				intent_giftcard_zcard.putExtra("bothcards", "both");
 			    				this.context.startActivity(intent_giftcard_zcard);
@@ -260,7 +262,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 			    		}else{
 			    			if(parsedobjectvalues.has_point_of_sale.equalsIgnoreCase("yes")){
 			    				//Move to step2
-			    				Intent intent_step2 = new Intent(this.context,Step2_ManageCards.class);
+			    				Intent intent_step2 = new Intent(this.context,MobilePay.class);
 			    				intent_step2.putExtra("datasourcename", "zpay");
 			    				this.context.startActivity(intent_step2);
 			    			}else{
@@ -279,15 +281,15 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 						RightMenuStoreId_ClassVariables.mLocationId=parsedobjectvalues.location_id;
 						RightMenuStoreId_ClassVariables.mSelectedStore_lat=parsedobjectvalues.latitude;
 						RightMenuStoreId_ClassVariables.mSelectedStore_long=parsedobjectvalues.longitude;
-						if(parsedobjectvalues.distance.equalsIgnoreCase("-1")){
-							RightMenuStoreId_ClassVariables.mStoreLocation = "online";
+						if(parsedobjectvalues.deviceDistance.equalsIgnoreCase("-1")){
+							RightMenuStoreId_ClassVariables.mStoreLocation = "online store";
 						}else{
 							RightMenuStoreId_ClassVariables.mStoreLocation = parsedobjectvalues.addressLine1 + "\n" + parsedobjectvalues.city+", "+parsedobjectvalues.state+" "+parsedobjectvalues.zipcode;	
 						}
 						if(mPageFlag.equalsIgnoreCase("giftcard")){
 			    			if(parsedobjectvalues.rightmenu_giftcards_flag.equalsIgnoreCase("yes")){
 			    				//Move to Giftcards and zcards page
-			    				Intent intent_giftcard_zcard = new Intent(this.context,StoreGiftCardDetails.class);
+			    				Intent intent_giftcard_zcard = new Intent(this.context,StoreCardDetails.class);
 			    				intent_giftcard_zcard.putExtra("CardType", "Regular");
 			    				intent_giftcard_zcard.putExtra("bothcards", "both");
 			    				this.context.startActivity(intent_giftcard_zcard);
@@ -298,7 +300,7 @@ public class CustomMapCalloutClickListener implements OnInfoWindowClickListener{
 			    		}else{
 			    			if(parsedobjectvalues.rightmenu_pointofsale_flag.equalsIgnoreCase("yes")){
 			    				//Move to step2
-			    				Intent intent_step2 = new Intent(this.context,Step2_ManageCards.class);
+			    				Intent intent_step2 = new Intent(this.context,MobilePay.class);
 			    				intent_step2.putExtra("datasourcename", "zpay");
 			    				this.context.startActivity(intent_step2);
 			    			}else{

@@ -77,6 +77,7 @@
                 android:id="@+id/menubar_splitter1"
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
+                android:orientation="vertical"
                 android:background="@color/menubarsplitter"
                 android:visibility="visible" />
 
@@ -118,7 +119,7 @@
                         android:singleLine="true"
                         android:text="QR CODE"
                         android:textColor="@color/white"
-                        android:textSize="10sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -126,6 +127,7 @@
                 android:id="@+id/menubar_splitter2"
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
+                android:orientation="vertical"
                 android:background="@color/menubarsplitter"
                 android:visibility="invisible" />
 
@@ -175,6 +177,7 @@
                 android:id="@+id/menubar_splitter3"
                 android:layout_width="1dip"
                 android:layout_height="fill_parent"
+                android:orientation="vertical"
                 android:background="@color/menubarsplitter" />
 
             <LinearLayout
@@ -297,7 +300,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:visibility="visible" >
 
                     <EditText
                         android:id="@+id/addcoupon_selecttype_value"
@@ -323,6 +327,17 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false" />
                 </FrameLayout>
+                
+                <TextView
+                    android:id="@+id/edit_coupon_typeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                     />
+                
+                
             </LinearLayout>
 
             <!-- Mobile Number -->
@@ -355,201 +370,12 @@
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <!-- storeowner add coupon customer info Header -->
-
-            <LinearLayout
-                android:id="@+id/addcoupon_customer_info_container"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:visibility="gone" >
-
-                <!-- storeowner invoice customer details -->
-
-                <TextView
-                    android:id="@+id/addcoupon_profile_info"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Profile Details"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal" >
-
-                    <!-- Contact Information Items -->
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:orientation="vertical" >
-
-                        <RelativeLayout
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/settings_contactborder"
-                            android:paddingRight="5dp"
-                            android:paddingTop="5dp" >
-
-                            <ImageView
-                                android:id="@+id/addcoupon_customer_profile_imageId"
-                                android:layout_width="120dp"
-                                android:layout_height="135dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="5dp"
-                                android:adjustViewBounds="true"
-                                android:paddingLeft="5dp"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/profileimage"
-                                android:visibility="visible" />
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_toRightOf="@id/addcoupon_customer_profile_imageId"
-                                android:orientation="vertical" >
-
-                                <!-- First Name -->
-
-                                <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical" >
-
-                                    <LinearLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:paddingBottom="5dip" >
-
-                                        <TextView
-                                            android:id="@+id/txtFirstName"
-                                            android:layout_width="fill_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="First Name"
-                                            android:textColor="@color/black"
-                                            android:textSize="16sp"
-                                            android:textStyle="bold" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:paddingBottom="5dip" >
-
-                                        <EditText
-                                            android:id="@+id/addcoupon_customer_firstname_value"
-                                            android:layout_width="fill_parent"
-                                            android:layout_height="wrap_content"
-                                            android:hint="First Name"
-                                            android:singleLine="true"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp" />
-                                    </LinearLayout>
-                                </LinearLayout>
-
-                                <!-- Last Name -->
-
-                                <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical" >
-
-                                    <LinearLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:paddingBottom="5dip" >
-
-                                        <TextView
-                                            android:id="@+id/txtLastName"
-                                            android:layout_width="fill_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Last Name"
-                                            android:textColor="@color/black"
-                                            android:textSize="16sp"
-                                            android:textStyle="bold" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1" >
-
-                                        <EditText
-                                            android:id="@+id/addcoupon_customer_lastname_value"
-                                            android:layout_width="fill_parent"
-                                            android:layout_height="wrap_content"
-                                            android:hint="Last Name"
-                                            android:singleLine="true"
-                                            android:textColor="@color/black"
-                                            android:textSize="15sp" />
-                                    </LinearLayout>
-                                </LinearLayout>
-                            </LinearLayout>
-                        </RelativeLayout>
-
-                        <!-- Email Address field -->
-
-                        <LinearLayout
-                            android:id="@+id/storeowner_customer_invoice_EmailLayout"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:visibility="visible" >
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:paddingBottom="5dip" >
-
-                                <TextView
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Email Address"
-                                    android:textColor="@color/black"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:paddingBottom="5dip" >
-
-                                <EditText
-                                    android:id="@+id/addcoupon_customer_emailaddress_value"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="Email Address"
-                                    android:padding="5dp"
-                                    android:singleLine="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15sp" />
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
             <!-- Title -->
 
             <LinearLayout
                 android:id="@+id/selecttype_below_space"
                 android:layout_width="fill_parent"
+                android:orientation="vertical"
                 android:layout_height="10dip" />
 
             <LinearLayout
@@ -578,6 +404,7 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="Enter Title"
+                    android:maxLength="80"
                     android:singleLine="true"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -587,6 +414,7 @@
             <LinearLayout
                 android:id="@+id/title_below_space"
                 android:layout_width="fill_parent"
+                android:orientation="vertical"
                 android:layout_height="10dip" />
 
             <LinearLayout
@@ -623,7 +451,7 @@
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:hint="Enter Coupon code"
-                        android:maxLength="10"
+                        android:maxLength="15"
                         android:singleLine="true"
                         android:textColor="@color/black"
                         android:textSize="15sp" />
@@ -639,64 +467,29 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- BarCode -->
-
-            <LinearLayout
-                android:id="@+id/title_below_space"
-                android:layout_width="fill_parent"
-                android:layout_height="10dip" />
-
-            <!--
-            <LinearLayout
-                android:id="@+id/barcode_container"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/title_below_space"
-                android:orientation="vertical"
-                android:visibility="gone" >
-
-                <TextView
-                    android:id="@+id/addcoupon_barcode"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Barcode"
-                    android:textColor="@color/black"
-                    android:textSize="15dip"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="10dip" />
-
-                <EditText
-                    android:id="@+id/addcoupon_barcode_value"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Enter Barcode"
-                    android:singleLine="true" />
-            </LinearLayout>
-            -->
-
-
             <!-- Barcode Image View -->
 
             <LinearLayout
-                android:id="@+id/barcode_below_space"
+                android:id="@+id/barcode_above_space"
                 android:layout_width="fill_parent"
                 android:layout_height="10dip"
+                android:orientation="vertical"
                 android:visibility="visible" />
 
             <FrameLayout
+                android:id="@+id/couponbarcode_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="visible" >
+                android:visibility="visible"
+                 >
 
                 <ImageView
                     android:id="@+id/add_coupon_barcode"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
+                    android:layout_width="300dp"
+                    android:layout_height="100dp"
                     android:background="@drawable/border"
+                    android:padding="20dp"
                     android:gravity="center"
                     android:visibility="visible" />
 
@@ -712,6 +505,7 @@
             <LinearLayout
                 android:id="@+id/barcode_imageview_below_space"
                 android:layout_width="fill_parent"
+                android:orientation="vertical"
                 android:layout_height="10dip" />
 
             <RelativeLayout
@@ -836,6 +630,7 @@
             <LinearLayout
                 android:id="@+id/activationexpiration_below_space"
                 android:layout_width="fill_parent"
+                android:orientation="vertical"
                 android:layout_height="10dip" />
 
             <LinearLayout
@@ -865,7 +660,6 @@
                     android:focusableInTouchMode="false"
                     android:gravity="top"
                     android:inputType="textMultiLine"
-                    android:maxLength="110"
                     android:maxLines="5"
                     android:minLines="5"
                     android:textSize="15sp" />

@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="UserName"
+                android:text="@string/zoupons_login_username"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" 
@@ -835,7 +835,7 @@
                                             android:maxLines="2"
                                             android:minLines="2"
                                             android:paddingRight="50dp"
-                                            android:textSize="10sp" />
+                                            android:textSize="12sp" />
 
                                         <ImageView
                                             android:id="@+id/storeowner_settings_questions1ImageId"
@@ -937,7 +937,7 @@
                                             android:maxLines="2"
                                             android:minLines="2"
                                             android:paddingRight="50dp"
-                                            android:textSize="10sp" />
+                                            android:textSize="12sp" />
 
                                         <ImageView
                                             android:id="@+id/storeowner_settings_questions2ImageId"
@@ -1256,7 +1256,8 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
-            android:background="@color/menubarsplitter" />
+            android:background="@color/menubarsplitter" 
+            android:orientation="vertical"/>
 
         <LinearLayout
             android:id="@+id/storeowner_settings_contactinfo"
@@ -1287,6 +1288,7 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="visible" />
 
         <LinearLayout
@@ -1317,6 +1319,7 @@
             android:layout_width="1dip"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
+            android:orientation="vertical"
             android:visibility="visible" />
 
         <LinearLayout

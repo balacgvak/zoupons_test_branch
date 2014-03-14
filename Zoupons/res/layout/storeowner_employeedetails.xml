@@ -530,19 +530,9 @@
             android:id="@+id/employeedetails_permission_container"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_above="@+id/storeowner_employeedetails_default_footer"
             android:orientation="vertical"
             android:padding="5dip"
             android:visibility="gone" >
-
-            <!-- New Permission View like add employee -->
-
-
-            <!-- Choose Modules -->
-
-
-            <!-- Start -->
-
 
             <!-- employee module permission two container -->
 
@@ -899,6 +889,7 @@
         <LinearLayout
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
+            android:orientation="vertical"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter" />
 
@@ -931,6 +922,7 @@
         <LinearLayout
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
+            android:orientation="vertical"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
             android:visibility="visible" />
@@ -1022,6 +1014,7 @@
             android:id="@+id/menubar_splitter1"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter" />
 
         <!-- Invisible 1 -->
@@ -1071,6 +1064,7 @@
         <LinearLayout
             android:id="@+id/menubar_splitter2"
             android:layout_width="1dip"
+            android:orientation="vertical"
             android:layout_height="fill_parent"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
@@ -1123,6 +1117,7 @@
             android:id="@+id/menubar_splitter3"
             android:layout_width="1dip"
             android:layout_height="fill_parent"
+            android:orientation="vertical"
             android:background="@color/menubarsplitter"
             android:visibility="invisible" />
 

@@ -6,4 +6,9 @@
     <dimen name="cancelbuttonheight">45dip</dimen>
     <dimen name="generalinfo_storelogo_width">250dip</dimen>
     <dimen name="generalinfo_storelogo_height">150dip</dimen>
+    <dimen name="pop_up_button_width">30dp</dimen>
+    <dimen name="TakeMeHomebuttonwidth">150dip</dimen>
+    <dimen name="TakeMeHomebuttonheight">45dip</dimen>
+    <dimen name="dashboardbuttonwidth">150dip</dimen>
+    <dimen name="dashboardbuttonheight">60dip</dimen>
 </resources>
